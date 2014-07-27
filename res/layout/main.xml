@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:id="@+id/news_list_title_bar"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:background="@drawable/titlebar" >
+
+        <TextView
+            android:id="@+id/news_list_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="金融计算器"
+            android:textColor="@android:color/white"
+            android:textSize="20sp" />
+    </RelativeLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingLeft="8dp"
+            android:paddingRight="8dp"
+            android:paddingTop="5dp" >
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="120dp"
+                android:background="@drawable/shape"
+                android:padding="8dp"
+                android:text="功能介绍"
+                android:textColor="@android:color/black"
+                android:textSize="18sp" />
+
+            <Button
+                android:id="@+id/financeButton"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="5dp"
+                android:text="个人理财"
+                android:textSize="18sp" />
+
+            <Button
+                android:id="@+id/loanButton"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:text="贷款计算"
+                android:textSize="18sp" />
+
+            <Button
+                android:id="@+id/investmentButton"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:text="投资指标"
+                android:textSize="18sp" />
+
+            <Button
+                android:id="@+id/identificationButton"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:text="金融产品定价"
+                android:textSize="18sp" />
+
+            <Button
+                android:id="@+id/derivativeButton"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:text="金融衍生品定价"
+                android:textSize="18sp" />
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

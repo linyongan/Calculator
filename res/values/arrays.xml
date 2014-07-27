@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<string-array name="array1">
+		<item>期权理论价格</item>
+		<item>期权到期收益</item>
+		<item>期权组合损益分析</item>
+		<item>保证金</item>
+		<item>期权Delta值</item>
+	</string-array>
+	<string-array name="array2">
+		<item>认购期权</item>
+		<item>认沽期权</item>
+		<item>股票</item>
+	</string-array>
+	<string-array name="array3">
+		<item>多头</item>
+		<item>空头</item>
+	</string-array>
+ </resources>
+
