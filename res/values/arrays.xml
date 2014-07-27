@@ -8,8 +8,9 @@
 		<item>期权Delta值</item>
 	</string-array>
 	<string-array name="array2">
-		<item>认购期权</item>
-		<item>认沽期权</item>
+	    <item>空</item>
+		<item>认购</item>
+		<item>认沽</item>
 		<item>股票</item>
 	</string-array>
 	<string-array name="array3">
