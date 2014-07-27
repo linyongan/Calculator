@@ -38,7 +38,8 @@
                 android:layout_height="120dp"
                 android:background="@drawable/shape"
                 android:padding="8dp"
-                android:text="功能介绍"
+                android:text="理念介绍"
+                android:layout_marginTop="5dp"
                 android:textColor="@android:color/black"
                 android:textSize="18sp" />
 
@@ -74,13 +75,30 @@
                 android:text="金融产品定价"
                 android:textSize="18sp"
                 android:visibility="gone" />
-
+            <Button
+                android:id="@+id/learnButton"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="5dp"
+                android:text="期权学堂"
+                android:textSize="18sp" />
             <Button
                 android:id="@+id/derivativeButton"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
-                android:layout_marginTop="5dp"
-                android:text="金融衍生品定价"
+                android:text="期权计算"
+                android:textSize="18sp" />
+            <Button
+                android:id="@+id/searchButton"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:text="名词查询"
+                android:textSize="18sp" />
+            <Button
+                android:id="@+id/aboutButton"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:text="常见问题"
                 android:textSize="18sp" />
         </LinearLayout>
     </ScrollView>

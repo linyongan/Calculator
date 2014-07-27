@@ -5,11 +5,6 @@ import java.io.FileOutputStream;
 import java.io.InputStream;
 import java.io.OutputStream;
 
-import com.linyongan.test.FinanceActivity;
-import com.linyongan.test.IdentificationActivity;
-import com.linyongan.test.InvestmentActivity;
-import com.linyongan.test.LoanActivity;
-
 import android.app.Activity;
 import android.content.Intent;
 import android.os.AsyncTask;
@@ -24,15 +19,14 @@ import android.widget.Button;
  * 金融计算器主页面
  */
 public class MainActivity extends Activity {
-	/** 个人理财按钮 */
-	private Button financeButton;
-	/** 贷款计算按钮 */
-	private Button loanButton;
-	/** 投资指标按钮 */
-	private Button investmentButton;
-	/** 金融产品定价按钮 */
-	private Button identificationButton;
-	/** 金融衍生品定价按钮 */
+	
+	/** 常见问题按钮 */
+	private Button aboutButton;
+	/** 名词查询按钮 */
+	private Button searchButton;
+	/** 期权学堂按钮 */
+	private Button learnButton;
+	/** 期权计算按钮 */
 	private Button derivativeButton;
 
 	/** 标记，第一次运行加载数据 */
@@ -50,15 +44,13 @@ public class MainActivity extends Activity {
 			mark = false;
 		}
 		// 找到所有的button
-		financeButton = (Button) findViewById(R.id.financeButton);
-		loanButton = (Button) findViewById(R.id.loanButton);
-		investmentButton = (Button) findViewById(R.id.investmentButton);
-		identificationButton = (Button) findViewById(R.id.identificationButton);
+		aboutButton = (Button) findViewById(R.id.aboutButton);
+		searchButton = (Button) findViewById(R.id.searchButton);
+		learnButton = (Button) findViewById(R.id.learnButton);
 		derivativeButton = (Button) findViewById(R.id.derivativeButton);
-		financeButton.setOnClickListener(new ButtonListener());
-		loanButton.setOnClickListener(new ButtonListener());
-		investmentButton.setOnClickListener(new ButtonListener());
-		identificationButton.setOnClickListener(new ButtonListener());
+		aboutButton.setOnClickListener(new ButtonListener());
+		searchButton.setOnClickListener(new ButtonListener());
+		learnButton.setOnClickListener(new ButtonListener());
 		derivativeButton.setOnClickListener(new ButtonListener());
 	}
 
@@ -72,24 +64,19 @@ public class MainActivity extends Activity {
 
 		public void onClick(View v) {
 			switch (v.getId()) {
-			case R.id.financeButton:
-				Intent intent1 = new Intent(MainActivity.this,
-						FinanceActivity.class);
-				startActivity(intent1);
-				break;
-			case R.id.loanButton:
+			case R.id.aboutButton:
 				Intent intent2 = new Intent(MainActivity.this,
-						LoanActivity.class);
+						AboutActivity.class);
 				startActivity(intent2);
 				break;
-			case R.id.investmentButton:
+			case R.id.searchButton:
 				Intent intent3 = new Intent(MainActivity.this,
-						InvestmentActivity.class);
+						SearchActivity.class);
 				startActivity(intent3);
 				break;
-			case R.id.identificationButton:
+			case R.id.learnButton:
 				Intent intent4 = new Intent(MainActivity.this,
-						IdentificationActivity.class);
+						LearnActivity.class);
 				startActivity(intent4);
 				break;
 			case R.id.derivativeButton:
