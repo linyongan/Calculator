@@ -85,6 +85,7 @@ public class Button5Activity extends Activity {
 				if (test1.length() != 0 && test2.length() != 0
 						&& test3.length() != 0 && test4.length() != 0
 						&& test5.length() != 0) {
+					mark2 = 1;
 					Double a = calculate(Double.parseDouble(test1),
 							Double.parseDouble(test2),
 							Double.parseDouble(test3),
@@ -93,9 +94,8 @@ public class Button5Activity extends Activity {
 					Double b = a - 1;
 					if (mark2 == 1) {
 						out_tv.setText("计算结果：\n认购期权Delta值为："
-								+ String.format("%.2f", a)
-								+ "\n认沽期权Delta值为："
-								+ String.format("%.2f", b));
+								+ String.format("%.2f", a-0.005) + "\n认沽期权Delta值为："
+								+ String.format("%.2f", b-0.005));
 					} else {
 						out_tv.setText("计算结果：输入的数据有误，请重新输入！");
 					}
@@ -150,11 +150,14 @@ public class Button5Activity extends Activity {
 		if (string.endsWith("0")) {
 			string = string.substring(0, string.length() - 1);
 			if (string.endsWith("0")) {
+			string = string.substring(0, string.length() - 1);
+			if (string.endsWith("0")) {
 				string = string.substring(0, string.length() - 2);
 				if (string.endsWith("0")) {
 					string = "0";
 				}
 			}
+		}
 		}
 		System.out.println("--string:-- " + string);
 		dbmanger.open();

@@ -31,7 +31,7 @@
             android:orientation="vertical"
             android:paddingLeft="8dp"
             android:paddingRight="8dp"
-            android:paddingTop="5dp" >
+             >
 
             <TextView
                 android:layout_width="match_parent"
@@ -48,33 +48,38 @@
                 android:layout_height="50dp"
                 android:layout_marginTop="5dp"
                 android:text="个人理财"
-                android:textSize="18sp" />
+                android:textSize="18sp"
+                android:visibility="gone" />
 
             <Button
                 android:id="@+id/loanButton"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:text="贷款计算"
-                android:textSize="18sp" />
+                android:textSize="18sp"
+                android:visibility="gone" />
 
             <Button
                 android:id="@+id/investmentButton"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:text="投资指标"
-                android:textSize="18sp" />
+                android:textSize="18sp"
+                android:visibility="gone" />
 
             <Button
                 android:id="@+id/identificationButton"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:text="金融产品定价"
-                android:textSize="18sp" />
+                android:textSize="18sp"
+                android:visibility="gone" />
 
             <Button
                 android:id="@+id/derivativeButton"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
+                android:layout_marginTop="5dp"
                 android:text="金融衍生品定价"
                 android:textSize="18sp" />
         </LinearLayout>

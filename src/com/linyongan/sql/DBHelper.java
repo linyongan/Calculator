@@ -11,7 +11,7 @@ import android.util.Log;
 public class DBHelper extends SQLiteOpenHelper {
 
 	private static final String TAG = "DBHelper";
-	private final String STUDENT_TABLE = "create table "
+	private final String STUDENT_TABLE = "create table if not exists "
 			+ Constants.StudentTable.TABLE_NAME + " ("
 			+ Constants.StudentTable.ID + " text , "
 			+ Constants.StudentTable.Y + " text)";

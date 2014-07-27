@@ -91,14 +91,12 @@ public class Button1Activity extends Activity {
 			case R.id.Button1_radioButton2:
 				mark = 2;
 				break;
-
 			}
 		}
 
 	}
 
 	private class ButtonListener implements OnClickListener {
-
 		@Override
 		public void onClick(View v) {
 			switch (v.getId()) {
@@ -113,6 +111,7 @@ public class Button1Activity extends Activity {
 				if (mark == 1 && test1.length() != 0 && test2.length() != 0
 						&& test3.length() != 0 && test4.length() != 0
 						&& test5.length() != 0) {
+					mark2 = 1;
 					Double a = calculate1(Double.parseDouble(test1),
 							Double.parseDouble(test2),
 							Double.parseDouble(test3),
@@ -120,7 +119,7 @@ public class Button1Activity extends Activity {
 							Double.parseDouble(test5));
 					if (mark2 == 1) {
 						out_tv.setText("计算结果：\n认购期权理论价格为："
-								+ String.format("%.2f", a));
+								+ String.format("%.2f", a-0.005));
 					} else {
 						out_tv.setText("计算结果：输入的数据有误，请重新输入！");
 					}
@@ -128,6 +127,7 @@ public class Button1Activity extends Activity {
 				} else if (mark == 2 && test1.length() != 0
 						&& test2.length() != 0 && test3.length() != 0
 						&& test4.length() != 0 && test5.length() != 0) {
+					mark2 = 1;
 					Double a = calculate2(Double.parseDouble(test1),
 							Double.parseDouble(test2),
 							Double.parseDouble(test3),
@@ -135,7 +135,7 @@ public class Button1Activity extends Activity {
 							Double.parseDouble(test5));
 					if (mark2 == 1) {
 						out_tv.setText("计算结果：\n认沽期权理论价格为："
-								+ String.format("%.2f", a));
+								+ String.format("%.2f", a-0.005));
 					} else {
 						out_tv.setText("计算结果：输入的数据有误，请重新输入！");
 					}
@@ -143,7 +143,6 @@ public class Button1Activity extends Activity {
 					Toast.makeText(Button1Activity.this, "输入数字不能为空！",
 							Toast.LENGTH_SHORT).show();
 				}
-
 				break;
 			case R.id.Button1_back_bn:
 				goBack();
@@ -217,15 +216,18 @@ public class Button1Activity extends Activity {
 	 * @return
 	 */
 	private Double change(Double a) {
-		java.text.DecimalFormat df = new java.text.DecimalFormat("#0.00");
+		java.text.DecimalFormat df = new java.text.DecimalFormat("#0.000");
 		String string = df.format(a);
 		// 如果小数点最后一位是0，则删除它
 		if (string.endsWith("0")) {
 			string = string.substring(0, string.length() - 1);
 			if (string.endsWith("0")) {
-				string = string.substring(0, string.length() - 2);
+				string = string.substring(0, string.length() - 1);
 				if (string.endsWith("0")) {
-					string = "0";
+					string = string.substring(0, string.length() - 2);
+					if (string.endsWith("0")) {
+						string = "0";
+					}
 				}
 			}
 		}
