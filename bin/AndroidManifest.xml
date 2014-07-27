@@ -26,14 +26,14 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="com.linyongan.activity.LoanActivity" >
+        <activity android:name="com.linyongan.test.LoanActivity" >
         </activity>
-        <activity android:name="com.linyongan.activity.InvestmentActivity" >
+        <activity android:name="com.linyongan.test.InvestmentActivity" >
         </activity>
-        <activity android:name="com.linyongan.activity.IdentificationActivity" >
+        <activity android:name="com.linyongan.test.IdentificationActivity" >
         </activity>
-        <activity android:name="com.linyongan.activity.FinanceActivity" >
-        </activity>
+        <activity android:name="com.linycom.linyongan.test.FinanceActivity" >
+       </activity>
         <activity android:name="com.linyongan.activity.DerivativeActivity" >
         </activity>
         <activity android:name="com.linyongan.activity.Button1Activity" >

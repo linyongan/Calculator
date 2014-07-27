@@ -1,6 +1,8 @@
-package com.linyongan.activity;
+package com.linyongan.test;
 
 
+import com.linyongan.activity.MainActivity;
+import com.linyongan.activity.R;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;

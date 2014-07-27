@@ -5,6 +5,11 @@ import java.io.FileOutputStream;
 import java.io.InputStream;
 import java.io.OutputStream;
 
+import com.linyongan.test.FinanceActivity;
+import com.linyongan.test.IdentificationActivity;
+import com.linyongan.test.InvestmentActivity;
+import com.linyongan.test.LoanActivity;
+
 import android.app.Activity;
 import android.content.Intent;
 import android.os.AsyncTask;
