@@ -19,18 +19,20 @@ public final class R {
     public static final class drawable {
         public static final int btn_back=0x7f020000;
         public static final int btn_common_selector=0x7f020001;
-        public static final int common_btn=0x7f020002;
-        public static final int common_btn_pressed=0x7f020003;
-        public static final int emotionstore_progresscancelbtn=0x7f020004;
-        public static final int icon=0x7f020005;
-        public static final int search_bar_edit_normal=0x7f020006;
-        public static final int search_bar_edit_pressed=0x7f020007;
-        public static final int search_bar_edit_selector=0x7f020008;
-        public static final int search_bar_icon_normal=0x7f020009;
-        public static final int shape=0x7f02000a;
-        public static final int show_head_toast_bg=0x7f02000b;
-        public static final int sidebar_background=0x7f02000c;
-        public static final int titlebar=0x7f02000d;
+        public static final int close=0x7f020002;
+        public static final int common_btn=0x7f020003;
+        public static final int common_btn_pressed=0x7f020004;
+        public static final int emotionstore_progresscancelbtn=0x7f020005;
+        public static final int icon=0x7f020006;
+        public static final int search_bar_edit_normal=0x7f020007;
+        public static final int search_bar_edit_pressed=0x7f020008;
+        public static final int search_bar_edit_selector=0x7f020009;
+        public static final int search_bar_icon_normal=0x7f02000a;
+        public static final int shape=0x7f02000b;
+        public static final int shape1=0x7f02000c;
+        public static final int show_head_toast_bg=0x7f02000d;
+        public static final int sidebar_background=0x7f02000e;
+        public static final int titlebar=0x7f02000f;
     }
     public static final class id {
         public static final int Button1_back_bn=0x7f070007;
@@ -94,7 +96,7 @@ public final class R {
         public static final int aboutButton=0x7f07006f;
         public static final int about_back_bn=0x7f070000;
         public static final int catalog=0x7f07005d;
-        public static final int country_lvcountry=0x7f070072;
+        public static final int country_lvcountry=0x7f070074;
         public static final int derivativeButton=0x7f07006d;
         public static final int derivative_Button1=0x7f070002;
         public static final int derivative_Button2=0x7f070003;
@@ -103,8 +105,8 @@ public final class R {
         public static final int derivative_Button5=0x7f070006;
         public static final int derivative_back_bn=0x7f070001;
         public static final int derivative_clean_bn=0x7f070057;
-        public static final int dialog=0x7f070073;
-        public static final int filter_edit=0x7f070071;
+        public static final int dialog=0x7f070075;
+        public static final int filter_edit=0x7f070073;
         public static final int financeButton=0x7f070068;
         public static final int finance_RadioButton1=0x7f070044;
         public static final int finance_RadioButton2=0x7f070045;
@@ -147,8 +149,10 @@ public final class R {
         public static final int news_list_title_bar=0x7f07005a;
         public static final int period=0x7f070051;
         public static final int searchButton=0x7f07006e;
-        public static final int search_back_bn=0x7f070070;
-        public static final int sidrbar=0x7f070074;
+        public static final int search_back_bn=0x7f070072;
+        public static final int search_closeButton=0x7f070071;
+        public static final int search_show_tv=0x7f070070;
+        public static final int sidrbar=0x7f070076;
         public static final int title=0x7f07005e;
     }
     public static final class layout {
@@ -166,7 +170,8 @@ public final class R {
         public static final int learn=0x7f03000b;
         public static final int loan=0x7f03000c;
         public static final int main=0x7f03000d;
-        public static final int search=0x7f03000e;
+        public static final int popup=0x7f03000e;
+        public static final int search=0x7f03000f;
     }
     public static final class string {
         public static final int app_name=0x7f050001;

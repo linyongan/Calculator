@@ -18,4 +18,12 @@ public class Constants {
 		/** Y */
 		public static final String Y = "y";
 	}
+	public static class NounTable {
+		/** ±íÃû */
+		public static final String TABLE_NAME = "noun";
+		/** name */
+		public static final String NAME = "name";
+		/** value */
+		public static final String VALUE = "value";
+	}
 }

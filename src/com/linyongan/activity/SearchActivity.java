@@ -4,8 +4,29 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-import com.linyongan.activity.MainActivity;
-import com.linyongan.activity.R;
+
+import android.app.Activity;
+import android.content.Intent;
+import android.database.Cursor;
+import android.graphics.drawable.BitmapDrawable;
+import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextUtils;
+import android.text.TextWatcher;
+import android.view.Gravity;
+import android.view.KeyEvent;
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.view.Window;
+import android.view.WindowManager.LayoutParams;
+import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemClickListener;
+import android.widget.ImageButton;
+import android.widget.ListView;
+import android.widget.PopupWindow;
+import android.widget.TextView;
+
+import com.linyongan.cofig.Constants;
 import com.linyongan.sortlistview.CharacterParser;
 import com.linyongan.sortlistview.ClearEditText;
 import com.linyongan.sortlistview.PinyinComparator;
@@ -13,23 +34,7 @@ import com.linyongan.sortlistview.SideBar;
 import com.linyongan.sortlistview.SideBar.OnTouchingLetterChangedListener;
 import com.linyongan.sortlistview.SortAdapter;
 import com.linyongan.sortlistview.SortModel;
-
-import android.app.Activity;
-import android.content.Intent;
-import android.os.Bundle;
-import android.text.Editable;
-import android.text.TextUtils;
-import android.text.TextWatcher;
-import android.view.KeyEvent;
-import android.view.View;
-import android.view.Window;
-import android.view.View.OnClickListener;
-import android.widget.AdapterView;
-import android.widget.ImageButton;
-import android.widget.ListView;
-import android.widget.TextView;
-import android.widget.Toast;
-import android.widget.AdapterView.OnItemClickListener;
+import com.linyongan.sql.NounDbManger;
 
 /**
  * 名词查询页面
@@ -54,12 +59,16 @@ public class SearchActivity extends Activity {
 	 */
 	private PinyinComparator pinyinComparator;
 
+	private NounDbManger nounDbManger;
+	private TextView textView;
+
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		/* 设置全屏 */
 		requestWindowFeature(Window.FEATURE_NO_TITLE);
 		setContentView(R.layout.search);
+		nounDbManger = new NounDbManger(this);
 		initViews();
 
 		backButton = (ImageButton) findViewById(R.id.search_back_bn);
@@ -99,9 +108,40 @@ public class SearchActivity extends Activity {
 			public void onItemClick(AdapterView<?> parent, View view,
 					int position, long id) {
 				// 这里要利用adapter.getItem(position)来获取当前position所对应的对象
-				Toast.makeText(getApplication(),
-						((SortModel) adapter.getItem(position)).getName(),
-						Toast.LENGTH_SHORT).show();
+				// Toast.makeText(getApplication(),
+				// ((SortModel) adapter.getItem(position)).getName(),
+				// Toast.LENGTH_SHORT).show();
+				// 装载R.layout.popup对应的界面布局
+				View root = getLayoutInflater().inflate(R.layout.popup, null);
+				// 创建PopupWindow对象
+				final PopupWindow popup = new PopupWindow(root,
+						LayoutParams.MATCH_PARENT, LayoutParams.MATCH_PARENT,
+						true);
+				popup.setBackgroundDrawable(new BitmapDrawable());
+				// 将PopupWindow显示在指定位置
+				popup.showAtLocation(findViewById(R.id.filter_edit),
+						Gravity.CENTER, 0, 0);
+				textView = (TextView) root.findViewById(R.id.search_show_tv);
+				String string = ((SortModel) adapter.getItem(position))
+						.getName();
+				nounDbManger.open();
+				Cursor cursor = nounDbManger.search(string);
+				if (cursor.moveToFirst()) {
+					String string1 = cursor.getString(cursor
+							.getColumnIndex(Constants.NounTable.VALUE));
+					System.out.println("--string:-- " + string1);
+					textView.setText(string1);
+				}
+				nounDbManger.close();
+				// 获取PopupWindow中的关闭按钮。
+				root.findViewById(R.id.search_closeButton).setOnClickListener(
+						new View.OnClickListener() {
+							public void onClick(View v) {
+								// 关闭PopupWindow
+								popup.dismiss(); // ①
+							}
+						});
+
 			}
 		});
 

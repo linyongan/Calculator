@@ -27,13 +27,13 @@
         <item>标的证券</item>
         <item>波动率</item>
         <item>波幅</item>
-        <item>Black-Scholes 模型</item>
+        <item>Black-Scholes模型</item>
         <item>场内期权</item>
         <item>场外期权</item>
         <item>垂直价差策略</item>
         <item>Delta值</item>
         <item>大户报告制度</item>
-        <item>带式策略(Strap)</item>
+        <item>带式策略</item>
         <item>到期不行权风险</item>
         <item>蝶式价差策略</item>
         <item>对冲</item>
@@ -53,9 +53,9 @@
         <item>价值归零风险</item>
         <item>空头</item>
         <item>空头蝶式价差策略</item>
-        <item>跨期价差策略(Calendar Spread)</item>
-        <item>跨式策略(Straddle)</item>
-        <item>勒式策略(Strangle)</item>
+        <item>跨期价差策略</item>
+        <item>跨式策略</item>
+        <item>勒式策略</item>
         <item>历史波动率</item>
         <item>流动性服务商</item>
         <item>买入开仓</item>
@@ -79,8 +79,8 @@
         <item>权利金</item>
         <item>权证</item>
         <item>Rho值</item>
-        <item>认购期权(Call Option)</item>
-        <item>认沽期权(Put Option)</item>
+        <item>认购期权</item>
+        <item>认沽期权</item>
         <item>时间价值</item>
         <item>实物交割</item>
         <item>实值</item>
@@ -90,7 +90,7 @@
         <item>Theta值</item>
         <item>套利</item>
         <item>套期保值</item>
-        <item>条式策略(Strip)</item>
+        <item>条式策略</item>
         <item>头寸</item>
         <item>投资者分级</item>
         <item>投资者适当性管理</item>
