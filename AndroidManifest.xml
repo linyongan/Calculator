@@ -14,43 +14,45 @@
     <application
         android:icon="@drawable/icon"
         android:label="@string/app_name"
-        android:theme="@android:style/Theme.Black.NoTitleBar" >
+         android:theme="@android:style/Theme.Black.NoTitleBar" >
 
         <!-- 声明作为程序入口的Activity -->
         <activity
             android:name="com.linyongan.activity.MainActivity"
-            android:label="@string/app_name" >
+            android:label="@string/app_name" 
+           >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="com.linyongan.test.LoanActivity" >
+        <activity android:name="com.linyongan.activity.DerivativeActivity"
+           >
         </activity>
-        <activity android:name="com.linyongan.test.InvestmentActivity" >
+        <activity android:name="com.linyongan.activity.Button1Activity" 
+            >
         </activity>
-        <activity android:name="com.linyongan.test.IdentificationActivity" >
+        <activity android:name="com.linyongan.activity.Button2Activity" 
+            >
         </activity>
-        <activity android:name="com.linycom.linyongan.test.FinanceActivity" >
+        <activity android:name="com.linyongan.activity.Button3Activity" 
+            >
         </activity>
-        <activity android:name="com.linyongan.activity.DerivativeActivity" >
+        <activity android:name="com.linyongan.activity.Button4Activity" 
+            >
         </activity>
-        <activity android:name="com.linyongan.activity.Button1Activity" >
+        <activity android:name="com.linyongan.activity.Button5Activity" 
+            >
         </activity>
-        <activity android:name="com.linyongan.activity.Button2Activity" >
+        <activity android:name="com.linyongan.activity.AboutActivity" 
+            >
         </activity>
-        <activity android:name="com.linyongan.activity.Button3Activity" >
+        <activity android:name="com.linyongan.activity.LearnActivity" 
+            >
         </activity>
-        <activity android:name="com.linyongan.activity.Button4Activity" >
-        </activity>
-        <activity android:name="com.linyongan.activity.Button5Activity" >
-        </activity>
-        <activity android:name="com.linyongan.activity.AboutActivity" >
-        </activity>
-        <activity android:name="com.linyongan.activity.LearnActivity" >
-        </activity>
-        <activity android:name="com.linyongan.activity.SearchActivity" >
+        <activity android:name="com.linyongan.activity.SearchActivity" 
+            android:theme="@style/AppTheme" >
         </activity>
     </application>
 
