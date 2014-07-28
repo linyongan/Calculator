@@ -26,4 +26,12 @@ public class Constants {
 		/** value */
 		public static final String VALUE = "value";
 	}
+	public static class QuestionTable {
+		/** ±íÃû */
+		public static final String TABLE_NAME = "question";
+		/** question */
+		public static final String QUESTION = "question";
+		/** answer */
+		public static final String ANSWER = "answer";
+	}
 }

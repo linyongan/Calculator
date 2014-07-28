@@ -18,7 +18,10 @@ public class DBHelper extends SQLiteOpenHelper {
 	private final String NOUN_TABLE = "create table if not exists "
 			+ Constants.NounTable.TABLE_NAME + " (" + Constants.NounTable.NAME
 			+ " text, " + Constants.NounTable.VALUE + " text)";
-
+	private final String QUESTION_TABLE = "create table if not exists "
+			+ Constants.QuestionTable.TABLE_NAME + " (" 
+			+ Constants.QuestionTable.QUESTION
+			+ " text, " + Constants.QuestionTable.ANSWER + " text)";
 	public DBHelper(Context context, String name, CursorFactory factory,
 			int version) {
 		super(context, name, factory, version);
@@ -29,6 +32,7 @@ public class DBHelper extends SQLiteOpenHelper {
 		try {
 			db.execSQL(STUDENT_TABLE);
 			db.execSQL(NOUN_TABLE);
+			db.execSQL(QUESTION_TABLE);
 			Log.i(TAG, "创建数据库成功！！！！！");
 		} catch (Exception e) {
 			Log.e(TAG, e.getMessage());

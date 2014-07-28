@@ -36,11 +36,12 @@
             android:textColor="@android:color/white"
             android:textSize="20sp" />
     </RelativeLayout>
- <com.linyongan.sortlistview.ClearEditText
+
+    <com.linyongan.sortlistview.ClearEditText
         android:id="@+id/filter_edit"
-        android:layout_marginTop="5dip"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="2dip"
         android:background="@drawable/search_bar_edit_selector"
         android:drawableLeft="@drawable/search_bar_icon_normal"
         android:hint="请输入关键字"
@@ -63,7 +64,7 @@
             android:layout_width="80.0dip"
             android:layout_height="80.0dip"
             android:layout_gravity="center"
-            android:background="@drawable/show_head_toast_bg"
+            android:background="@drawable/common_btn"
             android:gravity="center"
             android:textColor="#ffffffff"
             android:textSize="30.0dip"
@@ -71,8 +72,9 @@
 
         <com.linyongan.sortlistview.SideBar
             android:id="@+id/sidrbar"
-            android:layout_width="30.0dip"
+            android:layout_width="25dp"
             android:layout_height="fill_parent"
             android:layout_gravity="right|center" />
     </FrameLayout>
+
 </LinearLayout>

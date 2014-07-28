@@ -6,6 +6,8 @@ import java.io.InputStream;
 import java.io.OutputStream;
 
 import android.app.Activity;
+import android.app.ProgressDialog;
+import android.content.Context;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
@@ -19,7 +21,7 @@ import android.widget.Button;
  * 金融计算器主页面
  */
 public class MainActivity extends Activity {
-	
+
 	/** 常见问题按钮 */
 	private Button aboutButton;
 	/** 名词查询按钮 */
@@ -39,7 +41,7 @@ public class MainActivity extends Activity {
 		requestWindowFeature(Window.FEATURE_NO_TITLE);
 		setContentView(R.layout.main);
 		if (mark) {
-			LoadTask load = new LoadTask();
+			LoadTask load = new LoadTask(MainActivity.this);
 			load.execute();
 			mark = false;
 		}
@@ -66,7 +68,7 @@ public class MainActivity extends Activity {
 			switch (v.getId()) {
 			case R.id.aboutButton:
 				Intent intent2 = new Intent(MainActivity.this,
-						AboutActivity.class);
+						QuestionActivity.class);
 				startActivity(intent2);
 				break;
 			case R.id.searchButton:
@@ -94,6 +96,29 @@ public class MainActivity extends Activity {
 	 * 加载数据
 	 */
 	class LoadTask extends AsyncTask<Object, Object, Object> {
+		// 可变长的输入参数，与AsyncTask.exucute()对应
+		ProgressDialog pdialog;
+		Context mContext;
+
+		// 这里的参数可以自定义，需要什么控件就传入什么控件
+		public LoadTask(Context ctx) {
+			mContext = ctx;
+		}
+
+		// 该方法运行在UI线程当中,主要用于进行异步操作之前的UI准备工作
+		@Override
+		protected void onPreExecute() {
+			pdialog = new ProgressDialog(mContext);
+			// 设置对话框的标题
+			pdialog.setTitle("正在读取数据");
+			// 设置对话框 显示的内容
+			pdialog.setMessage("第一次运行程序，读取数据中，敬请等待十几秒...");
+			// 设置对话框不能用“取消”按钮关闭
+			pdialog.setCancelable(false);
+			// 设置对话框的进度条是否显示进度
+			pdialog.setIndeterminate(false);
+			pdialog.show();
+		}
 
 		// 该方法并不运行在UI线程当中，所以在该方法当中，不能对UI当中的控件进行设置和修改
 		// 主要用于进行异步操作。
@@ -135,6 +160,12 @@ public class MainActivity extends Activity {
 			}
 			return null;
 		}
+		// 在doInBackground方法执行结束之后再运行，并且运行在UI线程当中。
+				// 主要用于将异步任务执行的结果展示给客户
+				@Override
+				protected void onPostExecute(Object result) {
+					pdialog.dismiss();
+				}
 
 	}
 

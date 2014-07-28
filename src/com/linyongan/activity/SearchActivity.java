@@ -4,7 +4,6 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-
 import android.app.Activity;
 import android.content.Intent;
 import android.database.Cursor;
@@ -112,37 +111,10 @@ public class SearchActivity extends Activity {
 				// ((SortModel) adapter.getItem(position)).getName(),
 				// Toast.LENGTH_SHORT).show();
 				// 装载R.layout.popup对应的界面布局
-				View root = getLayoutInflater().inflate(R.layout.popup, null);
-				// 创建PopupWindow对象
-				final PopupWindow popup = new PopupWindow(root,
-						LayoutParams.MATCH_PARENT, LayoutParams.MATCH_PARENT,
-						true);
-				popup.setBackgroundDrawable(new BitmapDrawable());
-				// 将PopupWindow显示在指定位置
-				popup.showAtLocation(findViewById(R.id.filter_edit),
-						Gravity.CENTER, 0, 0);
-				textView = (TextView) root.findViewById(R.id.search_show_tv);
-				String string = ((SortModel) adapter.getItem(position))
-						.getName();
-				nounDbManger.open();
-				Cursor cursor = nounDbManger.search(string);
-				if (cursor.moveToFirst()) {
-					String string1 = cursor.getString(cursor
-							.getColumnIndex(Constants.NounTable.VALUE));
-					System.out.println("--string:-- " + string1);
-					textView.setText(string1);
-				}
-				nounDbManger.close();
-				// 获取PopupWindow中的关闭按钮。
-				root.findViewById(R.id.search_closeButton).setOnClickListener(
-						new View.OnClickListener() {
-							public void onClick(View v) {
-								// 关闭PopupWindow
-								popup.dismiss(); // ①
-							}
-						});
+				popupView(position);
 
 			}
+
 		});
 
 		SourceDateList = filledData(getResources().getStringArray(R.array.date));
@@ -174,6 +146,41 @@ public class SearchActivity extends Activity {
 			public void afterTextChanged(Editable s) {
 			}
 		});
+	}
+
+	/**
+	 * 弹出窗口
+	 * 
+	 * @param position
+	 */
+	private void popupView(int position) {
+		View root = getLayoutInflater().inflate(R.layout.search_popup, null);
+		// 创建PopupWindow对象
+		final PopupWindow popup = new PopupWindow(root,
+				LayoutParams.MATCH_PARENT, LayoutParams.MATCH_PARENT, true);
+		popup.setBackgroundDrawable(new BitmapDrawable());
+		// 将PopupWindow显示在指定位置
+		popup.showAtLocation(findViewById(R.id.filter_edit), Gravity.CENTER, 0,
+				0);
+		textView = (TextView) root.findViewById(R.id.search_show_tv);
+		String string = ((SortModel) adapter.getItem(position)).getName();
+		nounDbManger.open();
+		Cursor cursor = nounDbManger.search(string);
+		if (cursor.moveToFirst()) {
+			String string1 = cursor.getString(cursor
+					.getColumnIndex(Constants.NounTable.VALUE));
+			System.out.println("--string:-- " + string1);
+			textView.setText(string1);
+		}
+		nounDbManger.close();
+		// 获取PopupWindow中的关闭按钮。
+		root.findViewById(R.id.search_closeButton).setOnClickListener(
+				new View.OnClickListener() {
+					public void onClick(View v) {
+						// 关闭PopupWindow
+						popup.dismiss(); // ①
+					}
+				});
 	}
 
 	/**

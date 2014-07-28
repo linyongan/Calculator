@@ -29,7 +29,6 @@ public class SideBar extends View {
 		this.mTextDialog = mTextDialog;
 	}
 
-
 	public SideBar(Context context, AttributeSet attrs, int defStyle) {
 		super(context, attrs, defStyle);
 	}
@@ -57,7 +56,7 @@ public class SideBar extends View {
 			// paint.setColor(Color.WHITE);
 			paint.setTypeface(Typeface.DEFAULT_BOLD);
 			paint.setAntiAlias(true);
-			paint.setTextSize(20);
+			paint.setTextSize(16);
 			// ѡ�е�״̬
 			if (i == choose) {
 				paint.setColor(Color.parseColor("#3399ff"));
@@ -101,7 +100,7 @@ public class SideBar extends View {
 						mTextDialog.setText(b[c]);
 						mTextDialog.setVisibility(View.VISIBLE);
 					}
-					
+
 					choose = c;
 					invalidate();
 				}
