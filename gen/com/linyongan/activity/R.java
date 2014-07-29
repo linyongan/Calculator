@@ -18,20 +18,32 @@ public final class R {
     }
     public static final class drawable {
         public static final int btn_back=0x7f020000;
-        public static final int btn_common_selector=0x7f020001;
-        public static final int close=0x7f020002;
-        public static final int common_btn=0x7f020003;
-        public static final int common_btn_pressed=0x7f020004;
-        public static final int emotionstore_progresscancelbtn=0x7f020005;
-        public static final int icon=0x7f020006;
-        public static final int search_bar_edit_normal=0x7f020007;
-        public static final int search_bar_edit_pressed=0x7f020008;
-        public static final int search_bar_edit_selector=0x7f020009;
-        public static final int search_bar_icon_normal=0x7f02000a;
-        public static final int shape=0x7f02000b;
-        public static final int shape1=0x7f02000c;
-        public static final int sidebar_background=0x7f02000d;
-        public static final int titlebar=0x7f02000e;
+        public static final int calculate_btn_normal=0x7f020001;
+        public static final int calculate_btn_pressed=0x7f020002;
+        public static final int calculate_btn_selector=0x7f020003;
+        public static final int close=0x7f020004;
+        public static final int common_btn=0x7f020005;
+        public static final int common_btn_pressed=0x7f020006;
+        public static final int common_btn_selector=0x7f020007;
+        public static final int emotionstore_progresscancelbtn=0x7f020008;
+        public static final int icon=0x7f020009;
+        public static final int learn_btn_normal=0x7f02000a;
+        public static final int learn_btn_pressed=0x7f02000b;
+        public static final int learn_btn_selector=0x7f02000c;
+        public static final int noun_btn_normal=0x7f02000d;
+        public static final int noun_btn_pressed=0x7f02000e;
+        public static final int noun_btn_selector=0x7f02000f;
+        public static final int question_btn_normal=0x7f020010;
+        public static final int question_btn_pressed=0x7f020011;
+        public static final int question_btn_selector=0x7f020012;
+        public static final int search_bar_edit_normal=0x7f020013;
+        public static final int search_bar_edit_pressed=0x7f020014;
+        public static final int search_bar_edit_selector=0x7f020015;
+        public static final int search_bar_icon_normal=0x7f020016;
+        public static final int shape=0x7f020017;
+        public static final int shape1=0x7f020018;
+        public static final int sidebar_background=0x7f020019;
+        public static final int titlebar=0x7f02001a;
     }
     public static final class id {
         public static final int Button1_back_bn=0x7f070006;
@@ -92,11 +104,11 @@ public final class R {
         public static final int Button5_editText4=0x7f07003c;
         public static final int Button5_editText5=0x7f07003d;
         public static final int Button5_out_tv=0x7f07003e;
-        public static final int TextView=0x7f070071;
-        public static final int aboutButton=0x7f07006e;
+        public static final int TextView=0x7f07006d;
+        public static final int aboutButton=0x7f07006a;
         public static final int catalog=0x7f07005c;
-        public static final int country_lvcountry=0x7f070076;
-        public static final int derivativeButton=0x7f07006c;
+        public static final int country_lvcountry=0x7f070072;
+        public static final int derivativeButton=0x7f070068;
         public static final int derivative_Button1=0x7f070001;
         public static final int derivative_Button2=0x7f070002;
         public static final int derivative_Button3=0x7f070003;
@@ -104,9 +116,8 @@ public final class R {
         public static final int derivative_Button5=0x7f070005;
         public static final int derivative_back_bn=0x7f070000;
         public static final int derivative_clean_bn=0x7f070056;
-        public static final int dialog=0x7f070077;
-        public static final int filter_edit=0x7f070075;
-        public static final int financeButton=0x7f070067;
+        public static final int dialog=0x7f070073;
+        public static final int filter_edit=0x7f070071;
         public static final int finance_RadioButton1=0x7f070043;
         public static final int finance_RadioButton2=0x7f070044;
         public static final int finance_RadioButton3=0x7f070045;
@@ -127,13 +138,10 @@ public final class R {
         public static final int finance_year_et=0x7f070048;
         public static final int finance_year_rb=0x7f070052;
         public static final int finance_year_tv=0x7f070047;
-        public static final int identificationButton=0x7f07006a;
         public static final int identification_back_bn=0x7f070055;
-        public static final int investmentButton=0x7f070069;
         public static final int investment_back_bn=0x7f07005a;
-        public static final int learnButton=0x7f07006b;
+        public static final int learnButton=0x7f070067;
         public static final int learn_back_bn=0x7f07005e;
-        public static final int loanButton=0x7f070068;
         public static final int loan_RadioButton1=0x7f070062;
         public static final int loan_RadioButton2=0x7f070063;
         public static final int loan_RadioGroup=0x7f070061;
@@ -147,15 +155,15 @@ public final class R {
         public static final int news_list_title=0x7f07005b;
         public static final int news_list_title_bar=0x7f070059;
         public static final int period=0x7f070050;
-        public static final int question_back_bn=0x7f07006f;
-        public static final int question_closeButton=0x7f070073;
-        public static final int question_listview=0x7f070070;
-        public static final int question_show_tv=0x7f070072;
-        public static final int searchButton=0x7f07006d;
-        public static final int search_back_bn=0x7f070074;
-        public static final int search_closeButton=0x7f07007a;
-        public static final int search_show_tv=0x7f070079;
-        public static final int sidrbar=0x7f070078;
+        public static final int question_back_bn=0x7f07006b;
+        public static final int question_closeButton=0x7f07006f;
+        public static final int question_listview=0x7f07006c;
+        public static final int question_show_tv=0x7f07006e;
+        public static final int searchButton=0x7f070069;
+        public static final int search_back_bn=0x7f070070;
+        public static final int search_closeButton=0x7f070076;
+        public static final int search_show_tv=0x7f070075;
+        public static final int sidrbar=0x7f070074;
         public static final int title=0x7f07005d;
     }
     public static final class layout {

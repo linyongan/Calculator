@@ -21,28 +21,24 @@
             android:textSize="20sp" />
     </RelativeLayout>
 
-    <ScrollView
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent" >
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingLeft="8dp"
+        android:paddingRight="8dp" 
+        android:gravity="center_horizontal|center_vertical">
 
-        <LinearLayout
+        <TextView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:paddingLeft="8dp"
-            android:paddingRight="8dp"
-             >
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="120dp"
-                android:background="@drawable/shape"
-                android:padding="8dp"
-                android:text="理念介绍"
-                android:layout_marginTop="5dp"
-                android:textColor="@android:color/black"
-                android:textSize="18sp" />
-
+            android:layout_height="120dp"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/shape"
+            android:padding="8dp"
+            android:text="理念介绍"
+            android:textColor="@android:color/black"
+            android:textSize="18sp" />
+        <!--
             <Button
                 android:id="@+id/financeButton"
                 android:layout_width="match_parent"
@@ -75,32 +71,66 @@
                 android:text="金融产品定价"
                 android:textSize="18sp"
                 android:visibility="gone" />
-            <Button
-                android:id="@+id/learnButton"
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:layout_marginTop="5dp"
-                android:text="期权学堂"
-                android:textSize="18sp" />
-            <Button
-                android:id="@+id/derivativeButton"
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:text="期权计算"
-                android:textSize="18sp" />
-            <Button
-                android:id="@+id/searchButton"
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:text="名词查询"
-                android:textSize="18sp" />
-            <Button
-                android:id="@+id/aboutButton"
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:text="常见问题"
-                android:textSize="18sp" />
-        </LinearLayout>
-    </ScrollView>
+        -->
+
+        <TableLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" 
+            android:layout_marginTop="5dp">
+
+            <TableRow
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" >
+
+                <Button
+                    android:id="@+id/learnButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/transparent"
+                    android:drawableTop="@drawable/learn_btn_selector"
+                    android:layout_marginRight="20dp"
+                    android:drawablePadding="-10dp"
+                    android:text="期权学堂"
+                    android:textSize="16sp" />
+
+                <Button
+                    android:id="@+id/derivativeButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/transparent"
+                    android:drawableTop="@drawable/calculate_btn_selector"
+                    android:drawablePadding="-10dp"
+                    android:text="期权计算"
+                    android:textSize="16sp" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp" >
+
+                <Button
+                    android:id="@+id/searchButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/transparent"
+                    android:drawableTop="@drawable/noun_btn_selector"
+                    android:layout_marginRight="20dp"
+                    android:drawablePadding="-10dp"
+                    android:text="名词查询"
+                    android:textSize="16sp" />
+
+                <Button
+                    android:id="@+id/aboutButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/transparent"
+                    android:drawableTop="@drawable/question_btn_selector"
+                    android:drawablePadding="-10dp"
+                    android:text="常见问题"
+                    android:textSize="16sp" />
+            </TableRow>
+        </TableLayout>
+    </LinearLayout>
 
 </LinearLayout>
