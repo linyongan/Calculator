@@ -74,7 +74,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="5dp"
-                    android:background="@drawable/shape" >
+                    android:background="@drawable/shape"
+                    android:paddingRight="5dp" >
 
                     <TableRow
                         android:layout_width="match_parent"
@@ -118,7 +119,7 @@
                             android:textSize="16sp" />
 
                         <TextView
-                            android:layout_width="50dp"
+                            android:layout_width="60dp"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center_vertical"
                             android:padding="8dp"
@@ -137,156 +138,150 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:entries="@array/array2"
-                            android:textColor="@android:color/black"
-                            android:prompt="@string/tip" />
+                            android:prompt="@string/tip"
+                            android:textColor="@android:color/black" />
 
                         <Spinner
                             android:id="@+id/Button3_spinner2"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:textColor="@android:color/black"
                             android:entries="@array/array3"
-                            android:prompt="@string/tip" />
+                            android:prompt="@string/tip"
+                            android:textColor="@android:color/black" />
 
                         <EditText
                             android:id="@+id/Button3_et1"
-                            android:inputType="number|numberDecimal" 
                             android:layout_width="wrap_content"
-                            android:layout_height="wrap_content" />
+                            android:layout_height="wrap_content"
+                            android:inputType="number|numberDecimal" />
 
                         <EditText
                             android:id="@+id/Button3_et2"
-                            android:inputType="number|numberDecimal" 
                             android:layout_width="wrap_content"
-                            android:layout_height="wrap_content" />
+                            android:layout_height="wrap_content"
+                            android:inputType="number|numberDecimal" />
 
                         <EditText
                             android:id="@+id/Button3_et3"
-                            android:inputType="number|numberDecimal" 
                             android:layout_width="wrap_content"
-                            android:layout_height="wrap_content" />
-
+                            android:layout_height="wrap_content"
+                            android:inputType="number|numberDecimal" />
                     </TableRow>
 
                     <TableRow
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                         >
+                        android:layout_height="wrap_content" >
 
                         <Spinner
                             android:id="@+id/Button3_spinner3"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:entries="@array/array2"
-                            android:textColor="@android:color/black"
-                            android:prompt="@string/tip" />
+                            android:prompt="@string/tip"
+                            android:textColor="@android:color/black" />
 
                         <Spinner
                             android:id="@+id/Button3_spinner4"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:textColor="@android:color/black"
                             android:entries="@array/array3"
-                            android:prompt="@string/tip" />
+                            android:prompt="@string/tip"
+                            android:textColor="@android:color/black" />
 
                         <EditText
                             android:id="@+id/Button3_et4"
-                            android:inputType="number|numberDecimal" 
                             android:layout_width="wrap_content"
-                            android:layout_height="wrap_content" />
+                            android:layout_height="wrap_content"
+                            android:inputType="number|numberDecimal" />
+
                         <EditText
                             android:id="@+id/Button3_et5"
-                            android:inputType="number|numberDecimal" 
                             android:layout_width="wrap_content"
-                            android:layout_height="wrap_content" />
+                            android:layout_height="wrap_content"
+                            android:inputType="number|numberDecimal" />
 
                         <EditText
                             android:id="@+id/Button3_et6"
-                            android:inputType="number|numberDecimal" 
                             android:layout_width="wrap_content"
-                            android:layout_height="wrap_content" />
-
+                            android:layout_height="wrap_content"
+                            android:inputType="number|numberDecimal" />
                     </TableRow>
 
                     <TableRow
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        >
+                        android:layout_height="wrap_content" >
 
                         <Spinner
                             android:id="@+id/Button3_spinner5"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:entries="@array/array2"
-                            android:textColor="@android:color/black"
-                            android:prompt="@string/tip" />
+                            android:prompt="@string/tip"
+                            android:textColor="@android:color/black" />
 
                         <Spinner
                             android:id="@+id/Button3_spinner6"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:textColor="@android:color/black"
                             android:entries="@array/array3"
-                            android:prompt="@string/tip" />
+                            android:prompt="@string/tip"
+                            android:textColor="@android:color/black" />
 
                         <EditText
                             android:id="@+id/Button3_et7"
-                            android:inputType="number|numberDecimal" 
                             android:layout_width="wrap_content"
-                            android:layout_height="wrap_content" />
+                            android:layout_height="wrap_content"
+                            android:inputType="number|numberDecimal" />
 
                         <EditText
                             android:id="@+id/Button3_et8"
-                            android:inputType="number|numberDecimal" 
                             android:layout_width="wrap_content"
-                            android:layout_height="wrap_content" />
+                            android:layout_height="wrap_content"
+                            android:inputType="number|numberDecimal" />
+
                         <EditText
                             android:id="@+id/Button3_et9"
-                            android:inputType="number|numberDecimal" 
                             android:layout_width="wrap_content"
-                            android:layout_height="wrap_content" />
-
+                            android:layout_height="wrap_content"
+                            android:inputType="number|numberDecimal" />
                     </TableRow>
 
                     <TableRow
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        >
+                        android:layout_height="wrap_content" >
 
                         <Spinner
                             android:id="@+id/Button3_spinner7"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:entries="@array/array2"
-                            android:textColor="@android:color/black"
-                            android:prompt="@string/tip" />
+                            android:prompt="@string/tip"
+                            android:textColor="@android:color/black" />
 
                         <Spinner
                             android:id="@+id/Button3_spinner8"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:textColor="@android:color/black"
                             android:entries="@array/array3"
-                            />
+                            android:textColor="@android:color/black" />
 
-                      
                         <EditText
                             android:id="@+id/Button3_et10"
-                            android:inputType="number|numberDecimal" 
                             android:layout_width="wrap_content"
-                            android:layout_height="wrap_content" />
+                            android:layout_height="wrap_content"
+                            android:inputType="number|numberDecimal" />
 
                         <EditText
                             android:id="@+id/Button3_et11"
-                            android:inputType="number|numberDecimal" 
                             android:layout_width="wrap_content"
-                            android:layout_height="wrap_content" />
+                            android:layout_height="wrap_content"
+                            android:inputType="number|numberDecimal" />
 
                         <EditText
                             android:id="@+id/Button3_et12"
-                            android:inputType="number|numberDecimal" 
                             android:layout_width="wrap_content"
-                            android:layout_height="wrap_content" />
+                            android:layout_height="wrap_content"
+                            android:inputType="number|numberDecimal" />
                     </TableRow>
                 </TableLayout>
 
@@ -301,15 +296,38 @@
                     android:textColor="#1E90FF"
                     android:textSize="18sp" />
 
-                <Button
-                    android:id="@+id/Button3_calculate_bt"
+                <TableLayout
                     android:layout_width="match_parent"
+                    android:layout_height="wrap_content" >
+
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" >
+                        <Button
+                    android:id="@+id/Button3_calculate_bt"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
+                    android:layout_weight="1"
                     android:layout_marginTop="5dp"
                     android:padding="8dp"
                     android:text="计算"
                     android:textColor="@android:color/black"
+                    android:textSize="18sp" /> 
+                     <Button
+                    android:id="@+id/Button3_show_bt"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_marginTop="5dp"
+                    android:padding="8dp"
+                    android:text="显示图表"
+                    android:visibility="gone"
+                    android:textColor="@android:color/black"
                     android:textSize="18sp" />
+                    </TableRow>
+                </TableLayout>
+
+               
             </LinearLayout>
         </ScrollView>
     </HorizontalScrollView>

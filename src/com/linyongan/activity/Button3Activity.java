@@ -1,7 +1,21 @@
 package com.linyongan.activity;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import org.achartengine.ChartFactory;
+import org.achartengine.chart.PointStyle;
+import org.achartengine.renderer.XYMultipleSeriesRenderer;
+import org.achartengine.renderer.XYSeriesRenderer;
+
+import com.linyongan.achartengine.AbstractDemoChart;
+import com.linyongan.achartengine.IDemoChart;
+
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.Paint.Align;
 import android.os.Bundle;
 import android.view.KeyEvent;
 import android.view.View;
@@ -25,6 +39,8 @@ public class Button3Activity extends Activity {
 	private ImageButton cleanButton;
 	/** 计算按钮 */
 	private Button calculateButton;
+	/** 显示图表按钮 */
+	private Button showButton;
 	/** 单数是认购认沽股票 */
 	private Spinner spinner1;
 	private Spinner spinner3;
@@ -62,6 +78,19 @@ public class Button3Activity extends Activity {
 	private int mark4 = 0;
 	private int mark6 = 0;
 	private int mark8 = 0;
+	private double[] result1;
+	private double[] result2;
+	private double[] result3;
+	private double[] result4;
+	private double[] all;
+	String test1;
+	String test4;
+	String test7;
+	String test10;
+	String test3;
+	String test6;
+	String test9;
+	String test12;
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -108,6 +137,8 @@ public class Button3Activity extends Activity {
 		backButton.setOnClickListener(new ButtonListener());
 		cleanButton = (ImageButton) findViewById(R.id.Button3_clean_bn);
 		cleanButton.setOnClickListener(new ButtonListener());
+		showButton = (Button) findViewById(R.id.Button3_show_bt);
+		showButton.setOnClickListener(new ButtonListener());
 	}
 
 	private class ButtonListener implements OnClickListener {
@@ -117,24 +148,23 @@ public class Button3Activity extends Activity {
 			switch (v.getId()) {
 			case R.id.Button3_calculate_bt:
 				// 获取输入框的数字，必须先取值！！！
-				String test1 = editText1.getText().toString();
+				test1 = editText1.getText().toString();
 				String test2 = editText2.getText().toString();
-				String test3 = editText3.getText().toString();
-				String test4 = editText4.getText().toString();
+				test3 = editText3.getText().toString();
+				test4 = editText4.getText().toString();
 				String test5 = editText5.getText().toString();
-				String test6 = editText6.getText().toString();
-				String test7 = editText7.getText().toString();
+				test6 = editText6.getText().toString();
+				test7 = editText7.getText().toString();
 				String test8 = editText8.getText().toString();
-				String test9 = editText9.getText().toString();
-				String test10 = editText10.getText().toString();
+				test9 = editText9.getText().toString();
+				test10 = editText10.getText().toString();
 				String test11 = editText11.getText().toString();
-				String test12 = editText12.getText().toString();
+				test12 = editText12.getText().toString();
 
-				Double[] result1 = getResult(test1, test2, test3, mark1, mark2);
-				Double[] result2 = getResult(test4, test5, test6, mark3, mark4);
-				Double[] result3 = getResult(test7, test8, test9, mark5, mark6);
-				Double[] result4 = getResult(test10, test11, test12, mark7,
-						mark8);
+				result1 = getResult(test1, test2, test3, mark1, mark2);
+				result2 = getResult(test4, test5, test6, mark3, mark4);
+				result3 = getResult(test7, test8, test9, mark5, mark6);
+				result4 = getResult(test10, test11, test12, mark7, mark8);
 				// 计算显示的结果
 				String out = "";
 				out = "组合构建成本为："
@@ -143,31 +173,25 @@ public class Button3Activity extends Activity {
 								(someArryAll(result1, result2, result3,
 										result4, 0) - someArryAll(result1,
 										result2, result3, result4, 1))) + "元\n";
-				out = out
-						+ "组合最大损失为："
-						+ String.format(
-								"%.2f",
-								arrayMax(All(result1, result2, result3, result4)))
-						+ "元\n";
-				out = out
-						+ "组合最大收益为："
-						+ String.format(
-								"%.2f",
-								arrayMin(All(result1, result2, result3, result4)))
-						+ "元\n";
-				out = out
-						+ "组合盈亏平衡点为："
-						+ arraychange(All(result1, result2,
-										result3, result4));
+				all = All(result1, result2, result3, result4);
+				double max = arrayMax(all);
+				out = out + "组合最大损失为：" + String.format("%.2f", max) + "元\n";
+				double min = arrayMin(all);
+				out = out + "组合最大收益为：" + String.format("%.2f", min) + "元\n";
+				out = out + "组合盈亏平衡点为：" + arraychange(all);
 				out_tv.setText("计算结果：\n" + out);
-				// 显示图片需要准备的数据
-
+				showButton.setVisibility(View.VISIBLE);
 				break;
 			case R.id.Button3_back_bn:
 				goBack();
 				break;
 			case R.id.Button3_clean_bn:
 				cleanEditText();
+				break;
+			case R.id.Button3_show_bt:
+				IDemoChart[] mCharts = new IDemoChart[] { new LineChar() };
+				Intent timeIntent = mCharts[0].execute(Button3Activity.this);
+				startActivity(timeIntent);
 				break;
 			}
 		}
@@ -176,14 +200,9 @@ public class Button3Activity extends Activity {
 	/**
 	 * 计算每一行
 	 */
-	private Double[] getResult(String a, String b, String c, int mark1,
+	private double[] getResult(String a, String b, String c, int mark1,
 			int mark2) {
-		System.out.println("first函数接收到的 a值：" + a);
-		System.out.println("first函数接收到的 b值：" + b);
-		System.out.println("first函数接收到的 c值：" + c);
-		System.out.println("first函数接收到的 mark1值：" + mark1);
-		System.out.println("first函数接收到的 mark2值：" + mark2);
-		Double[] result = new Double[50];
+		double[] result = new double[50];
 		if (mark1 == 1 && mark2 == 0 && a.length() != 0 && b.length() != 0) {
 			result = calculate1(Double.parseDouble(a), Double.parseDouble(b));
 		} else if (mark1 == 1 && mark2 == 1 && a.length() != 0
@@ -195,12 +214,10 @@ public class Button3Activity extends Activity {
 		} else if (mark1 == 2 && mark2 == 1 && a.length() != 0
 				&& b.length() != 0) {
 			result = calculate4(Double.parseDouble(a), Double.parseDouble(b));
-		} else if (mark1 == 3 && mark2 == 0 && c.length() != 0
-				&& b.length() != 0) {
-			result = calculate5(Double.parseDouble(b), Double.parseDouble(c));
-		} else if (mark1 == 3 && mark2 == 1 && c.length() != 0
-				&& b.length() != 0) {
-			result = calculate6(Double.parseDouble(b), Double.parseDouble(c));
+		} else if (mark1 == 3 && mark2 == 0 && c.length() != 0) {
+			result = calculate5(Double.parseDouble(c));
+		} else if (mark1 == 3 && mark2 == 1 && c.length() != 0) {
+			result = calculate6(Double.parseDouble(c));
 		} else {
 			return null;
 		}
@@ -210,21 +227,22 @@ public class Button3Activity extends Activity {
 	/**
 	 * 获取每一行的名字
 	 */
-	private String getName(int mark1, int mark2) {
+	private String getAllName(int mark1, int mark2, String string,
+			String string1) {
 
 		String result = "";
-		if (mark1 == 1 && mark2 == 0) {
-			result = "(多头)行权价为X认购期权";
-		} else if (mark1 == 1 && mark2 == 1) {
-			result = "(空头)行权价为X认购期权";
-		} else if (mark1 == 2 && mark2 == 0) {
-			result = "(多头)行权价为X认沽期权";
-		} else if (mark1 == 2 && mark2 == 1) {
-			result = "(空头)行权价为X认沽期权";
-		} else if (mark1 == 3 && mark2 == 0) {
-			result = "(多头)股票";
-		} else if (mark1 == 3 && mark2 == 1) {
-			result = "(空头)股票";
+		if (mark1 == 1 && mark2 == 0 && string.length() != 0) {
+			result = "(多头)行权价为" + Double.parseDouble(string) + "的认购期权";
+		} else if (mark1 == 1 && mark2 == 1 && string.length() != 0) {
+			result = "(空头)行权价为" + Double.parseDouble(string) + "的认购期权";
+		} else if (mark1 == 2 && mark2 == 0 && string.length() != 0) {
+			result = "(多头)行权价为" + Double.parseDouble(string) + "的认沽期权";
+		} else if (mark1 == 2 && mark2 == 1 && string.length() != 0) {
+			result = "(空头)行权价为" + Double.parseDouble(string) + "的认沽期权";
+		} else if (mark1 == 3 && mark2 == 0 && string1.length() != 0) {
+			result = "(多头)价格为" + Double.parseDouble(string1) + "的股票";
+		} else if (mark1 == 3 && mark2 == 1 && string1.length() != 0) {
+			result = "(空头)价格为" + Double.parseDouble(string1) + "的股票";
 		} else {
 			return null;
 		}
@@ -237,9 +255,9 @@ public class Button3Activity extends Activity {
 	 * @param a
 	 * @return
 	 */
-	private Double arrayAll(Double[] a) {
+	private double arrayAll(double[] a) {
 		if (a != null) {
-			Double result = 0.0;
+			double result = 0.0;
 			for (int i = 0; i < 50; i++) {
 				result = result + a[i];
 			}
@@ -258,9 +276,9 @@ public class Button3Activity extends Activity {
 	 * @param d
 	 * @return
 	 */
-	private Double[] All(Double[] a, Double[] b, Double[] c, Double[] d) {
+	private double[] All(double[] a, double[] b, double[] c, double[] d) {
 		// 记得初始化，否则报空指针
-		Double[] result = new Double[] { 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0,
+		double[] result = new double[] { 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0,
 				0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0,
 				0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0,
 				0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0,
@@ -295,8 +313,8 @@ public class Button3Activity extends Activity {
 	 * @param a
 	 * @return
 	 */
-	private Double arrayMax(Double[] a) {
-		Double result = a[0];
+	private double arrayMax(double[] a) {
+		double result = a[0];
 		for (int i = 1; i < 50; i++) {
 			if (result < a[i])
 				result = a[i];
@@ -310,8 +328,8 @@ public class Button3Activity extends Activity {
 	 * @param a
 	 * @return
 	 */
-	private Double arrayMin(Double[] a) {
-		Double result = a[0];
+	private double arrayMin(double[] a) {
+		double result = a[0];
 		for (int i = 1; i < 50; i++) {
 			if (result > a[i])
 				result = a[i];
@@ -320,13 +338,13 @@ public class Button3Activity extends Activity {
 	}
 
 	/**
-	 * 计算一个Double[]数组中的负数变成正数,然后求出Y最小时X的值
-	 * (未算好的！！！！！)
+	 * 计算一个Double[]数组中的负数变成正数,然后求出Y最小时X的值 (未算好的！！！！！)
+	 * 
 	 * @param a
 	 * @return
 	 */
-	private int arraychange(Double[] a) {
-		Double[] result = new Double[50];
+	private int arraychange(double[] a) {
+		double[] result = new double[50];
 		for (int i = 0; i < 50; i++) {
 			if (a[i] > 0) {
 				result[i] = a[i];
@@ -334,7 +352,7 @@ public class Button3Activity extends Activity {
 				result[i] = -a[i];
 			}
 		}
-		Double y = a[0];
+		double y = a[0];
 		int x = 0;
 		for (int i = 1; i < 50; i++) {
 			if (y > a[i]) {
@@ -360,9 +378,9 @@ public class Button3Activity extends Activity {
 	 *            e =0，计算多头；e=1，计算空头
 	 * @return
 	 */
-	private Double someArryAll(Double[] a, Double[] b, Double[] c, Double[] d,
+	private double someArryAll(double[] a, double[] b, double[] c, double[] d,
 			int e) {
-		Double result = 0.0;
+		double result = 0.0;
 		if (mark1 != 0 && mark2 == e) {
 			result = result + arrayAll(a);
 		}
@@ -396,6 +414,7 @@ public class Button3Activity extends Activity {
 		editText11.setText("");
 		editText12.setText("");
 		out_tv.setText("");
+		showButton.setVisibility(View.GONE);
 	}
 
 	/**
@@ -409,12 +428,11 @@ public class Button3Activity extends Activity {
 	 *            期权权益金
 	 * @return
 	 */
-	private Double[] calculate1(Double b, Double c) {
-		Double[] result = new Double[50];
-		Double a = 0.0;
+	private double[] calculate1(double b, double c) {
+		double[] result = new double[50];
+		double a = 0.0;
 		for (int i = 0; i < 50; i++) {
 			result[i] = Math.max((a - b), 0) - c;
-			System.out.println(result[i] + "   result[i]");
 			a = a + b / 20;
 		}
 		return result;
@@ -431,12 +449,11 @@ public class Button3Activity extends Activity {
 	 *            期权权益金
 	 * @return
 	 */
-	private Double[] calculate2(Double b, Double c) {
-		Double[] result = new Double[50];
-		Double a = 0.0;
+	private double[] calculate2(double b, double c) {
+		double[] result = new double[50];
+		double a = 0.0;
 		for (int i = 0; i < 50; i++) {
 			result[i] = c - Math.max((a - b), 0);
-			System.out.println(result[i] + "   result[i]");
 			a = a + b / 20;
 		}
 		return result;
@@ -453,9 +470,9 @@ public class Button3Activity extends Activity {
 	 *            期权权益金
 	 * @return
 	 */
-	private Double[] calculate3(Double b, Double c) {
-		Double[] result = new Double[50];
-		Double a = 0.0;
+	private double[] calculate3(double b, double c) {
+		double[] result = new double[50];
+		double a = 0.0;
 		for (int i = 0; i < 50; i++) {
 			result[i] = Math.max((b - a), 0) - c;
 			a = a + b / 20;
@@ -474,9 +491,9 @@ public class Button3Activity extends Activity {
 	 *            期权权益金
 	 * @return
 	 */
-	private Double[] calculate4(Double b, Double c) {
-		Double[] result = new Double[50];
-		Double a = 0.0;
+	private double[] calculate4(double b, double c) {
+		double[] result = new double[50];
+		double a = 0.0;
 		for (int i = 0; i < 50; i++) {
 			result[i] = c - Math.max((b - a), 0);
 			a = a + b / 20;
@@ -493,12 +510,12 @@ public class Button3Activity extends Activity {
 	 *            股票价格
 	 * @return
 	 */
-	private Double[] calculate5(Double b, Double c) {
-		Double[] result = new Double[50];
-		Double a = 0.0;
+	private double[] calculate5(double c) {
+		double[] result = new double[50];
+		double a = 0.0;
 		for (int i = 0; i < 50; i++) {
 			result[i] = a - c;
-			a = a + b / 20;
+			a = a + c / 20;
 		}
 		return result;
 	}
@@ -512,12 +529,12 @@ public class Button3Activity extends Activity {
 	 *            股票价格
 	 * @return
 	 */
-	private Double[] calculate6(Double b, Double c) {
-		Double[] result = new Double[50];
-		Double a = 0.0;
+	private double[] calculate6(double c) {
+		double[] result = new double[50];
+		double a = 0.0;
 		for (int i = 0; i < 50; i++) {
 			result[i] = c - a;
-			a = a + b / 20;
+			a = a + c / 20;
 		}
 		return result;
 	}
@@ -602,6 +619,7 @@ public class Button3Activity extends Activity {
 			editText2.setFocusableInTouchMode(false);
 			editText3.setFocusable(false);
 			editText3.setFocusableInTouchMode(false);
+			showButton.setVisibility(View.GONE);
 			break;
 		case 1:
 			mark = 1;
@@ -612,6 +630,7 @@ public class Button3Activity extends Activity {
 			editText2.setFocusable(true);
 			editText3.setFocusable(false);
 			editText3.setFocusableInTouchMode(false);
+			showButton.setVisibility(View.GONE);
 			break;
 		case 2:
 			mark = 2;
@@ -622,6 +641,7 @@ public class Button3Activity extends Activity {
 			editText2.setFocusable(true);
 			editText3.setFocusable(false);
 			editText3.setFocusableInTouchMode(false);
+			showButton.setVisibility(View.GONE);
 			break;
 		case 3:
 			mark = 3;
@@ -632,6 +652,7 @@ public class Button3Activity extends Activity {
 			editText3.setFocusableInTouchMode(true);
 			editText3.setFocusable(true);
 			editText3.requestFocus();
+			showButton.setVisibility(View.GONE);
 			break;
 		}
 		return mark;
@@ -739,4 +760,200 @@ public class Button3Activity extends Activity {
 		startActivity(intent);
 		finish();
 	}
+
+	/**
+	 * 画图：计算输入的4个参数不为null的个数+1
+	 * 
+	 * @param a
+	 * @param b
+	 * @param c
+	 * @param d
+	 * @return
+	 */
+	private int length(Object a, Object b, Object c, Object d) {
+		int i = 0;
+		if (a != null) {
+			i++;
+		}
+		if (b != null) {
+			i++;
+		}
+		if (c != null) {
+			i++;
+		}
+		if (d != null) {
+			i++;
+		}
+		return i + 1;
+
+	}
+
+	/**
+	 * 画图：获取title的方法
+	 * 
+	 * @return
+	 */
+	private String[] setTitles() {
+		String string1 = getAllName(mark1, mark2, test1, test3);
+		String string2 = getAllName(mark3, mark4, test4, test6);
+		String string3 = getAllName(mark5, mark6, test7, test9);
+		String string4 = getAllName(mark7, mark8, test10, test12);
+		// 每个item的title
+		String[] titles = new String[length(string1, string2, string3, string4)];
+		titles[0] = "组合总收益";
+		int i = 1;
+		if (string1 != null) {
+			titles[i] = string1;
+			i++;
+		}
+		if (string2 != null) {
+			titles[i] = string2;
+			i++;
+		}
+		if (string3 != null) {
+			titles[i] = string3;
+			i++;
+		}
+		if (string4 != null) {
+			titles[i] = string4;
+			i++;
+		}
+		return titles;
+	}
+
+	/**
+	 * 画图：获取Y轴需要的值
+	 * 
+	 * @return
+	 */
+	private List<double[]> setY() {
+		List<double[]> values = new ArrayList<double[]>();
+		values.add(all);
+		if (result1 != null) {
+			values.add(result1);
+		}
+		if (result2 != null) {
+			values.add(result2);
+		}
+		if (result3 != null) {
+			values.add(result3);
+		}
+		if (result4 != null) {
+			values.add(result4);
+		}
+		return values;
+	}
+
+	/**
+	 * 画图：为每条线段设置颜色
+	 * 
+	 * @return
+	 */
+	private int[] setColor() {
+		int[] color = new int[] { Color.BLUE, Color.GREEN, Color.CYAN,
+				Color.YELLOW, Color.RED };
+		int i = 1;
+		int[] result = new int[length(result1, result2, result3, result4)];
+		result[0] = color[0];
+		if (result1 != null) {
+			result[i] = color[i];
+			i++;
+		}
+		if (result2 != null) {
+			result[i] = color[i];
+			i++;
+		}
+		if (result3 != null) {
+			result[i] = color[i];
+			i++;
+		}
+		if (result4 != null) {
+			result[i] = color[i];
+			i++;
+		}
+		return result;
+	}
+
+	/**
+	 * 画图：为每条线段设置点的形状
+	 * 
+	 * @return
+	 */
+	private PointStyle[] setPoint() {
+		int i = 1;
+		PointStyle[] result = new PointStyle[length(result1, result2, result3,
+				result4)];
+		result[0] = PointStyle.POINT;
+		if (result1 != null) {
+			result[i] = PointStyle.POINT;
+			i++;
+		}
+		if (result2 != null) {
+			result[i] = PointStyle.POINT;
+			i++;
+		}
+		if (result3 != null) {
+			result[i] = PointStyle.POINT;
+			i++;
+		}
+		if (result4 != null) {
+			result[i] = PointStyle.POINT;
+			i++;
+		}
+		return result;
+	}
+
+	/**
+	 * 画图
+	 * 
+	 * @author yongan
+	 * 
+	 */
+	public class LineChar extends AbstractDemoChart {
+		public String getName() {
+			return "期权组合损益分布图";
+		}
+
+		public String getDesc() {
+			return "期权组合损益分布图";
+		}
+
+		public Intent execute(Context context) {
+			// 准备数据：
+			String[] titles = setTitles();
+			// x轴的值
+			List<double[]> x = new ArrayList<double[]>();
+			for (int i = 0; i < titles.length; i++) {
+				x.add(new double[] { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12 });// 每个序列中点的X坐标
+			}
+			// y轴的值
+			List<double[]> values = setY();
+			// 每个序列的颜色设置
+			int[] colors = setColor();
+			// 为每条线段设置点的形状
+			PointStyle[] styles = setPoint();
+
+			XYMultipleSeriesRenderer renderer = buildRenderer(colors, styles);// 调用AbstractDemoChart中的方法设置renderer.
+			int length = renderer.getSeriesRendererCount();
+			// 点是空心还是实心
+			for (int i = 0; i < length; i++) {
+				((XYSeriesRenderer) renderer.getSeriesRendererAt(i))
+						.setFillPoints(true);// 设置图上的点为实心
+			}
+			// 最后两个参数代表轴的颜色和轴标签的颜色
+			setChartSettings(renderer, "组合总收益", "行权价格", "收益", 0.5,
+					12.5, -10, 40, Color.LTGRAY, Color.LTGRAY);
+			renderer.setXLabels(12);// 设置x轴显示12个点,根据setChartSettings的最大值和最小值自动计算点的间隔
+			renderer.setYLabels(10);// 设置y轴显示10个点,根据setChartSettings的最大值和最小值自动计算点的间隔
+			renderer.setShowGrid(true);// 是否显示网格
+			// x或y轴上数字的方向，相反的。
+			renderer.setXLabelsAlign(Align.RIGHT);// 刻度线与刻度标注之间的相对位置关系
+			renderer.setYLabelsAlign(Align.CENTER);// 刻度线与刻度标注之间的相对位置关系
+			renderer.setPanLimits(new double[] { -10, 20, -arrayMax(all)-10, arrayMax(all)+10 }); // 设置拖动时X轴Y轴允许的最大值最小值.
+			Intent intent = ChartFactory.getLineChartIntent(context,
+					buildDataset(titles, x, values), renderer, "期权组合损益分布图");// 构建Intent
+			return intent;
+		}
+	}
+
 }
