@@ -186,7 +186,7 @@ public class Button2Activity extends Activity {
 	}
 
 	/**
-	 * (多头)认购期权到期收益分布
+	 * (多头)认购期权到期收益分布 (空头)前面加个负号
 	 * 
 	 * @param a
 	 *            标的资产到期价格
@@ -203,7 +203,7 @@ public class Button2Activity extends Activity {
 
 	/**
 	 * (多头)认沽期权到期收益分布
-	 * 
+	 * (空头)前面加个负号
 	 * @param a
 	 *            标的资产到期价格
 	 * @param b

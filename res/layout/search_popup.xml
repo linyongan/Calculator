@@ -7,8 +7,8 @@
 
     <TextView
         android:id="@+id/search_show_tv"
-        android:layout_width="220dp"
-        android:layout_height="wrap_content"
+        android:layout_width="235dp"
+        android:layout_height="210dp"
         android:background="@drawable/shape1"
         android:padding="8dp"
         android:text="111"

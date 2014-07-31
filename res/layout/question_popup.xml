@@ -7,12 +7,11 @@
 
     <TextView
         android:id="@+id/question_show_tv"
-        android:layout_width="290dp"
-        android:layout_height="400dp"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
         android:background="@drawable/shape1"
         android:padding="8dp"
         android:text="111"
-        android:layout_marginTop="45dp"
         android:scrollbars="vertical" 
         android:textColor="@android:color/black"
         android:textSize="18sp" />
@@ -21,7 +20,8 @@
         android:id="@+id/question_closeButton"
         android:layout_width="45dp"
         android:layout_height="50dp"
-        android:layout_marginTop="19dp"
+        android:layout_marginTop="-8dp"
+        android:layout_marginRight="-8dp"
         android:layout_alignRight="@+id/question_show_tv"
         android:background="@drawable/close" />
  
