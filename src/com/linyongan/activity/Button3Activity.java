@@ -90,7 +90,6 @@ public class Button3Activity extends Activity {
 	/** 第四行的计算结果 */
 	private double[] result4;
 	/** 总的收益 */
-	private double[] all;
 	private String test1;
 	private String test4;
 	private String test7;
@@ -184,6 +183,7 @@ public class Button3Activity extends Activity {
 									test12);
 							if (string4.equals("输入正常")) {
 
+								// 正式开始计算
 								result1 = getResult(test1, test2, test3, mark1,
 										mark2);
 								result2 = getResult(test4, test5, test6, mark3,
@@ -199,14 +199,13 @@ public class Button3Activity extends Activity {
 												"%.2f",
 												(someArryAll(0) - someArryAll(1)))
 										+ "元\n";
-								all = All();
-								double max = arrayMax(all);
+								double max = arrayMax(All());
 								out = out + "组合最大损失为："
 										+ String.format("%.2f", max) + "元\n";
-								double min = arrayMin(all);
+								double min = arrayMin(All());
 								out = out + "组合最大收益为："
 										+ String.format("%.2f", min) + "元\n";
-								out = out + "组合盈亏平衡点为：" + arraychange(all);
+								out = out + "组合盈亏平衡点为：" + arraychange(All());
 								out_tv.setText("计算结果：\n" + out);
 
 							} else {
@@ -252,6 +251,7 @@ public class Button3Activity extends Activity {
 
 	/**
 	 * 输入的逻辑判断
+	 * 
 	 * @param mark
 	 * @param a
 	 * @param b
@@ -261,7 +261,7 @@ public class Button3Activity extends Activity {
 	private String checkInput(int mark, String a, String b, String c) {
 		if (mark == 0) {
 			if (a.length() != 0 || b.length() != 0 || c.length() != 0) {
-				return "如果产品类型选择了空，请清空该行的数据。";
+				return "如果产品类型选择了空，\n请清空这行的数据。";
 			}
 		}
 		if (mark == 1 || mark == 2) {
@@ -272,15 +272,15 @@ public class Button3Activity extends Activity {
 				return "请输入权益金。";
 			}
 			if (c.length() != 0) {
-				return "请清空该行的股票价格。";
+				return "请清空这行的股票价格。";
 			}
 		}
 		if (mark == 3) {
 			if (a.length() != 0) {
-				return "请清空该行的行权价。";
+				return "请清空这行的行权价。";
 			}
 			if (b.length() != 0) {
-				return "请清空该行的权益金。";
+				return "请清空这行的权益金。";
 			}
 			if (c.length() == 0) {
 				return "请输入股票价格。";
@@ -387,7 +387,7 @@ public class Button3Activity extends Activity {
 	 */
 	private double arrayMax(double[] a) {
 		double result = a[0];
-		for (int i = 1; i < LENGTH; i++) {
+		for (int i = 1; i < a.length; i++) {
 			if (result < a[i])
 				result = a[i];
 		}
@@ -401,7 +401,7 @@ public class Button3Activity extends Activity {
 	 */
 	private double arrayMin(double[] a) {
 		double result = a[0];
-		for (int i = 1; i < LENGTH; i++) {
+		for (int i = 1; i < a.length; i++) {
 			if (result > a[i])
 				result = a[i];
 		}
@@ -902,7 +902,7 @@ public class Button3Activity extends Activity {
 	 */
 	private List<double[]> setY() {
 		List<double[]> values = new ArrayList<double[]>();
-		values.add(all);
+		values.add(All());
 		if (result1 != null) {
 			values.add(result1);
 		}
@@ -974,6 +974,109 @@ public class Button3Activity extends Activity {
 	}
 
 	/**
+	 * 求Y的范围
+	 * 
+	 * @return
+	 */
+	private double maxY() {
+		double result = 0.0;
+		if (result1 != null) {
+			if (result < arrayMax(result1)) {
+				result = arrayMax(result1);
+			}
+		}
+		if (result2 != null) {
+			if (result < arrayMax(result2)) {
+				result = arrayMax(result2);
+			}
+		}
+		if (result3 != null) {
+			if (result < arrayMax(result3)) {
+				result = arrayMax(result3);
+			}
+		}
+		if (result4 != null) {
+			if (result < arrayMax(result4)) {
+				result = arrayMax(result4);
+			}
+		}
+		if (result < arrayMax(All())) {
+			result = arrayMax(All());
+		}
+		return result;
+
+	}
+
+	private double[] X() {
+		if (test1.length() != 0) {
+			double d = Double.parseDouble(test1);
+			java.text.DecimalFormat df = new java.text.DecimalFormat("#0.0");
+			String string = df.format(d);
+			d = Double.parseDouble(string);
+			return new double[] { 0.25 * d, 0.5 * d, 0.75 * d, d, 1.25 * d,
+					1.5 * d, 1.75 * d, 2 * d, 2.25 * d, 2.5 * d };
+		}
+		if (test4.length() != 0) {
+			double d = Double.parseDouble(test4);
+			java.text.DecimalFormat df = new java.text.DecimalFormat("#0.0");
+			String string = df.format(d);
+			d = Double.parseDouble(string);
+			return new double[] { 0.25 * d, 0.5 * d, 0.75 * d, d, 1.25 * d,
+					1.5 * d, 1.75 * d, 2 * d, 2.25 * d, 2.5 * d };
+		}
+		if (test7.length() != 0) {
+			double d = Double.parseDouble(test7);
+			java.text.DecimalFormat df = new java.text.DecimalFormat("#0.0");
+			String string = df.format(d);
+			d = Double.parseDouble(string);
+			return new double[] { 0.25 * d, 0.5 * d, 0.75 * d, d, 1.25 * d,
+					1.5 * d, 1.75 * d, 2 * d, 2.25 * d, 2.5 * d };
+		}
+		if (test10.length() != 0) {
+			double d = Double.parseDouble(test10);
+			java.text.DecimalFormat df = new java.text.DecimalFormat("#0.0");
+			String string = df.format(d);
+			d = Double.parseDouble(string);
+			return new double[] { 0.25 * d, 0.5 * d, 0.75 * d, d, 1.25 * d,
+					1.5 * d, 1.75 * d, 2 * d, 2.25 * d, 2.5 * d };
+		}
+		if (test3.length() != 0) {
+			double d = Double.parseDouble(test3);
+			java.text.DecimalFormat df = new java.text.DecimalFormat("#0.0");
+			String string = df.format(d);
+			d = Double.parseDouble(string);
+			return new double[] { 0.25 * d, 0.5 * d, 0.75 * d, d, 1.25 * d,
+					1.5 * d, 1.75 * d, 2 * d, 2.25 * d, 2.5 * d };
+		}
+		if (test6.length() != 0) {
+			double d = Double.parseDouble(test6);
+			java.text.DecimalFormat df = new java.text.DecimalFormat("#0.0");
+			String string = df.format(d);
+			d = Double.parseDouble(string);
+			return new double[] { 0.25 * d, 0.5 * d, 0.75 * d, d, 1.25 * d,
+					1.5 * d, 1.75 * d, 2 * d, 2.25 * d, 2.5 * d };
+		}
+		if (test9.length() != 0) {
+			double d = Double.parseDouble(test9);
+			java.text.DecimalFormat df = new java.text.DecimalFormat("#0.0");
+			String string = df.format(d);
+			d = Double.parseDouble(string);
+			return new double[] { 0.25 * d, 0.5 * d, 0.75 * d, d, 1.25 * d,
+					1.5 * d, 1.75 * d, 2 * d, 2.25 * d, 2.5 * d };
+		}
+		if (test12.length() != 0) {
+			double d = Double.parseDouble(test12);
+			java.text.DecimalFormat df = new java.text.DecimalFormat("#0.0");
+			String string = df.format(d);
+			d = Double.parseDouble(string);
+			return new double[] { 0.25 * d, 0.5 * d, 0.75 * d, d, 1.25 * d,
+					1.5 * d, 1.75 * d, 2 * d, 2.25 * d, 2.5 * d };
+		}
+		return null;
+
+	}
+
+	/**
 	 * 画图函数
 	 */
 	public class LineChar extends AbstractDemoChart {
@@ -991,7 +1094,7 @@ public class Button3Activity extends Activity {
 			// x轴的值
 			List<double[]> x = new ArrayList<double[]>();
 			for (int i = 0; i < titles.length; i++) {
-				x.add(new double[] { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12 });// 每个序列中点的X坐标
+				x.add(X());// 每个序列中点的X坐标
 			}
 			// y轴的值
 			List<double[]> values = setY();
@@ -1015,9 +1118,10 @@ public class Button3Activity extends Activity {
 			renderer.setShowGrid(true);// 是否显示网格
 			// x或y轴上数字的方向，相反的。
 			renderer.setXLabelsAlign(Align.RIGHT);// 刻度线与刻度标注之间的相对位置关系
-			renderer.setYLabelsAlign(Align.CENTER);// 刻度线与刻度标注之间的相对位置关系
-			renderer.setPanLimits(new double[] { -10, 20, -arrayMax(all) - 10,
-					arrayMax(all) + 10 }); // 设置拖动时X轴Y轴允许的最大值最小值.
+			renderer.setYLabelsAlign(Align.CENTER);// 刻度线与刻度标注之间的相对位置关系、
+
+			renderer.setPanLimits(new double[] { -10, arrayMax(X())+10, -maxY() - 10,
+					maxY() + 10 }); // 设置拖动时X轴Y轴允许的最大值最小值.
 			Intent intent = ChartFactory.getLineChartIntent(context,
 					buildDataset(titles, x, values), renderer, "期权组合损益分布图");// 构建Intent
 			return intent;

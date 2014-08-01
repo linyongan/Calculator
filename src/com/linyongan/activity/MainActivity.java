@@ -16,6 +16,7 @@ import android.view.View;
 import android.view.Window;
 import android.view.View.OnClickListener;
 import android.widget.Button;
+import android.widget.Toast;
 
 /**
  * 金融计算器主页面
@@ -23,13 +24,17 @@ import android.widget.Button;
 public class MainActivity extends Activity {
 
 	/** 常见问题按钮 */
-	private Button aboutButton;
+	private Button questionButton;
 	/** 名词查询按钮 */
 	private Button searchButton;
 	/** 期权学堂按钮 */
 	private Button learnButton;
 	/** 期权计算按钮 */
 	private Button derivativeButton;
+	/** 自我测试按钮 */
+	private Button testButton;
+	/** 关于我们按钮 */
+	private Button aboutButton;
 
 	/** 标记，第一次运行加载数据 */
 	private static boolean mark = true;
@@ -46,14 +51,19 @@ public class MainActivity extends Activity {
 			mark = false;
 		}
 		// 找到所有的button
-		aboutButton = (Button) findViewById(R.id.aboutButton);
+		questionButton = (Button) findViewById(R.id.questionButton);
 		searchButton = (Button) findViewById(R.id.searchButton);
 		learnButton = (Button) findViewById(R.id.learnButton);
 		derivativeButton = (Button) findViewById(R.id.derivativeButton);
-		aboutButton.setOnClickListener(new ButtonListener());
+		testButton = (Button) findViewById(R.id.testButton);
+		aboutButton = (Button) findViewById(R.id.aboutButton);
+
+		questionButton.setOnClickListener(new ButtonListener());
 		searchButton.setOnClickListener(new ButtonListener());
 		learnButton.setOnClickListener(new ButtonListener());
 		derivativeButton.setOnClickListener(new ButtonListener());
+		testButton.setOnClickListener(new ButtonListener());
+		aboutButton.setOnClickListener(new ButtonListener());
 	}
 
 	/**
@@ -66,7 +76,7 @@ public class MainActivity extends Activity {
 
 		public void onClick(View v) {
 			switch (v.getId()) {
-			case R.id.aboutButton:
+			case R.id.questionButton:
 				Intent intent2 = new Intent(MainActivity.this,
 						QuestionActivity.class);
 				startActivity(intent2);
@@ -85,6 +95,16 @@ public class MainActivity extends Activity {
 				Intent intent5 = new Intent(MainActivity.this,
 						DerivativeActivity.class);
 				startActivity(intent5);
+				break;
+			case R.id.testButton:
+				Intent intent1 = new Intent(MainActivity.this,
+						TestActivity.class);
+				startActivity(intent1);
+				break;
+			case R.id.aboutButton:
+				Intent intent6 = new Intent(MainActivity.this,
+						AboutActivity.class);
+				startActivity(intent6);
 				break;
 			}
 
@@ -160,18 +180,21 @@ public class MainActivity extends Activity {
 			}
 			return null;
 		}
+
 		// 在doInBackground方法执行结束之后再运行，并且运行在UI线程当中。
-				// 主要用于将异步任务执行的结果展示给客户
-				@Override
-				protected void onPostExecute(Object result) {
-					pdialog.dismiss();
-				}
+		// 主要用于将异步任务执行的结果展示给客户
+		@Override
+		protected void onPostExecute(Object result) {
+			pdialog.dismiss();
+		}
 
 	}
 
 	/** 退出按钮 */
 	public boolean dispatchKeyEvent(KeyEvent event) {
 		if (event.getKeyCode() == KeyEvent.KEYCODE_BACK) {
+			Toast.makeText(MainActivity.this, "再按一次返回键退出系统", Toast.LENGTH_SHORT)
+					.show();
 			if (event.getAction() == KeyEvent.ACTION_DOWN
 					&& event.getRepeatCount() == 0) {
 				finish();

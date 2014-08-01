@@ -31,10 +31,12 @@
 
         <TextView
             android:layout_width="match_parent"
-            android:layout_height="120dp"
+            android:layout_height="180dp"
             android:layout_marginTop="5dp"
             android:background="@drawable/shape"
             android:padding="8dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
             android:text="理念介绍"
             android:textColor="@android:color/black"
             android:textSize="18sp" />
@@ -76,7 +78,7 @@
         <TableLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" 
-            android:layout_marginTop="5dp">
+            android:layout_marginTop="10dp">
 
             <TableRow
                 android:layout_width="wrap_content"
@@ -89,7 +91,7 @@
                     android:background="@android:color/transparent"
                     android:drawableTop="@drawable/learn_btn_selector"
                     android:layout_marginRight="20dp"
-                    android:drawablePadding="-10dp"
+                    android:drawablePadding="-5dp"
                     android:text="期权学堂"
                     android:textSize="16sp" />
 
@@ -99,8 +101,18 @@
                     android:layout_height="wrap_content"
                     android:background="@android:color/transparent"
                     android:drawableTop="@drawable/calculate_btn_selector"
-                    android:drawablePadding="-10dp"
+                    android:drawablePadding="-5dp"
+                    android:layout_marginRight="20dp"
                     android:text="期权计算"
+                    android:textSize="16sp" />
+                <Button
+                    android:id="@+id/testButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/transparent"
+                    android:drawableTop="@drawable/test_btn_selector"
+                    android:drawablePadding="-5dp"
+                    android:text="自我测试"
                     android:textSize="16sp" />
             </TableRow>
 
@@ -116,18 +128,28 @@
                     android:background="@android:color/transparent"
                     android:drawableTop="@drawable/noun_btn_selector"
                     android:layout_marginRight="20dp"
-                    android:drawablePadding="-10dp"
+                    android:drawablePadding="-5dp"
                     android:text="名词查询"
                     android:textSize="16sp" />
 
                 <Button
-                    android:id="@+id/aboutButton"
+                    android:id="@+id/questionButton"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:background="@android:color/transparent"
                     android:drawableTop="@drawable/question_btn_selector"
-                    android:drawablePadding="-10dp"
+                     android:layout_marginRight="20dp"
+                    android:drawablePadding="-5dp"
                     android:text="常见问题"
+                    android:textSize="16sp" />
+                 <Button
+                    android:id="@+id/aboutButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/transparent"
+                    android:drawableTop="@drawable/about_btn_selector"
+                    android:drawablePadding="-5dp"
+                    android:text="关于我们"
                     android:textSize="16sp" />
             </TableRow>
         </TableLayout>

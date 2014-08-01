@@ -47,6 +47,10 @@
             android:theme="@style/AppTheme" >
         </activity>
         <activity android:name="org.achartengine.GraphicalActivity" />
+         <activity android:name="com.linyongan.activity.AboutActivity" >
+        </activity>
+         <activity android:name="com.linyongan.activity.TestActivity" >
+        </activity>
     </application>
 
 </manifest>
