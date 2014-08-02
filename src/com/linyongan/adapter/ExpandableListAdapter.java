@@ -2,6 +2,7 @@ package com.linyongan.adapter;
 
 import android.content.Context;
 import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.view.Gravity;
 import android.view.View;
 import android.view.ViewGroup;
@@ -45,7 +46,7 @@ public class ExpandableListAdapter extends BaseExpandableListAdapter {
 		TextView textView = new TextView(context);
 		textView.setLayoutParams(lp);
 		textView.setGravity(Gravity.CENTER_VERTICAL | Gravity.LEFT);
-		textView.setPadding(50, 0, 0, 0);
+		textView.setPadding(10, 0, 0, 0);
 		textView.setTextColor(Color.BLACK);
 		textView.setTextSize(16);
 		return textView;
@@ -77,8 +78,16 @@ public class ExpandableListAdapter extends BaseExpandableListAdapter {
 			View convertView, ViewGroup parent) {
 		LinearLayout ll = new LinearLayout(context);
 		ll.setOrientation(0);
-		TextView textView = getTextView();
+		AbsListView.LayoutParams lp = new AbsListView.LayoutParams(
+				ViewGroup.LayoutParams.MATCH_PARENT, 50);
+		TextView textView = new TextView(context);
+		textView.setLayoutParams(lp);
+		textView.setGravity(Gravity.CENTER_VERTICAL | Gravity.LEFT);
+		textView.setPadding(50, 0, 0, 0);
+		textView.setTextColor(Color.BLACK);
+		textView.setTextSize(16);
 		textView.setText(getGroup(groupPosition).toString());
+		textView.setBackgroundColor(Color.LTGRAY);
 		ll.addView(textView);
 		return ll;
 	}
