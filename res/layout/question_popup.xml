@@ -18,7 +18,7 @@
 
     <ImageButton
         android:id="@+id/question_closeButton"
-        android:layout_width="45dp"
+        android:layout_width="50dp"
         android:layout_height="50dp"
         android:layout_marginTop="-8dp"
         android:layout_marginRight="-8dp"

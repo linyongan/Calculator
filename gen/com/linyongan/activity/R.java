@@ -17,39 +17,49 @@ public final class R {
     public static final class attr {
     }
     public static final class drawable {
-        public static final int about_btn_selector=0x7f020000;
-        public static final int adout_btn_normal=0x7f020001;
-        public static final int adout_btn_pressed=0x7f020002;
-        public static final int btn_back=0x7f020003;
-        public static final int calculate_btn_normal=0x7f020004;
-        public static final int calculate_btn_pressed=0x7f020005;
-        public static final int calculate_btn_selector=0x7f020006;
-        public static final int close=0x7f020007;
-        public static final int common_btn=0x7f020008;
-        public static final int common_btn_pressed=0x7f020009;
-        public static final int common_btn_selector=0x7f02000a;
-        public static final int emotionstore_progresscancelbtn=0x7f02000b;
-        public static final int icon=0x7f02000c;
-        public static final int learn_btn_normal=0x7f02000d;
-        public static final int learn_btn_pressed=0x7f02000e;
-        public static final int learn_btn_selector=0x7f02000f;
-        public static final int noun_btn_normal=0x7f020010;
-        public static final int noun_btn_pressed=0x7f020011;
-        public static final int noun_btn_selector=0x7f020012;
-        public static final int question_btn_normal=0x7f020013;
-        public static final int question_btn_pressed=0x7f020014;
-        public static final int question_btn_selector=0x7f020015;
-        public static final int search_bar_edit_normal=0x7f020016;
-        public static final int search_bar_edit_pressed=0x7f020017;
-        public static final int search_bar_edit_selector=0x7f020018;
-        public static final int search_bar_icon_normal=0x7f020019;
-        public static final int shape=0x7f02001a;
-        public static final int shape1=0x7f02001b;
-        public static final int sidebar_background=0x7f02001c;
-        public static final int test_btn_normal=0x7f02001d;
-        public static final int test_btn_pressed=0x7f02001e;
-        public static final int test_btn_selector=0x7f02001f;
-        public static final int titlebar=0x7f020020;
+        public static final int a=0x7f020000;
+        public static final int about_btn_selector=0x7f020001;
+        public static final int adout_btn_normal=0x7f020002;
+        public static final int adout_btn_pressed=0x7f020003;
+        public static final int b=0x7f020004;
+        public static final int btn_back=0x7f020005;
+        public static final int c=0x7f020006;
+        public static final int calculate_btn_normal=0x7f020007;
+        public static final int calculate_btn_pressed=0x7f020008;
+        public static final int calculate_btn_selector=0x7f020009;
+        public static final int close=0x7f02000a;
+        public static final int common_btn=0x7f02000b;
+        public static final int common_btn_pressed=0x7f02000c;
+        public static final int common_btn_selector=0x7f02000d;
+        public static final int d=0x7f02000e;
+        public static final int dot_focused=0x7f02000f;
+        public static final int dot_normal=0x7f020010;
+        public static final int e=0x7f020011;
+        public static final int emotionstore_progresscancelbtn=0x7f020012;
+        public static final int icon=0x7f020013;
+        public static final int learn_btn_normal=0x7f020014;
+        public static final int learn_btn_pressed=0x7f020015;
+        public static final int learn_btn_selector=0x7f020016;
+        public static final int noun_btn_normal=0x7f020017;
+        public static final int noun_btn_pressed=0x7f020018;
+        public static final int noun_btn_selector=0x7f020019;
+        public static final int question_btn_normal=0x7f02001a;
+        public static final int question_btn_pressed=0x7f02001b;
+        public static final int question_btn_selector=0x7f02001c;
+        public static final int search_bar_edit_normal=0x7f02001d;
+        public static final int search_bar_edit_pressed=0x7f02001e;
+        public static final int search_bar_edit_selector=0x7f02001f;
+        public static final int search_bar_icon_normal=0x7f020020;
+        public static final int shape=0x7f020021;
+        public static final int shape1=0x7f020022;
+        public static final int sidebar_background=0x7f020023;
+        public static final int test_btn_normal=0x7f020024;
+        public static final int test_btn_pressed=0x7f020025;
+        public static final int test_btn_selector=0x7f020026;
+        public static final int test_button1=0x7f020027;
+        public static final int test_button4=0x7f020028;
+        public static final int test_button5=0x7f020029;
+        public static final int titlebar=0x7f02002a;
     }
     public static final class id {
         public static final int Button1_back_bn=0x7f070007;
@@ -196,6 +206,12 @@ public final class R {
         public static final int testButton=0x7f07007f;
         public static final int test_back_bn=0x7f07008f;
         public static final int title=0x7f070073;
+        public static final int v_dot0=0x7f070091;
+        public static final int v_dot1=0x7f070092;
+        public static final int v_dot2=0x7f070093;
+        public static final int v_dot3=0x7f070094;
+        public static final int v_dot4=0x7f070095;
+        public static final int vp=0x7f070090;
     }
     public static final class layout {
         public static final int about=0x7f030000;
@@ -218,6 +234,7 @@ public final class R {
         public static final int search=0x7f030011;
         public static final int search_popup=0x7f030012;
         public static final int test=0x7f030013;
+        public static final int viewpage=0x7f030014;
     }
     public static final class string {
         public static final int app_name=0x7f050001;
@@ -239,5 +256,6 @@ public final class R {
  All customizations that are NOT specific to a particular API-level can go here. 
          */
         public static final int AppTheme=0x7f060001;
+        public static final int dot_style=0x7f060002;
     }
 }

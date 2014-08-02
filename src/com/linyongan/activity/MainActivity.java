@@ -13,10 +13,9 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.KeyEvent;
 import android.view.View;
-import android.view.Window;
 import android.view.View.OnClickListener;
+import android.view.Window;
 import android.widget.Button;
-import android.widget.Toast;
 
 /**
  * 金融计算器主页面
@@ -193,8 +192,6 @@ public class MainActivity extends Activity {
 	/** 退出按钮 */
 	public boolean dispatchKeyEvent(KeyEvent event) {
 		if (event.getKeyCode() == KeyEvent.KEYCODE_BACK) {
-			Toast.makeText(MainActivity.this, "再按一次返回键退出系统", Toast.LENGTH_SHORT)
-					.show();
 			if (event.getAction() == KeyEvent.ACTION_DOWN
 					&& event.getRepeatCount() == 0) {
 				finish();

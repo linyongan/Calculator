@@ -11,7 +11,7 @@
         android:background="@drawable/titlebar" >
 
         <ImageButton
-            android:id="@+id/learn_back_bn"
+            android:id="@+id/about_back_bn"
             android:layout_width="40dp"
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
@@ -33,19 +33,25 @@
             android:layout_centerInParent="true"
             android:focusable="true"
             android:focusableInTouchMode="true"
-            android:text="期权学堂"
+            android:text="关于我们"
             android:textColor="@android:color/white"
             android:textSize="20sp" />
     </RelativeLayout>
 
-    <ExpandableListView
-        android:id="@id/android:list"
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent" 
-        android:layout_margin="10dp"
-        android:dividerHeight="0.5dp"
-        android:cacheColorHint="#00000000" 
-        >
-    </ExpandableListView>
+        android:layout_height="match_parent" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingLeft="8dp"
+            android:paddingRight="8dp" >
+
+        
+
+        </LinearLayout>
+    </ScrollView>
 
 </LinearLayout>
