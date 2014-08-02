@@ -2,7 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FFFFFF"
+    android:background="@android:color/black"
     android:orientation="vertical" >
 
     <FrameLayout
@@ -11,8 +11,8 @@
 
         <android.support.v4.view.ViewPager
             android:id="@+id/vp"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent" />
+            android:layout_width="512dp"
+            android:layout_height="288dp" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -50,6 +50,86 @@
 
                 <View
                     android:id="@+id/v_dot4"
+                    style="@style/dot_style"
+                    android:visibility="gone" />
+
+                <View
+                    android:id="@+id/v_dot5"
+                    style="@style/dot_style"
+                    android:visibility="gone" />
+
+                <View
+                    android:id="@+id/v_dot6"
+                    style="@style/dot_style"
+                    android:visibility="gone" />
+
+                <View
+                    android:id="@+id/v_dot7"
+                    style="@style/dot_style"
+                    android:visibility="gone" />
+
+                <View
+                    android:id="@+id/v_dot8"
+                    style="@style/dot_style"
+                    android:visibility="gone" />
+
+                <View
+                    android:id="@+id/v_dot9"
+                    style="@style/dot_style"
+                    android:visibility="gone" />
+
+                <View
+                    android:id="@+id/v_dot10"
+                    style="@style/dot_style"
+                    android:visibility="gone" />
+
+                <View
+                    android:id="@+id/v_dot11"
+                    style="@style/dot_style"
+                    android:visibility="gone" />
+
+                <View
+                    android:id="@+id/v_dot12"
+                    style="@style/dot_style"
+                    android:visibility="gone" />
+
+                <View
+                    android:id="@+id/v_dot13"
+                    style="@style/dot_style"
+                    android:visibility="gone" />
+
+                <View
+                    android:id="@+id/v_dot14"
+                    style="@style/dot_style"
+                    android:visibility="gone" />
+
+                <View
+                    android:id="@+id/v_dot15"
+                    style="@style/dot_style"
+                    android:visibility="gone" />
+
+                <View
+                    android:id="@+id/v_dot16"
+                    style="@style/dot_style"
+                    android:visibility="gone" />
+
+                <View
+                    android:id="@+id/v_dot17"
+                    style="@style/dot_style"
+                    android:visibility="gone" />
+
+                <View
+                    android:id="@+id/v_dot18"
+                    style="@style/dot_style"
+                    android:visibility="gone" />
+
+                <View
+                    android:id="@+id/v_dot19"
+                    style="@style/dot_style"
+                    android:visibility="gone" />
+
+                <View
+                    android:id="@+id/v_dot20"
                     style="@style/dot_style"
                     android:visibility="gone" />
             </LinearLayout>
