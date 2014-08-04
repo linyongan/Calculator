@@ -1,22 +1,19 @@
 package com.linyongan.activity;
 
-import com.linyongan.activity.MainActivity;
-import com.linyongan.activity.R;
-
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.KeyEvent;
 import android.view.View;
-import android.view.Window;
 import android.view.View.OnClickListener;
+import android.view.Window;
 import android.widget.Button;
 import android.widget.ImageButton;
 
 /**
  * 选择试卷页面
  */
-public class TesPaperActivity extends Activity {
+public class TestPaperActivity extends Activity {
 	/** 返回按钮 */
 	private ImageButton backButton;
 	private Button button1;
@@ -55,16 +52,7 @@ public class TesPaperActivity extends Activity {
 		button12 = (Button) findViewById(R.id.test_paper_Button12);
 		backButton = (ImageButton) findViewById(R.id.test_paper_back_bn);
 
-		Button[] buttons = new Button[] { button1, button2, button3, button4,
-				button5, button6, button7, button8, button9, button10,
-				button11, button12 };
-		Intent intent = getIntent();
-		Bundle bundle = intent.getExtras();
-		String string = bundle.getString("mark");
-		mark = Integer.valueOf(string);
-		for (int i = 0; i < mark; i++) {
-			buttons[i].setVisibility(View.VISIBLE);
-		}
+		setButtonVisible();
 
 		button1.setOnClickListener(new ButtonListener());
 		button2.setOnClickListener(new ButtonListener());
@@ -79,6 +67,21 @@ public class TesPaperActivity extends Activity {
 		button11.setOnClickListener(new ButtonListener());
 		button12.setOnClickListener(new ButtonListener());
 		backButton.setOnClickListener(new ButtonListener());
+	}
+
+	private void setButtonVisible() {
+		Button[] buttons = new Button[] { button1, button2, button3, button4,
+				button5, button6, button7, button8, button9, button10,
+				button11, button12 };
+		Intent intent = getIntent();
+		Bundle bundle = intent.getExtras();
+		String string = bundle.getString("mark");
+		if (string.length() != 0) {
+			mark = Integer.valueOf(string);
+			for (int i = 0; i < mark; i++) {
+				buttons[i].setVisibility(View.VISIBLE);
+			}
+		}
 	}
 
 	/**
@@ -96,6 +99,67 @@ public class TesPaperActivity extends Activity {
 			case R.id.test_paper_back_bn:
 				goBack();
 				break;
+			case R.id.test_paper_Button1:
+				Intent intent1 = new Intent(TestPaperActivity.this,
+						TestingActivity.class);
+				startActivity(intent1);
+				break;
+			case R.id.test_paper_Button2:
+				Intent intent2 = new Intent(TestPaperActivity.this,
+						TestingActivity.class);
+				startActivity(intent2);
+				break;
+			case R.id.test_paper_Button3:
+				Intent intent3 = new Intent(TestPaperActivity.this,
+						TestingActivity.class);
+				startActivity(intent3);
+				break;
+			case R.id.test_paper_Button4:
+				Intent intent4 = new Intent(TestPaperActivity.this,
+						TestingActivity.class);
+				startActivity(intent4);
+				break;
+			case R.id.test_paper_Button5:
+				Intent intent5 = new Intent(TestPaperActivity.this,
+						TestingActivity.class);
+				startActivity(intent5);
+				break;
+			case R.id.test_paper_Button6:
+				Intent intent6 = new Intent(TestPaperActivity.this,
+						TestingActivity.class);
+				startActivity(intent6);
+				break;
+			case R.id.test_paper_Button7:
+				Intent intent7 = new Intent(TestPaperActivity.this,
+						TestingActivity.class);
+				startActivity(intent7);
+				break;
+			case R.id.test_paper_Button8:
+				Intent intent8 = new Intent(TestPaperActivity.this,
+						TestingActivity.class);
+				startActivity(intent8);
+				break;
+			case R.id.test_paper_Button9:
+				Intent intent9 = new Intent(TestPaperActivity.this,
+						TestingActivity.class);
+				startActivity(intent9);
+				break;
+			case R.id.test_paper_Button10:
+				Intent intent10 = new Intent(TestPaperActivity.this,
+						TestingActivity.class);
+				startActivity(intent10);
+				break;
+			case R.id.test_paper_Button11:
+				Intent intent11 = new Intent(TestPaperActivity.this,
+						TestingActivity.class);
+				startActivity(intent11);
+				break;
+			case R.id.test_paper_Button12:
+				Intent intent12 = new Intent(TestPaperActivity.this,
+						TestingActivity.class);
+				startActivity(intent12);
+				break;
+
 			}
 		}
 
@@ -115,7 +179,7 @@ public class TesPaperActivity extends Activity {
 
 	/** 返回上一个界面 */
 	private void goBack() {
-		Intent intent = new Intent(TesPaperActivity.this, TestActivity.class);
+		Intent intent = new Intent(TestPaperActivity.this, TestActivity.class);
 		startActivity(intent);
 		finish();
 	}

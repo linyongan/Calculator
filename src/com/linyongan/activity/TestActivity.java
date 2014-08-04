@@ -64,39 +64,34 @@ public class TestActivity extends Activity {
 			// TODO Auto-generated method stub
 			switch (v.getId()) {
 			case R.id.test_back_bn:
-				Intent intent1 = new Intent(TestActivity.this,
-						TesPaperActivity.class);
-
-				startActivity(intent1);
+				goBack();
 				break;
 			case R.id.test_baseButton:
 				Intent intent2 = new Intent(TestActivity.this,
-						TesPaperActivity.class);
+						TestPaperActivity.class);
 				intent2.putExtra("mark", 12 + "");
 				startActivity(intent2);
 				break;
 			case R.id.test_advanceButton1:
 				Intent intent3 = new Intent(TestActivity.this,
-						TesPaperActivity.class);
+						TestPaperActivity.class);
 				intent3.putExtra("mark", 3 + "");
 				startActivity(intent3);
 				break;
 			case R.id.test_advanceButton2:
 				Intent intent4 = new Intent(TestActivity.this,
-						TesPaperActivity.class);
+						TestPaperActivity.class);
 				intent4.putExtra("mark", 9 + "");
 				startActivity(intent4);
 				break;
 			case R.id.test_collectButton:
 				Intent intent5 = new Intent(TestActivity.this,
-						TesPaperActivity.class);
-				intent5.putExtra("mark", 12 + "");
+						TestCollectActivity.class);
 				startActivity(intent5);
 				break;
 			case R.id.test_gradeButton:
 				Intent intent6 = new Intent(TestActivity.this,
-						TesPaperActivity.class);
-				intent6.putExtra("mark", 12 + "");
+						TestGradeActivity.class);
 				startActivity(intent6);
 				break;
 			}

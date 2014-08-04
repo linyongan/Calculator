@@ -1,31 +1,37 @@
 package com.linyongan.adapter;
 
+import com.linyongan.activity.R;
+
 import android.content.Context;
 import android.graphics.Color;
 import android.view.Gravity;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AbsListView;
 import android.widget.BaseExpandableListAdapter;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
 public class ExpandableListAdapter extends BaseExpandableListAdapter {
 
 	private Context context;
-	/** À¸Ä¿ */
+	private LayoutInflater inflater;
+	/** æ ç›® */
 	private String[] item = new String[] {};
-	/** ×ÓÀ¸Ä¿ */
+	/** å­æ ç›® */
 	private String[][] subItem = new String[][] {};
 
 	public ExpandableListAdapter(Context context, String[] item,
 			String[][] subItem) {
 		this.context = context;
+		inflater = LayoutInflater.from(context);
 		this.item = item;
 		this.subItem = subItem;
 	}
 
-	// »ñÈ¡Ö¸¶¨×éÎ»ÖÃ¡¢Ö¸¶¨×ÓÁĞ±íÏî´¦µÄ×ÓÁĞ±íÏîÊı¾İ
+	// è·å–æŒ‡å®šç»„ä½ç½®ã€æŒ‡å®šå­åˆ—è¡¨é¡¹å¤„çš„å­åˆ—è¡¨é¡¹æ•°æ®
 
 	public Object getChild(int groupPosition, int childPosition) {
 		return subItem[groupPosition][childPosition];
@@ -39,27 +45,18 @@ public class ExpandableListAdapter extends BaseExpandableListAdapter {
 		return subItem[groupPosition].length;
 	}
 
-	private TextView getTextView() {
-		AbsListView.LayoutParams lp = new AbsListView.LayoutParams(
-				ViewGroup.LayoutParams.MATCH_PARENT, 60);
-		TextView textView = new TextView(context);
-		textView.setLayoutParams(lp);
-		textView.setGravity(Gravity.CENTER_VERTICAL | Gravity.LEFT);
-		textView.setPadding(50, 0, 0, 0);
-		textView.setTextColor(Color.BLACK);
-		textView.setTextSize(16);
-		return textView;
-	}
-
-	// ¸Ã·½·¨¾ö¶¨Ã¿¸ö×ÓÑ¡ÏîµÄÍâ¹Û
+	// è¯¥æ–¹æ³•å†³å®šæ¯ä¸ªå­é€‰é¡¹çš„å¤–è§‚
 	public View getChildView(int groupPosition, int childPosition,
 			boolean isLastChild, View convertView, ViewGroup parent) {
-		TextView textView = getTextView();
+		if (convertView == null) {
+			convertView = inflater.inflate(R.layout.learn_child, null);
+		}
+		TextView textView = (TextView) convertView.findViewById(R.id.item);
 		textView.setText(getChild(groupPosition, childPosition).toString());
-		return textView;
+		return convertView;
 	}
 
-	// »ñÈ¡Ö¸¶¨×éÎ»ÖÃ´¦µÄ×éÊı¾İ
+	// è·å–æŒ‡å®šç»„ä½ç½®å¤„çš„ç»„æ•°æ®
 	public Object getGroup(int groupPosition) {
 		return item[groupPosition];
 	}
@@ -72,15 +69,28 @@ public class ExpandableListAdapter extends BaseExpandableListAdapter {
 		return groupPosition;
 	}
 
-	// ¸Ã·½·¨¾ö¶¨Ã¿¸ö×éÑ¡ÏîµÄÍâ¹Û
+	// è¯¥æ–¹æ³•å†³å®šæ¯ä¸ªç»„é€‰é¡¹çš„å¤–è§‚
 	public View getGroupView(int groupPosition, boolean isExpanded,
 			View convertView, ViewGroup parent) {
-		LinearLayout ll = new LinearLayout(context);
-		ll.setOrientation(0);
-		TextView textView = getTextView();
-		textView.setText(getGroup(groupPosition).toString());
-		ll.addView(textView);
-		return ll;
+		GroupHolder groupHolder = null;
+		if (convertView == null) {
+			groupHolder = new GroupHolder();
+			convertView = inflater.inflate(R.layout.learn_group, null);
+			groupHolder.textView = (TextView) convertView
+					.findViewById(R.id.group);
+			groupHolder.imageView = (ImageView) convertView
+					.findViewById(R.id.image);
+			convertView.setTag(groupHolder);
+		} else {
+			groupHolder = (GroupHolder) convertView.getTag();
+		}
+
+		groupHolder.textView.setText(getGroup(groupPosition).toString());
+		if (isExpanded)// ture is Expanded or false is not isExpanded
+			groupHolder.imageView.setImageResource(R.drawable.expanded);
+		else
+			groupHolder.imageView.setImageResource(R.drawable.collapse);
+		return convertView;
 	}
 
 	public boolean isChildSelectable(int groupPosition, int childPosition) {
@@ -90,4 +100,10 @@ public class ExpandableListAdapter extends BaseExpandableListAdapter {
 	public boolean hasStableIds() {
 		return true;
 	}
+
+	class GroupHolder {
+		TextView textView;
+		ImageView imageView;
+	}
+
 }

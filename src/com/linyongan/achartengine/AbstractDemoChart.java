@@ -70,10 +70,10 @@ public abstract class AbstractDemoChart implements IDemoChart {
 			PointStyle[] styles) {
 		// 整个图表属性设置
 		// -->start
-		renderer.setAxisTitleTextSize(20);// 设置轴标题文字的大小
-		renderer.setChartTitleTextSize(25);// 设置整个图表标题文字的大小
-		renderer.setLabelsTextSize(20);// 设置轴刻度文字的大小
-		renderer.setLegendTextSize(20);// 设置图例文字大小
+		renderer.setAxisTitleTextSize(14);// 设置轴标题文字的大小
+		renderer.setChartTitleTextSize(16);// 设置整个图表标题文字的大小
+		renderer.setLabelsTextSize(14);// 设置轴刻度文字的大小
+		renderer.setLegendTextSize(14);// 设置图例文字大小
 		renderer.setPointSize(5f);// 设置点的大小(图上显示的点的大小和图例中点的大小都会被设置)
 		renderer.setMargins(new int[] { 20, 30, 15, 20 });// 设置图表的外边框(上/左/下/右)
 		// -->end
