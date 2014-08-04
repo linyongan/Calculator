@@ -59,7 +59,6 @@ public class SearchActivity extends Activity {
 	private PinyinComparator pinyinComparator;
 
 	private NounDbManger nounDbManger;
-	/** µ¯³öÀ´µÄtextView */
 	private TextView textView;
 
 	@Override

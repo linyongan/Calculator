@@ -3,6 +3,7 @@ package com.linyongan.activity;
 import com.linyongan.activity.MainActivity;
 import com.linyongan.activity.R;
 import com.linyongan.cofig.Constants;
+import com.linyongan.sortlistview.SortModel;
 import com.linyongan.sql.QuestionDbManger;
 
 import android.app.Activity;
