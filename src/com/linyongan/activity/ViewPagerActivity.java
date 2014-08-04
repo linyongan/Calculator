@@ -27,7 +27,7 @@ public class ViewPagerActivity extends Activity {
 	private int currentItem = 0; // 当前图片的索引号
 
 	private ScheduledExecutorService scheduledExecutorService;
-
+	/** 从上一个界面接收到的点的id */
 	private int[] dot;
 	// 切换当前显示的图片
 	private Handler handler = new Handler() {
@@ -40,6 +40,7 @@ public class ViewPagerActivity extends Activity {
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.viewpage);
+		//获取从上一个界面传递来的参数
 		Bundle b = this.getIntent().getExtras();
 		imageResId = b.getIntArray("imageResId");
 		dot = b.getIntArray("dots");

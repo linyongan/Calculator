@@ -65,6 +65,11 @@ public class LearnActivity extends ExpandableListActivity {
 
 	}
 
+    /**
+     * ExpandableListView的监听器，跳转前设置好图片的ID就行了。
+     * @author yongan
+     *
+     */
 	private class ExpandableListViewListener implements OnChildClickListener {
 
 		@Override
