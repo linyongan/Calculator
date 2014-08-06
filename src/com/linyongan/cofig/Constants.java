@@ -54,4 +54,16 @@ public class Constants {
 		/** 答案*/
 		public static final String ANSWER = "answer";
 	}
+	public static class GradeTable {
+		/** id*/
+		public static final String ID = "_id";
+		/** 表名 */
+		public static final String TABLE_NAME = "grade";
+		/** 时间 */
+		public static final String TIME = "time";
+		/** 难度 */
+		public static final String NAME = "name";
+		/** 成绩 */
+		public static final String GRADE = "grade";
+	}
 }

@@ -38,4 +38,12 @@
             android:textSize="20sp" />
     </RelativeLayout>
 
+    <ListView
+        android:id="@+id/test_grade_listview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:listSelector="#00000000"
+        android:cacheColorHint="@android:color/transparent"
+        android:divider="@null" >
+    </ListView>
 </LinearLayout>

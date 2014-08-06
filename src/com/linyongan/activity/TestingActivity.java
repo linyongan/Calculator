@@ -1,6 +1,8 @@
 package com.linyongan.activity;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import java.util.Random;
 
@@ -26,7 +28,9 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.linyongan.cofig.Constants;
+import com.linyongan.model.Grade;
 import com.linyongan.model.Test;
+import com.linyongan.sql.GradeDbManger;
 import com.linyongan.sql.TestDbManger;
 
 public class TestingActivity extends Activity {
@@ -48,6 +52,7 @@ public class TestingActivity extends Activity {
 	private TextView collect_tv;
 	/** 数据库管理类 */
 	private TestDbManger dbManger;
+	private GradeDbManger gradeDbManger;
 	/** 问题 */
 	private TextView question;
 	/** 选项1 */
@@ -81,6 +86,7 @@ public class TestingActivity extends Activity {
 	private TextView wrong_tv;
 	/** 显示答案正确 */
 	private TextView rightAnswer_tv;
+	private String name;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -93,6 +99,7 @@ public class TestingActivity extends Activity {
 		getIdArray();
 		// 数据库管理类
 		dbManger = new TestDbManger(this);
+		gradeDbManger = new GradeDbManger(this);
 		// 找到所有的ImageButton
 		backButton = (ImageButton) findViewById(R.id.testing_back_bn);
 		backButton.setOnClickListener(new ButtonListener());
@@ -143,6 +150,7 @@ public class TestingActivity extends Activity {
 				}
 				id[x] = rand;
 				System.out.println("数据准备----随机产生的id为:" + id[x]);
+				name = "基础测试";
 			} else if (testNum == 30) {
 				Random random = new Random();
 				// 获取一个数据数，先判断是否与之前的相同
@@ -156,6 +164,7 @@ public class TestingActivity extends Activity {
 				}
 				id[x] = rand;
 				System.out.println("数据准备----随机产生的id为:" + id[x]);
+				name = "进阶测试1";
 			} else if (testNum == 90) {
 				Random random = new Random();
 				// 获取一个数据数，先判断是否与之前的相同
@@ -169,6 +178,7 @@ public class TestingActivity extends Activity {
 				}
 				id[x] = rand;
 				System.out.println("数据准备----随机产生的id为:" + id[x]);
+				name = "进阶测试2";
 			}
 		}
 	}
@@ -190,8 +200,7 @@ public class TestingActivity extends Activity {
 			if (i == 10 && mark) {
 				mark = false;
 				View view = inflater.inflate(R.layout.testing_item1, null);
-				collect_tv
-				.setBackgroundResource(R.drawable.testing_discollect);
+				collect_tv.setBackgroundResource(R.drawable.testing_discollect);
 				final Button button = (Button) view
 						.findViewById(R.id.testing_item1_btn);
 				final TextView textView = (TextView) view
@@ -204,6 +213,18 @@ public class TestingActivity extends Activity {
 					public void onClick(View v) {
 						// TODO Auto-generated method stub
 						int grade = changeView();
+						SimpleDateFormat formatter = new SimpleDateFormat(
+								"yyyy年MM月dd日 HH:mm:ss ");
+						Date curDate = new Date(System.currentTimeMillis());// 获取当前时间
+						String str = formatter.format(curDate);
+						System.out.println("获取当前时间" + str);
+						gradeDbManger.open();
+						Grade g = new Grade();
+						g.setTime(str);
+						g.setName(name);
+						g.setGrade(grade);
+						gradeDbManger.addGrade(g);
+						gradeDbManger.close();
 						if (grade >= 6) {
 							textView.setText("恭喜您！您已经通过本次测试，您一共答对了" + grade
 									+ "道题，您的分数是" + grade * 10
@@ -229,7 +250,7 @@ public class TestingActivity extends Activity {
 					@Override
 					public void onClick(View v) {
 						viewPager.setCurrentItem(0);
-						i= i-10;
+						i = i - 10;
 					}
 				});
 				content.add(view);

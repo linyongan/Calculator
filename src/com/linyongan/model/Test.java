@@ -1,7 +1,7 @@
 package com.linyongan.model;
 
 /**
- * 名词查询实体类
+ * 测试实体类
  * 
  * @author yongan
  * 

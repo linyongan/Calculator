@@ -29,8 +29,13 @@ public class DBHelper extends SQLiteOpenHelper {
 			+ Constants.TestTable.OPTION2 + " text, "
 			+ Constants.TestTable.OPTION3 + " text, "
 			+ Constants.TestTable.OPTION4 + " text, "
-			+ Constants.TestTable.MARK + " text, "
-			+ Constants.TestTable.ANSWER + " text)";
+			+ Constants.TestTable.MARK + " text, " + Constants.TestTable.ANSWER
+			+ " text)";
+	private final String GRADE_TABLE = "create table if not exists "
+			+ Constants.GradeTable.TABLE_NAME + " (" + Constants.GradeTable.ID
+			+ " integer primary key, " + Constants.GradeTable.TIME + " text, "
+			+ Constants.GradeTable.NAME + " text, "
+			+ Constants.GradeTable.GRADE + " integer)";
 
 	public DBHelper(Context context, String name, CursorFactory factory,
 			int version) {
@@ -44,6 +49,7 @@ public class DBHelper extends SQLiteOpenHelper {
 			db.execSQL(NOUN_TABLE);
 			db.execSQL(QUESTION_TABLE);
 			db.execSQL(TEST_TABLE);
+			db.execSQL(GRADE_TABLE);
 			Log.i(TAG, "创建数据库成功！！！！！");
 		} catch (Exception e) {
 			Log.e(TAG, e.getMessage());
