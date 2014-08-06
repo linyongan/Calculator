@@ -83,6 +83,35 @@ public class TestDbManger {
 	 * 
 	 * @return Cursor
 	 */
+	public Cursor getCollect() {
+		/**
+		 * 查询数据
+		 * 
+		 * @param table
+		 *            表名
+		 * @param columns
+		 *            要查询的列名
+		 * @param selection
+		 *            查询条件 如：( id=?)
+		 * @param selectionArgs
+		 *            条件里的参数，用来替换"?"
+		 * @param orderBy
+		 *            排序 如：id desc
+		 * @return 返回Cursor
+		 */
+		Cursor c = db.query(true, Constants.TestTable.TABLE_NAME, new String[] {
+				Constants.TestTable.ID, Constants.TestTable.QUESTION,
+				Constants.TestTable.ANSWER }, Constants.TestTable.MARK + " =?",
+				new String[] { String.valueOf(1) }, null, null,
+				Constants.TestTable.ID + " ASC", null);
+		return c;
+	}
+
+	/**
+	 * 通过试题ID，查找表中指定的一条记录
+	 * 
+	 * @return Cursor
+	 */
 	public Cursor getMark(int id) {
 		/**
 		 * 查询数据
