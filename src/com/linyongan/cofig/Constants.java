@@ -34,4 +34,24 @@ public class Constants {
 		/** answer */
 		public static final String ANSWER = "answer";
 	}
+	public static class TestTable {
+		/** 表名 */
+		public static final String TABLE_NAME = "test";
+		/** id*/
+		public static final String ID = "_id";
+		/** 问题 */
+		public static final String  QUESTION= "question";
+		/** 选项1*/
+		public static final String OPTION1 = "option1";
+		/** 选项2*/
+		public static final String OPTION2 = "option2";
+		/** 选项3*/
+		public static final String OPTION3 = "option3";
+		/** 选项4*/
+		public static final String OPTION4 = "option4";
+		/** 收藏的标记*/
+		public static final String MARK = "mark";
+		/** 答案*/
+		public static final String ANSWER = "answer";
+	}
 }

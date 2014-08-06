@@ -1,11 +1,5 @@
 package com.linyongan.activity;
 
-import com.linyongan.activity.MainActivity;
-import com.linyongan.activity.R;
-import com.linyongan.cofig.Constants;
-import com.linyongan.sortlistview.SortModel;
-import com.linyongan.sql.QuestionDbManger;
-
 import android.app.Activity;
 import android.content.Intent;
 import android.database.Cursor;
@@ -15,16 +9,19 @@ import android.text.method.ScrollingMovementMethod;
 import android.view.Gravity;
 import android.view.KeyEvent;
 import android.view.View;
-import android.view.Window;
 import android.view.View.OnClickListener;
+import android.view.Window;
 import android.view.WindowManager.LayoutParams;
 import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ArrayAdapter;
 import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.PopupWindow;
 import android.widget.TextView;
-import android.widget.AdapterView.OnItemClickListener;
+
+import com.linyongan.cofig.Constants;
+import com.linyongan.sql.QuestionDbManger;
 
 /**
  * 常见问题页面

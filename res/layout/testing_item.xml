@@ -3,14 +3,16 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent" >
 
-    <LinearLayout
+    <RelativeLayout
+        android:id="@+id/testing_item_relativeLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@drawable/shape1"
-        android:orientation="vertical" >
+        android:layout_gravity="center"
+        android:layout_margin="5dp"
+        android:background="@drawable/shape1" >
 
         <TextView
-            android:id="@+id/textview1"
+            android:id="@+id/testing_item_textview1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:padding="5dp"
@@ -19,52 +21,71 @@
             android:textSize="16sp" />
 
         <RadioGroup
-            android:id="@+id/radioGroup"
+            android:id="@+id/testing_item_radioGroup"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/textview1" >
+            android:layout_below="@+id/testing_item_textview1" >
 
             <RadioButton
+                android:id="@+id/testing_item_radioButton1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="A.选项一"
                 android:textColor="@android:color/black" />
 
             <RadioButton
+                android:id="@+id/testing_item_radioButton2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="B.选项二"
                 android:textColor="@android:color/black" />
 
             <RadioButton
+                android:id="@+id/testing_item_radioButton3"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="C.选项三"
                 android:textColor="@android:color/black" />
 
             <RadioButton
+                android:id="@+id/testing_item_radioButton4"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="D.选项四"
                 android:textColor="@android:color/black" />
         </RadioGroup>
-    </LinearLayout>
+    </RelativeLayout>
 
     <TextView
-        android:id="@+id/textview3"
+        android:id="@+id/testing_item_right"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/editText"
-        android:padding="10dp"
-        android:text="下面可以添加笔记："
-        android:textColor="@android:color/black"
-        android:textSize="16sp" />
-
-    <EditText
-        android:id="@+id/editText"
-        android:layout_width="match_parent"
-        android:layout_height="100dp"
-        android:layout_alignParentBottom="true"
+        android:layout_height="wrap_content" 
+        android:paddingLeft="5dp"
+        android:text="你选择的答案正确."
+        android:visibility="gone"
+        android:drawableRight="@drawable/test_right"
+        android:textSize="20sp" 
+        android:layout_below="@+id/testing_item_relativeLayout"
         android:textColor="@android:color/black" />
-
+    <TextView
+        android:id="@+id/testing_item_wrong"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" 
+        android:visibility="gone"
+        android:paddingLeft="5dp"
+        android:text="你选择的答案错误."
+        android:drawableRight="@drawable/test_wrong"
+        android:textSize="20sp" 
+        android:layout_below="@+id/testing_item_relativeLayout"
+        android:textColor="@android:color/black" />
+    <TextView
+        android:id="@+id/testing_item_rightAnswer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" 
+        android:visibility="gone"
+        android:paddingLeft="5dp"
+        android:text="正确答案是"
+        android:textSize="20sp" 
+        android:layout_below="@+id/testing_item_wrong"
+        android:textColor="@android:color/black" />
 </RelativeLayout>

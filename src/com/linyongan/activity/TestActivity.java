@@ -1,15 +1,12 @@
 package com.linyongan.activity;
 
-import com.linyongan.activity.MainActivity;
-import com.linyongan.activity.R;
-
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.KeyEvent;
 import android.view.View;
-import android.view.Window;
 import android.view.View.OnClickListener;
+import android.view.Window;
 import android.widget.Button;
 import android.widget.ImageButton;
 
@@ -68,20 +65,26 @@ public class TestActivity extends Activity {
 				break;
 			case R.id.test_baseButton:
 				Intent intent2 = new Intent(TestActivity.this,
-						TestPaperActivity.class);
-				intent2.putExtra("mark", 12 + "");
+						TestingActivity.class);
+				int testNum2 = 120;
+				// 记得发送字符串！！！！！
+				intent2.putExtra("testNum", testNum2 + "");
 				startActivity(intent2);
 				break;
 			case R.id.test_advanceButton1:
 				Intent intent3 = new Intent(TestActivity.this,
-						TestPaperActivity.class);
-				intent3.putExtra("mark", 3 + "");
+						TestingActivity.class);
+				int testNum3 = 30;
+				// 记得发送字符串！！！！！
+				intent3.putExtra("testNum", testNum3 + "");
 				startActivity(intent3);
 				break;
 			case R.id.test_advanceButton2:
 				Intent intent4 = new Intent(TestActivity.this,
-						TestPaperActivity.class);
-				intent4.putExtra("mark", 9 + "");
+						TestingActivity.class);
+				int testNum4 = 90;
+				// 记得发送字符串！！！！！
+				intent4.putExtra("testNum", testNum4 + "");
 				startActivity(intent4);
 				break;
 			case R.id.test_collectButton:

@@ -58,9 +58,8 @@
             android:launchMode="singleTask"
             android:screenOrientation="landscape" >
         </activity>
-        <activity android:name="com.linyongan.activity.TestPaperActivity" >
-        </activity>
-        <activity android:name="com.linyongan.activity.TestingActivity" >
+        <activity android:name="com.linyongan.activity.TestingActivity"
+             android:launchMode="singleTask" >
         </activity>
          <activity android:name="com.linyongan.activity.TestCollectActivity" >
         </activity>
