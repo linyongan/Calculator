@@ -24,7 +24,7 @@ public class DerivativeActivity extends Activity {
 	private Button Button4;
 	/** 期权Delta值 */
 	private Button Button5;
-	/** 期权Delta值 */
+	/** 返回按钮 */
 	private ImageButton backButton;
 
 	@Override
@@ -100,8 +100,6 @@ public class DerivativeActivity extends Activity {
 
 	/** 返回上一个界面 */
 	private void goBack() {
-		Intent intent = new Intent(DerivativeActivity.this, MainActivity.class);
-		startActivity(intent);
 		finish();
 	}
 }

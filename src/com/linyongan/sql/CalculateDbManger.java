@@ -2,7 +2,7 @@ package com.linyongan.sql;
 
 
 import com.linyongan.cofig.Constants;
-import com.linyongan.model.Student;
+import com.linyongan.model.Calculate;
 
 import android.content.ContentValues;
 import android.content.Context;
@@ -11,13 +11,13 @@ import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
 import android.util.Log;
 
-public class StudentDbManger {
+public class CalculateDbManger {
 
-	private static final String TAG = "StudentDbManger";
+	private static final String TAG = "CalculateDbManger";
 	private static SQLiteDatabase db;
 	private static DBHelper helper;
 
-	public StudentDbManger(Context c) {
+	public CalculateDbManger(Context c) {
 		helper = new DBHelper(c, Constants.DATABASE_NAME, null,
 				Constants.Version);
 	}
@@ -47,12 +47,12 @@ public class StudentDbManger {
 	 * 
 	 * @return long 如果是正数则表示增加成功，反之不成功
 	 */
-	public long add(Student student) {
+	public long add(Calculate calculate) {
 		try {
 			ContentValues values = new ContentValues();
-			values.put(Constants.StudentTable.ID, student.getId());
-			values.put(Constants.StudentTable.Y, student.getY());
-			return db.insert(Constants.StudentTable.TABLE_NAME, null, values);
+			values.put(Constants.CalculateTable.ID, calculate.getId());
+			values.put(Constants.CalculateTable.Y, calculate.getY());
+			return db.insert(Constants.CalculateTable.TABLE_NAME, null, values);
 		} catch (Exception e) {
 			Log.e(TAG, e.getMessage());
 			return -1;
@@ -81,9 +81,9 @@ public class StudentDbManger {
 		 *            排序 如：id desc
 		 * @return 返回Cursor
 		 */
-		Cursor c = db.query(Constants.StudentTable.TABLE_NAME,
-				new String[] { Constants.StudentTable.Y },
-				Constants.StudentTable.ID + " =?", new String[] { x }, null, null, null);
+		Cursor c = db.query(Constants.CalculateTable.TABLE_NAME,
+				new String[] { Constants.CalculateTable.Y },
+				Constants.CalculateTable.ID + " =?", new String[] { x }, null, null, null);
 		return c;
 	}
 

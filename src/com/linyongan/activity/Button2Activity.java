@@ -13,6 +13,7 @@ import android.widget.ImageButton;
 import android.widget.RadioGroup;
 import android.widget.TableRow;
 import android.widget.TextView;
+import android.widget.Toast;
 
 /**
  * 期权到期收益页面
@@ -129,12 +130,15 @@ public class Button2Activity extends Activity {
 							Double.parseDouble(test5));
 					out_tv.setText("计算结果：\n(空头)认沽期权到期收益分布："
 							+ String.format("%.2f", -a));
-				}else if (mark == 2 && mark2 == 3 && test3.length() != 0
+				} else if (mark == 2 && mark2 == 3 && test3.length() != 0
 						&& test4.length() != 0) {
 					Double a = Double.parseDouble(test4)
 							- Double.parseDouble(test3);
 					out_tv.setText("计算结果：\n(空头)股票到期收益分布："
 							+ String.format("%.2f", a));
+				} else {
+					Toast.makeText(Button2Activity.this, "输入数字不能为空！",
+							Toast.LENGTH_SHORT).show();
 				}
 
 				break;
@@ -202,8 +206,8 @@ public class Button2Activity extends Activity {
 	}
 
 	/**
-	 * (多头)认沽期权到期收益分布
-	 * (空头)前面加个负号
+	 * (多头)认沽期权到期收益分布 (空头)前面加个负号
+	 * 
 	 * @param a
 	 *            标的资产到期价格
 	 * @param b
@@ -243,9 +247,6 @@ public class Button2Activity extends Activity {
 
 	/** 返回上一个界面 */
 	private void goBack() {
-		Intent intent = new Intent(Button2Activity.this,
-				DerivativeActivity.class);
-		startActivity(intent);
 		finish();
 	}
 }

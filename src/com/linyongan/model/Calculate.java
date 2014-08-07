@@ -1,11 +1,17 @@
 package com.linyongan.model;
 
-public class Student {
-	public Student() {
+/**
+ * 根据X获取Y值的实体类
+ * 
+ * @author yongan
+ * 
+ */
+public class Calculate {
+	public Calculate() {
 		super();
 	}
 
-	public Student(String id, String y) {
+	public Calculate(String id, String y) {
 		super();
 		this.id = id;
 		this.y = y;

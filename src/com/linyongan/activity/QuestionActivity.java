@@ -30,7 +30,9 @@ public class QuestionActivity extends Activity {
 	/** 返回按钮 */
 	private ImageButton backButton;
 	private ListView listView;
+	/** 数据库管理类 */
 	private QuestionDbManger dbManger;
+	/** 12个问题 */
 	private String[] strings = new String[12];
 	private int i = 0;
 
@@ -45,7 +47,6 @@ public class QuestionActivity extends Activity {
 		dbManger = new QuestionDbManger(this);
 		getQuestion();
 		listView.setOnItemClickListener(new OnItemClickListener() {
-
 			@Override
 			public void onItemClick(AdapterView<?> parent, View view,
 					int position, long id) {

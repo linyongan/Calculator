@@ -9,7 +9,7 @@
         android:id="@+id/question_show_tv"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
-        android:background="@drawable/shape1"
+        android:background="@drawable/shape_bg"
         android:padding="8dp"
         android:text="111"
         android:scrollbars="vertical" 
@@ -18,7 +18,7 @@
 
     <ImageButton
         android:id="@+id/question_closeButton"
-        android:layout_width="50dp"
+        android:layout_width="48dp"
         android:layout_height="50dp"
         android:layout_marginTop="-8dp"
         android:layout_marginRight="-8dp"

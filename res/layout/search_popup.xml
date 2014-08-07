@@ -9,7 +9,7 @@
         android:id="@+id/search_show_tv"
         android:layout_width="235dp"
         android:layout_height="wrap_content"
-        android:background="@drawable/shape1"
+        android:background="@drawable/shape_bg"
         android:padding="8dp"
         android:layout_marginTop="150dp"
         android:text="111"

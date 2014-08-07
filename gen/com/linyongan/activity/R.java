@@ -17,22 +17,25 @@ public final class R {
     public static final class attr {
     }
     public static final class color {
-        public static final int Grey=0x7f05000e;
+        public static final int Grey=0x7f05000d;
         public static final int LightGray=0x7f050009;
         public static final int alpha_00=0x7f050008;
-        public static final int background=0x7f05000c;
         public static final int black=0x7f050005;
         public static final int blue=0x7f050004;
+        public static final int group=0x7f050011;
+        public static final int layoutBackground=0x7f05000e;
         public static final int light_orange=0x7f050007;
         public static final int lucensy=0x7f050001;
         public static final int orange=0x7f050003;
         public static final int red=0x7f05000b;
+        public static final int result=0x7f050010;
+        public static final int tip=0x7f05000f;
         public static final int trans=0x7f05000a;
         public static final int translucency=0x7f050002;
         /**  <color name="red">#bf242a</color> 
          */
         public static final int transparent=0x7f050006;
-        public static final int transparent_background=0x7f05000d;
+        public static final int transparent_background=0x7f05000c;
         public static final int white=0x7f050000;
     }
     public static final class drawable {
@@ -386,21 +389,29 @@ public final class R {
         public static final int shape=0x7f02015b;
         public static final int shape1=0x7f02015c;
         public static final int shape2=0x7f02015d;
-        public static final int sidebar_background=0x7f02015e;
-        public static final int test_btn_normal=0x7f02015f;
-        public static final int test_btn_pressed=0x7f020160;
-        public static final int test_btn_selector=0x7f020161;
-        public static final int test_button1=0x7f020162;
-        public static final int test_button4=0x7f020163;
-        public static final int test_button5=0x7f020164;
-        public static final int test_commonbtn_normal=0x7f020165;
-        public static final int test_commonbtn_pressed=0x7f020166;
-        public static final int test_commonbtn_selector=0x7f020167;
-        public static final int test_right=0x7f020168;
-        public static final int test_wrong=0x7f020169;
-        public static final int testing_collect=0x7f02016a;
-        public static final int testing_discollect=0x7f02016b;
-        public static final int titlebar=0x7f02016c;
+        public static final int shape_bg=0x7f02015e;
+        public static final int shape_line=0x7f02015f;
+        public static final int sidebar_background=0x7f020160;
+        public static final int test_back_normal=0x7f020161;
+        public static final int test_back_pressed=0x7f020162;
+        public static final int test_back_selector=0x7f020163;
+        public static final int test_btn_normal=0x7f020164;
+        public static final int test_btn_pressed=0x7f020165;
+        public static final int test_btn_selector=0x7f020166;
+        public static final int test_button1=0x7f020167;
+        public static final int test_button4=0x7f020168;
+        public static final int test_button5=0x7f020169;
+        public static final int test_commonbtn_normal=0x7f02016a;
+        public static final int test_commonbtn_pressed=0x7f02016b;
+        public static final int test_commonbtn_selector=0x7f02016c;
+        public static final int test_next_normal=0x7f02016d;
+        public static final int test_next_pressed=0x7f02016e;
+        public static final int test_next_selector=0x7f02016f;
+        public static final int test_right=0x7f020170;
+        public static final int test_wrong=0x7f020171;
+        public static final int testing_collect=0x7f020172;
+        public static final int testing_discollect=0x7f020173;
+        public static final int titlebar=0x7f020174;
     }
     public static final class id {
         public static final int Button1_back_bn=0x7f080007;
@@ -564,22 +575,27 @@ public final class R {
         public static final int test_grade_item_name=0x7f0800b0;
         public static final int test_grade_item_time=0x7f0800af;
         public static final int test_grade_listview=0x7f0800ae;
-        public static final int testing_back_bn=0x7f0800b8;
-        public static final int testing_collect_bn=0x7f0800b9;
-        public static final int testing_collect_tv=0x7f0800ba;
-        public static final int testing_item1_btn=0x7f0800c7;
-        public static final int testing_item1_btn1=0x7f0800c8;
-        public static final int testing_item1_tv=0x7f0800c6;
-        public static final int testing_item_radioButton1=0x7f0800bf;
-        public static final int testing_item_radioButton2=0x7f0800c0;
-        public static final int testing_item_radioButton3=0x7f0800c1;
-        public static final int testing_item_radioButton4=0x7f0800c2;
-        public static final int testing_item_radioGroup=0x7f0800be;
-        public static final int testing_item_relativeLayout=0x7f0800bc;
-        public static final int testing_item_right=0x7f0800c3;
-        public static final int testing_item_rightAnswer=0x7f0800c5;
-        public static final int testing_item_textview1=0x7f0800bd;
-        public static final int testing_item_wrong=0x7f0800c4;
+        public static final int testing_back=0x7f0800be;
+        public static final int testing_back_bn=0x7f0800b9;
+        public static final int testing_collect_bn=0x7f0800ba;
+        public static final int testing_collect_tv=0x7f0800bb;
+        public static final int testing_computer=0x7f0800bf;
+        public static final int testing_item1_btn=0x7f0800cc;
+        public static final int testing_item1_btn1=0x7f0800cd;
+        public static final int testing_item1_tv=0x7f0800cb;
+        public static final int testing_item_radioButton1=0x7f0800c4;
+        public static final int testing_item_radioButton2=0x7f0800c5;
+        public static final int testing_item_radioButton3=0x7f0800c6;
+        public static final int testing_item_radioButton4=0x7f0800c7;
+        public static final int testing_item_radioGroup=0x7f0800c3;
+        public static final int testing_item_relativeLayout=0x7f0800c1;
+        public static final int testing_item_right=0x7f0800c8;
+        public static final int testing_item_rightAnswer=0x7f0800ca;
+        public static final int testing_item_textview1=0x7f0800c2;
+        public static final int testing_item_wrong=0x7f0800c9;
+        public static final int testing_next=0x7f0800c0;
+        public static final int testing_relativeLayout=0x7f0800b8;
+        public static final int testing_relativeLayout1=0x7f0800bd;
         public static final int title=0x7f0800a7;
         public static final int v_dot0=0x7f080077;
         public static final int v_dot1=0x7f080078;
@@ -602,7 +618,7 @@ public final class R {
         public static final int v_dot7=0x7f08007e;
         public static final int v_dot8=0x7f08007f;
         public static final int v_dot9=0x7f080080;
-        public static final int viewpager=0x7f0800bb;
+        public static final int viewpager=0x7f0800bc;
         public static final int vp=0x7f080076;
     }
     public static final class layout {

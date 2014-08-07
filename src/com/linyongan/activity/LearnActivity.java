@@ -19,8 +19,10 @@ import com.linyongan.adapter.ExpandableListAdapter;
 public class LearnActivity extends ExpandableListActivity {
 	/** 返回按钮 */
 	private ImageButton backButton;
-	private int[] imageResId; // 图片ID
-	private int[] dots; // 图片标题正文的那些点
+	/** 图片ID */
+	private int[] imageResId;
+	/** 图片标题正文的那些点 */
+	private int[] dots;
 	private int[] Dots = new int[] { R.id.v_dot0, R.id.v_dot1, R.id.v_dot2,
 			R.id.v_dot3, R.id.v_dot4, R.id.v_dot5, R.id.v_dot6, R.id.v_dot7,
 			R.id.v_dot8, R.id.v_dot9, R.id.v_dot10, R.id.v_dot11, R.id.v_dot12,
@@ -65,6 +67,11 @@ public class LearnActivity extends ExpandableListActivity {
 
 	}
 
+	/**
+	 * 设置图片的ID，然后调整到相应的页面
+	 * @author yongan
+	 *
+	 */
 	private class ExpandableListViewListener implements OnChildClickListener {
 
 		@Override
@@ -261,7 +268,7 @@ public class LearnActivity extends ExpandableListActivity {
 							R.drawable.advance0608, R.drawable.advance0609,
 							R.drawable.advance0610, R.drawable.advance0611,
 							R.drawable.advance0612, R.drawable.advance0613,
-							R.drawable.advance0614, R.drawable.advance0615};
+							R.drawable.advance0614, R.drawable.advance0615 };
 					break;
 				case 1:
 					imageResId = new int[] { R.drawable.advance0701,
@@ -269,7 +276,7 @@ public class LearnActivity extends ExpandableListActivity {
 							R.drawable.advance0704, R.drawable.advance0705,
 							R.drawable.advance0706, R.drawable.advance0707,
 							R.drawable.advance0708, R.drawable.advance0709,
-							R.drawable.advance0710, R.drawable.advance0711};
+							R.drawable.advance0710, R.drawable.advance0711 };
 					break;
 				case 2:
 					imageResId = new int[] { R.drawable.advance0801,
@@ -279,7 +286,7 @@ public class LearnActivity extends ExpandableListActivity {
 							R.drawable.advance0808, R.drawable.advance0809,
 							R.drawable.advance0810, R.drawable.advance0811,
 							R.drawable.advance0812, R.drawable.advance0813,
-							R.drawable.advance0814};
+							R.drawable.advance0814 };
 					break;
 				case 3:
 					imageResId = new int[] { R.drawable.advance0901,
@@ -289,7 +296,7 @@ public class LearnActivity extends ExpandableListActivity {
 							R.drawable.advance0908, R.drawable.advance0909,
 							R.drawable.advance0910, R.drawable.advance0911,
 							R.drawable.advance0912, R.drawable.advance0913,
-							R.drawable.advance0914};
+							R.drawable.advance0914 };
 					break;
 				case 4:
 					imageResId = new int[] { R.drawable.advance1001,
@@ -299,7 +306,7 @@ public class LearnActivity extends ExpandableListActivity {
 							R.drawable.advance1008, R.drawable.advance1009,
 							R.drawable.advance1010, R.drawable.advance1011,
 							R.drawable.advance1012, R.drawable.advance1013,
-							R.drawable.advance1014};
+							R.drawable.advance1014 };
 					break;
 				}
 				break;
@@ -308,7 +315,6 @@ public class LearnActivity extends ExpandableListActivity {
 			for (int i = 0; i < imageResId.length; i++) {
 				dots[i] = Dots[i];
 			}
-			System.out.println("---输出---");
 			Bundle b = new Bundle();
 			b.putIntArray("imageResId", imageResId);
 			b.putIntArray("dots", dots);

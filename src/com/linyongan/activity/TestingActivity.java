@@ -47,7 +47,7 @@ public class TestingActivity extends Activity {
 	/** 收藏返回按钮 */
 	private ImageButton collectButton;
 	/** 显示第几题 */
-	private int i = 1;
+	private int i = 0;
 	/** 收藏按钮的背景 */
 	private TextView collect_tv;
 	/** 数据库管理类 */
@@ -77,9 +77,8 @@ public class TestingActivity extends Activity {
 	/** 存储正确答案的数组 */
 	private String[] rightAnswers = new String[11];
 	/** 存储用户选择的答案的数组 */
-	private String[] answers = new String[11];
-	/** 标记，只加载一次 */
-	private boolean mark = true;
+	private String[] answers = new String[] { "", "", "", "", "", "", "", "",
+			"", "", "" };
 	/** 答案正确显示的文本 */
 	private TextView right_tv;
 	/** 答案错误显示的文本 */
@@ -87,6 +86,9 @@ public class TestingActivity extends Activity {
 	/** 显示答案正确 */
 	private TextView rightAnswer_tv;
 	private String name;
+	private ImageButton nextbutton;
+	private ImageButton backbutton;
+	private Button computerbutton;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -105,6 +107,12 @@ public class TestingActivity extends Activity {
 		backButton.setOnClickListener(new ButtonListener());
 		collectButton = (ImageButton) findViewById(R.id.testing_collect_bn);
 		collectButton.setOnClickListener(new ButtonListener());
+		nextbutton = (ImageButton) findViewById(R.id.testing_next);
+		nextbutton.setOnClickListener(new ButtonListener());
+		backbutton = (ImageButton) findViewById(R.id.testing_back);
+		backbutton.setOnClickListener(new ButtonListener());
+		computerbutton = (Button) findViewById(R.id.testing_computer);
+		computerbutton.setOnClickListener(new ButtonListener());
 		// 找到所有的TextView
 		collect_tv = (TextView) findViewById(R.id.testing_collect_tv);
 		// 找到所有的ViewPager
@@ -118,6 +126,7 @@ public class TestingActivity extends Activity {
 			newView();
 			i++;
 		}
+		addLastView();
 		i = i - 10;
 		System.out.println("onCreate（）---加载完成后的i:" + i);
 		adapter = new MyPagerAdapter();
@@ -197,65 +206,6 @@ public class TestingActivity extends Activity {
 			if (i < 10 && arg0 == 1) {
 				adapter.notifyDataSetChanged();
 			}
-			if (i == 10 && mark) {
-				mark = false;
-				View view = inflater.inflate(R.layout.testing_item1, null);
-				collect_tv.setBackgroundResource(R.drawable.testing_discollect);
-				final Button button = (Button) view
-						.findViewById(R.id.testing_item1_btn);
-				final TextView textView = (TextView) view
-						.findViewById(R.id.testing_item1_tv);
-				final Button button1 = (Button) view
-						.findViewById(R.id.testing_item1_btn1);
-				button.setOnClickListener(new OnClickListener() {
-
-					@Override
-					public void onClick(View v) {
-						// TODO Auto-generated method stub
-						int grade = changeView();
-						SimpleDateFormat formatter = new SimpleDateFormat(
-								"yyyy年MM月dd日 HH:mm:ss ");
-						Date curDate = new Date(System.currentTimeMillis());// 获取当前时间
-						String str = formatter.format(curDate);
-						System.out.println("获取当前时间" + str);
-						gradeDbManger.open();
-						Grade g = new Grade();
-						g.setTime(str);
-						g.setName(name);
-						g.setGrade(grade);
-						gradeDbManger.addGrade(g);
-						gradeDbManger.close();
-						if (grade >= 6) {
-							textView.setText("恭喜您！您已经通过本次测试，您一共答对了" + grade
-									+ "道题，您的分数是" + grade * 10
-									+ "分。您可以选择再次测试本难度，或者挑战下一个难度。");
-							textView.setVisibility(View.VISIBLE);
-							button1.setVisibility(View.VISIBLE);
-							button.setVisibility(View.GONE);
-						} else {
-							textView.setText("您一共答对了"
-									+ grade
-									+ "道题，您的分数是"
-									+ grade
-									* 10
-									+ "分。很遗憾，您没有通过本次测试，您可以点击下面的按钮，查看具体答题情况，或者点击返回键重新测试。");
-							textView.setVisibility(View.VISIBLE);
-							button1.setVisibility(View.VISIBLE);
-							button.setVisibility(View.GONE);
-						}
-					}
-				});
-				button1.setOnClickListener(new OnClickListener() {
-
-					@Override
-					public void onClick(View v) {
-						viewPager.setCurrentItem(0);
-						i = i - 10;
-					}
-				});
-				content.add(view);
-				adapter.notifyDataSetChanged();
-			}
 		}
 
 		@Override
@@ -269,9 +219,10 @@ public class TestingActivity extends Activity {
 					// 递减，向右侧滑动
 					right = false;
 					left = true;
-				} else if (lastValue == arg2) {
-					right = left = false;
-				}
+				} 
+//				else if (lastValue == arg2) {
+//					right = left = false;
+//				}
 			}
 			lastValue = arg2;
 
@@ -280,7 +231,7 @@ public class TestingActivity extends Activity {
 		@Override
 		public void onPageSelected(int arg0) {
 			// 页面跳转完成之后才调用的方法
-			if (left && i < 11) {
+			if (left && i < 10) {
 				i++;
 				System.out.println("页面跳转后----向左滑动，现在的i值:" + i);
 			}
@@ -290,9 +241,9 @@ public class TestingActivity extends Activity {
 			}
 
 			dbManger.open();
-			Cursor cursor = dbManger.getMark(id[i - 1]);
-			System.out.println("页面跳转后----现在的i值:" + i + " id[i - 1]的值："
-					+ id[i - 1]);
+			Cursor cursor = dbManger.getMark(id[i]);
+			System.out.println("页面跳转后获取mark的值----现在的i值:" + i + " id[i]的值："
+					+ id[i]);
 			if (cursor.moveToFirst()) {
 				String mark = cursor.getString(cursor
 						.getColumnIndex(Constants.TestTable.MARK));
@@ -334,25 +285,25 @@ public class TestingActivity extends Activity {
 
 				switch (checkedId) {
 				case R.id.testing_item_radioButton1:
-					answers[i - 1] = "A";
+					answers[i] = "A";
 					System.out.println("radioGroup监听器---现在的i值:" + i
-							+ " 选择的选项是： " + answers[i - 1]);
+							+ " 选择的选项是： " + answers[i]);
 
 					break;
 				case R.id.testing_item_radioButton2:
-					answers[i - 1] = "B";
+					answers[i] = "B";
 					System.out.println("radioGroup监听器---现在的i值:" + i
-							+ " 选择的选项是： " + answers[i - 1]);
+							+ " 选择的选项是： " + answers[i]);
 					break;
 				case R.id.testing_item_radioButton3:
-					answers[i - 1] = "C";
+					answers[i] = "C";
 					System.out.println("radioGroup监听器---现在的i值:" + i
-							+ " 选择的选项是： " + answers[i - 1]);
+							+ " 选择的选项是： " + answers[i]);
 					break;
 				case R.id.testing_item_radioButton4:
-					answers[i - 1] = "D";
+					answers[i] = "D";
 					System.out.println("radioGroup监听器---现在的i值:" + i
-							+ " 选择的选项是： " + answers[i - 1]);
+							+ " 选择的选项是： " + answers[i]);
 					break;
 				}
 			}
@@ -365,8 +316,8 @@ public class TestingActivity extends Activity {
 	 */
 	private void getData() {
 		dbManger.open();
-		Cursor cursor = dbManger.getTest(id[i - 1]);
-		System.out.println("获取数据----现在的i值:" + i + " id[i - 1]的值：" + id[i - 1]);
+		Cursor cursor = dbManger.getTest(id[i]);
+		System.out.println("获取数据----现在的i值:" + i + " id[i]的值：" + id[i]);
 		if (cursor.moveToFirst()) {
 			String Squestion = cursor.getString(cursor
 					.getColumnIndex(Constants.TestTable.QUESTION));
@@ -385,14 +336,76 @@ public class TestingActivity extends Activity {
 			System.out.println("--option2:-- " + Soption2);
 			System.out.println("--option3:-- " + Soption3);
 			System.out.println("--option4:-- " + Soption4);
-			question.setText(i + "、" + Squestion);
+			question.setText((i+1) + "、" + Squestion);
 			option1.setText(Soption1);
 			option2.setText(Soption2);
 			option3.setText(Soption3);
 			option4.setText(Soption4);
-			rightAnswers[i - 1] = Sanswer;
+			rightAnswers[i] = Sanswer;
 		}
 		dbManger.close();
+	}
+
+	/**
+	 * 加载最后一View
+	 */
+	private void addLastView() {
+		View view = inflater.inflate(R.layout.testing_item1, null);
+		collect_tv.setBackgroundResource(R.drawable.testing_discollect);
+		final Button button = (Button) view
+				.findViewById(R.id.testing_item1_btn);
+		final TextView textView = (TextView) view
+				.findViewById(R.id.testing_item1_tv);
+		final Button button1 = (Button) view
+				.findViewById(R.id.testing_item1_btn1);
+		button.setOnClickListener(new OnClickListener() {
+
+			@Override
+			public void onClick(View v) {
+				// TODO Auto-generated method stub
+				int grade = changeView();
+				SimpleDateFormat formatter = new SimpleDateFormat(
+						"yyyy年MM月dd日 HH:mm:ss ");
+				Date curDate = new Date(System.currentTimeMillis());// 获取当前时间
+				String str = formatter.format(curDate);
+				System.out.println("获取当前时间" + str);
+				gradeDbManger.open();
+				Grade g = new Grade();
+				g.setTime(str);
+				g.setName(name);
+				g.setGrade(grade * 10);
+				gradeDbManger.addGrade(g);
+				gradeDbManger.close();
+				if (grade >= 6) {
+					textView.setText("恭喜您！您已经通过本次测试，您一共答对了" + grade
+							+ "道题，您的分数是" + grade * 10
+							+ "分。您可以选择再次测试本难度，或者挑战下一个难度。");
+					textView.setVisibility(View.VISIBLE);
+					button1.setVisibility(View.VISIBLE);
+					button.setVisibility(View.GONE);
+				} else {
+					textView.setText("您一共答对了"
+							+ grade
+							+ "道题，您的分数是"
+							+ grade
+							* 10
+							+ "分。很遗憾，您没有通过本次测试，您可以点击下面的按钮，查看具体答题情况，或者点击返回键重新测试。");
+					textView.setVisibility(View.VISIBLE);
+					button1.setVisibility(View.VISIBLE);
+					button.setVisibility(View.GONE);
+				}
+			}
+		});
+		button1.setOnClickListener(new OnClickListener() {
+
+			@Override
+			public void onClick(View v) {
+				viewPager.setCurrentItem(0);
+				i = i - 10;
+				System.out.println("跳转到第一页之后----现在的i值:" + i);
+			}
+		});
+		content.add(view);
 	}
 
 	/**
@@ -406,14 +419,35 @@ public class TestingActivity extends Activity {
 		@Override
 		public void onClick(View v) {
 			switch (v.getId()) {
+			case R.id.testing_next:
+				if(i<10){
+					viewPager.setCurrentItem(i+1);
+				}else{
+					Toast.makeText(TestingActivity.this, "已经到达最后一页！",
+							Toast.LENGTH_SHORT).show();
+				}
+				break;
+			case R.id.testing_back:
+				if(i>0){
+					viewPager.setCurrentItem(i-1);
+				}else{
+					Toast.makeText(TestingActivity.this, "已经到达第一页！",
+							Toast.LENGTH_SHORT).show();
+				}
+				break;
+			case R.id.testing_computer:
+				Intent intent5 = new Intent(TestingActivity.this,
+						DerivativeActivity.class);
+				startActivity(intent5);
+				break;
 			case R.id.testing_back_bn:
 				goBack();
 				break;
 			case R.id.testing_collect_bn:
 				dbManger.open();
-				Cursor cursor = dbManger.getMark(id[i - 1]);
-				System.out.println("收藏按钮--现在的i值:" + i + " id[i - 1]的值："
-						+ id[i - 1]);
+				Cursor cursor = dbManger.getMark(id[i]);
+				System.out.println("收藏按钮--现在的i值:" + i + " id[i]的值："
+						+ id[i]);
 				if (cursor.moveToFirst()) {
 					String mark = cursor.getString(cursor
 							.getColumnIndex(Constants.TestTable.MARK));
@@ -423,7 +457,7 @@ public class TestingActivity extends Activity {
 						collect_tv
 								.setBackgroundResource(R.drawable.testing_collect);
 						Test test = new Test();
-						test.set_id(id[i - 1]);
+						test.set_id(id[i]);
 						test.setMark("1");
 						dbManger.updateMark(test);
 					} else {
@@ -432,7 +466,7 @@ public class TestingActivity extends Activity {
 						collect_tv
 								.setBackgroundResource(R.drawable.testing_discollect);
 						Test test = new Test();
-						test.set_id(id[i - 1]);
+						test.set_id(id[i]);
 						test.setMark("0");
 						dbManger.updateMark(test);
 					}
@@ -452,7 +486,10 @@ public class TestingActivity extends Activity {
 			wrong_tv = (TextView) view.findViewById(R.id.testing_item_wrong);
 			rightAnswer_tv = (TextView) view
 					.findViewById(R.id.testing_item_rightAnswer);
-			if (answers[x].equals(rightAnswers[x].substring(0, 1))) {
+			if (answers[x].length() == 0) {
+				rightAnswer_tv.setText("请选择答案，不要空着");
+				rightAnswer_tv.setVisibility(View.VISIBLE);
+			} else if (answers[x].equals(rightAnswers[x].substring(0, 1))) {
 				right_tv.setVisibility(View.VISIBLE);
 				result++;
 			} else {

@@ -15,7 +15,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.linyongan.cofig.Constants;
-import com.linyongan.sql.StudentDbManger;
+import com.linyongan.sql.CalculateDbManger;
 
 /**
  * 期权Delta值页面
@@ -43,7 +43,7 @@ public class Button5Activity extends Activity {
 	private EditText editText5;
 	/** 结果(文字) */
 	private TextView out_tv;
-	private StudentDbManger dbmanger;
+	private CalculateDbManger dbmanger;
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -51,7 +51,7 @@ public class Button5Activity extends Activity {
 		/* 设置全屏 */
 		requestWindowFeature(Window.FEATURE_NO_TITLE);
 		setContentView(R.layout.derivative5);
-		dbmanger = new StudentDbManger(this);
+		dbmanger = new CalculateDbManger(this);
 		// 找到所有的TextView
 		out_tv = (TextView) findViewById(R.id.Button5_out_tv);
 		// 找到所有的EditText
@@ -100,6 +100,9 @@ public class Button5Activity extends Activity {
 						out_tv.setText("计算结果：输入的数据有误，请重新输入！");
 					}
 
+				} else {
+					Toast.makeText(Button5Activity.this, "输入数字不能为空！",
+							Toast.LENGTH_SHORT).show();
 				}
 
 				break;
@@ -164,7 +167,7 @@ public class Button5Activity extends Activity {
 		Cursor cursor = dbmanger.search(string);
 		if (cursor.moveToFirst()) {
 			String string1 = cursor.getString(cursor
-					.getColumnIndex(Constants.StudentTable.Y));
+					.getColumnIndex(Constants.CalculateTable.Y));
 			System.out.println("--string1:-- " + string1);
 			return Double.parseDouble(string1);
 		} else {
@@ -203,9 +206,6 @@ public class Button5Activity extends Activity {
 
 	/** 返回上一个界面 */
 	private void goBack() {
-		Intent intent = new Intent(Button5Activity.this,
-				DerivativeActivity.class);
-		startActivity(intent);
 		finish();
 	}
 }

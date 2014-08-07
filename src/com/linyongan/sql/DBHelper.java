@@ -11,9 +11,9 @@ import android.util.Log;
 public class DBHelper extends SQLiteOpenHelper {
 
 	private static final String TAG = "DBHelper";
-	private final String STUDENT_TABLE = "create table if not exists "
-			+ Constants.StudentTable.TABLE_NAME + " ("
-			+ Constants.StudentTable.ID + " text , " + Constants.StudentTable.Y
+	private final String CALCULATE_TABLE = "create table if not exists "
+			+ Constants.CalculateTable.TABLE_NAME + " ("
+			+ Constants.CalculateTable.ID + " text , " + Constants.CalculateTable.Y
 			+ " text)";
 	private final String NOUN_TABLE = "create table if not exists "
 			+ Constants.NounTable.TABLE_NAME + " (" + Constants.NounTable.NAME
@@ -45,7 +45,7 @@ public class DBHelper extends SQLiteOpenHelper {
 	@Override
 	public void onCreate(SQLiteDatabase db) {
 		try {
-			db.execSQL(STUDENT_TABLE);
+			db.execSQL(CALCULATE_TABLE);
 			db.execSQL(NOUN_TABLE);
 			db.execSQL(QUESTION_TABLE);
 			db.execSQL(TEST_TABLE);

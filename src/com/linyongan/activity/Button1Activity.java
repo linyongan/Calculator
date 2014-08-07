@@ -16,7 +16,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.linyongan.cofig.Constants;
-import com.linyongan.sql.StudentDbManger;
+import com.linyongan.sql.CalculateDbManger;
 
 /**
  * 期权理论价格页面
@@ -49,7 +49,8 @@ public class Button1Activity extends Activity {
 	private EditText editText5;
 	/** 结果(文字) */
 	private TextView out_tv;
-	private StudentDbManger dbmanger;
+	/** 数据库操作类 */
+	private CalculateDbManger dbmanger;
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -57,7 +58,7 @@ public class Button1Activity extends Activity {
 		/* 设置全屏 */
 		requestWindowFeature(Window.FEATURE_NO_TITLE);
 		setContentView(R.layout.derivative1);
-		dbmanger = new StudentDbManger(this);
+		dbmanger = new CalculateDbManger(this);
 		// 找到所有的TextView
 		out_tv = (TextView) findViewById(R.id.Button1_out_tv);
 		// 找到所有的EditText
@@ -119,7 +120,7 @@ public class Button1Activity extends Activity {
 							Double.parseDouble(test5));
 					if (mark2 == 1) {
 						out_tv.setText("计算结果：\n认购期权理论价格为："
-								+ String.format("%.2f", a-0.005));
+								+ String.format("%.2f", a - 0.005));
 					} else {
 						out_tv.setText("计算结果：输入的数据有误，请重新输入！");
 					}
@@ -135,7 +136,7 @@ public class Button1Activity extends Activity {
 							Double.parseDouble(test5));
 					if (mark2 == 1) {
 						out_tv.setText("计算结果：\n认沽期权理论价格为："
-								+ String.format("%.2f", a-0.005));
+								+ String.format("%.2f", a - 0.005));
 					} else {
 						out_tv.setText("计算结果：输入的数据有误，请重新输入！");
 					}
@@ -236,7 +237,7 @@ public class Button1Activity extends Activity {
 		Cursor cursor = dbmanger.search(string);
 		if (cursor.moveToFirst()) {
 			String string1 = cursor.getString(cursor
-					.getColumnIndex(Constants.StudentTable.Y));
+					.getColumnIndex(Constants.CalculateTable.Y));
 			System.out.println("--string1:-- " + string1);
 			return Double.parseDouble(string1);
 		} else {
@@ -275,9 +276,6 @@ public class Button1Activity extends Activity {
 
 	/** 返回上一个界面 */
 	private void goBack() {
-		Intent intent = new Intent(Button1Activity.this,
-				DerivativeActivity.class);
-		startActivity(intent);
 		finish();
 	}
 }

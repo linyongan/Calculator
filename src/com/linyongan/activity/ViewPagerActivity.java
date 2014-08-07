@@ -17,14 +17,18 @@ import android.widget.ImageView;
 import android.widget.ImageView.ScaleType;
 
 /**
- * 图片左右滑动
+ * 期权学堂：图片左右滑动
  */
 public class ViewPagerActivity extends Activity {
-	private ViewPager viewPager; // android-support-v4中的滑动组件
-	private List<ImageView> imageViews; // 滑动的图片集合
-	private int[] imageResId; // 图片ID
-	private List<View> dots; // 图片标题正文的那些点
-	private int currentItem = 0; // 当前图片的索引号
+	private ViewPager viewPager;
+	/** 滑动的图片集合 */
+	private List<ImageView> imageViews;
+	/** 图片ID */
+	private int[] imageResId;
+	/** 图片标题正文的那些点 */
+	private List<View> dots;
+	/** 当前图片的索引号 */
+	private int currentItem = 0;
 
 	private ScheduledExecutorService scheduledExecutorService;
 
@@ -40,6 +44,7 @@ public class ViewPagerActivity extends Activity {
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.learn_viewpage);
+		//获取传递过来的图片ID
 		Bundle b = this.getIntent().getExtras();
 		imageResId = b.getIntArray("imageResId");
 		dot = b.getIntArray("dots");
@@ -51,7 +56,7 @@ public class ViewPagerActivity extends Activity {
 			imageView.setScaleType(ScaleType.CENTER_CROP);
 			imageViews.add(imageView);
 		}
-
+        //找到所有的点
 		dots = new ArrayList<View>();
 		for (int i = 0; i < dot.length; i++) {
 			findViewById(dot[i]).setVisibility(View.VISIBLE);

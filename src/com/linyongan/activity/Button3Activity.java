@@ -801,9 +801,6 @@ public class Button3Activity extends Activity {
 
 	/** 返回上一个界面 */
 	private void goBack() {
-		Intent intent = new Intent(Button3Activity.this,
-				DerivativeActivity.class);
-		startActivity(intent);
 		finish();
 	}
 

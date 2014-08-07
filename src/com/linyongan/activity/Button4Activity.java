@@ -12,6 +12,7 @@ import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 /**
  * 保证金页面
@@ -119,6 +120,9 @@ public class Button4Activity extends Activity {
 							Double.parseDouble(test4));
 					System.out.println("--a:-- " + a);
 					out_tv.setText("计算结果：\n保证金为：" + String.format("%.2f", a));
+				} else {
+					Toast.makeText(Button4Activity.this, "输入数字不能为空！",
+							Toast.LENGTH_SHORT).show();
 				}
 
 				break;
@@ -259,9 +263,6 @@ public class Button4Activity extends Activity {
 
 	/** 返回上一个界面 */
 	private void goBack() {
-		Intent intent = new Intent(Button4Activity.this,
-				DerivativeActivity.class);
-		startActivity(intent);
 		finish();
 	}
 }

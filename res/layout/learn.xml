@@ -2,7 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@android:color/white"
+    android:background="@color/layoutBackground"
     android:orientation="vertical" >
 
     <RelativeLayout
@@ -52,8 +52,9 @@
         android:layout_margin="10dp"
         android:cacheColorHint="@null"
         android:childIndicatorLeft="0dp"
+        android:childDivider="@drawable/shape_line"
         android:divider="@color/Grey"
-        android:dividerHeight="1dp"
+        android:dividerHeight="0.75dp"
         android:groupIndicator="@null"
         android:scrollbarAlwaysDrawHorizontalTrack="true" >
     </ExpandableListView>
