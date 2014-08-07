@@ -66,6 +66,7 @@ public class TestingActivity extends Activity {
 	private RadioGroup radioGroup;
 	/** 正在滑动 */
 	private boolean isScrolling = false;
+	private boolean buttoncontrol = false;
 	private int lastValue = -1;
 	/** 向左滑动 */
 	private boolean left = false;
@@ -215,14 +216,17 @@ public class TestingActivity extends Activity {
 					// 递减，向右侧滑动
 					right = true;
 					left = false;
+					buttoncontrol = false;
 				} else if (lastValue < arg2) {
 					// 递减，向右侧滑动
 					right = false;
 					left = true;
+					buttoncontrol = false;
 				} 
-//				else if (lastValue == arg2) {
-//					right = left = false;
-//				}
+				else if (lastValue == arg2) {
+					right = left = false;
+					buttoncontrol = true;
+				}
 			}
 			lastValue = arg2;
 
@@ -231,11 +235,11 @@ public class TestingActivity extends Activity {
 		@Override
 		public void onPageSelected(int arg0) {
 			// 页面跳转完成之后才调用的方法
-			if (left && i < 10) {
+			if (left && i < 10&&!buttoncontrol) {
 				i++;
 				System.out.println("页面跳转后----向左滑动，现在的i值:" + i);
 			}
-			if (right) {
+			if (right&&!buttoncontrol) {
 				i--;
 				System.out.println("页面跳转后----向右滑动，现在的i值:" + i);
 			}
@@ -420,16 +424,20 @@ public class TestingActivity extends Activity {
 		public void onClick(View v) {
 			switch (v.getId()) {
 			case R.id.testing_next:
+				buttoncontrol = true;
 				if(i<10){
-					viewPager.setCurrentItem(i+1);
+					i=i+1;
+					viewPager.setCurrentItem(i);
 				}else{
 					Toast.makeText(TestingActivity.this, "已经到达最后一页！",
 							Toast.LENGTH_SHORT).show();
 				}
 				break;
 			case R.id.testing_back:
+				buttoncontrol = true;
 				if(i>0){
-					viewPager.setCurrentItem(i-1);
+					i=i-1;
+					viewPager.setCurrentItem(i);
 				}else{
 					Toast.makeText(TestingActivity.this, "已经到达第一页！",
 							Toast.LENGTH_SHORT).show();
