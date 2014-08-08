@@ -78,7 +78,7 @@
                 android:id="@+id/loan_RadioGroup"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@drawable/shape"
+                android:background="@drawable/shape_bg"
                 android:orientation="horizontal" >
 
                 <RadioButton
@@ -103,7 +103,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
-                android:background="@drawable/shape" >
+                android:background="@drawable/shape_bg" >
 
                 <TableRow
                     android:layout_width="match_parent"
@@ -174,7 +174,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
-                android:background="@drawable/shape"
+                android:background="@drawable/shape_bg"
                 android:padding="8dp"
                 android:text="功能介绍：\n先选择还款方式，然后输入相应的数据就可以进行计算"
                 android:textColor="#1E90FF"

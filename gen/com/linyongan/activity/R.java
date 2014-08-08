@@ -386,32 +386,29 @@ public final class R {
         public static final int search_bar_icon_normal=0x7f020158;
         public static final int selector_group=0x7f020159;
         public static final int selector_item=0x7f02015a;
-        public static final int shape=0x7f02015b;
-        public static final int shape1=0x7f02015c;
-        public static final int shape2=0x7f02015d;
-        public static final int shape_bg=0x7f02015e;
-        public static final int shape_line=0x7f02015f;
-        public static final int sidebar_background=0x7f020160;
-        public static final int test_back_normal=0x7f020161;
-        public static final int test_back_pressed=0x7f020162;
-        public static final int test_back_selector=0x7f020163;
-        public static final int test_btn_normal=0x7f020164;
-        public static final int test_btn_pressed=0x7f020165;
-        public static final int test_btn_selector=0x7f020166;
-        public static final int test_button1=0x7f020167;
-        public static final int test_button4=0x7f020168;
-        public static final int test_button5=0x7f020169;
-        public static final int test_commonbtn_normal=0x7f02016a;
-        public static final int test_commonbtn_pressed=0x7f02016b;
-        public static final int test_commonbtn_selector=0x7f02016c;
-        public static final int test_next_normal=0x7f02016d;
-        public static final int test_next_pressed=0x7f02016e;
-        public static final int test_next_selector=0x7f02016f;
-        public static final int test_right=0x7f020170;
-        public static final int test_wrong=0x7f020171;
-        public static final int testing_collect=0x7f020172;
-        public static final int testing_discollect=0x7f020173;
-        public static final int titlebar=0x7f020174;
+        public static final int shape_bg=0x7f02015b;
+        public static final int shape_line=0x7f02015c;
+        public static final int sidebar_background=0x7f02015d;
+        public static final int test_back_normal=0x7f02015e;
+        public static final int test_back_pressed=0x7f02015f;
+        public static final int test_back_selector=0x7f020160;
+        public static final int test_btn_normal=0x7f020161;
+        public static final int test_btn_pressed=0x7f020162;
+        public static final int test_btn_selector=0x7f020163;
+        public static final int test_button1=0x7f020164;
+        public static final int test_button4=0x7f020165;
+        public static final int test_button5=0x7f020166;
+        public static final int test_commonbtn_normal=0x7f020167;
+        public static final int test_commonbtn_pressed=0x7f020168;
+        public static final int test_commonbtn_selector=0x7f020169;
+        public static final int test_next_normal=0x7f02016a;
+        public static final int test_next_pressed=0x7f02016b;
+        public static final int test_next_selector=0x7f02016c;
+        public static final int test_right=0x7f02016d;
+        public static final int test_wrong=0x7f02016e;
+        public static final int testing_collect=0x7f02016f;
+        public static final int testing_discollect=0x7f020170;
+        public static final int titlebar=0x7f020171;
     }
     public static final class id {
         public static final int Button1_back_bn=0x7f080007;
@@ -661,11 +658,13 @@ public final class R {
         /** 
         Base application theme, dependent on API level. This theme is replaced
         by AppBaseTheme from res/values-vXX/styles.xml on newer devices.
+
     
 
             Theme customizations available in newer API levels can go in
             res/values-vXX/styles.xml, while customizations related to
             backward-compatibility can go here.
+
         
          */
         public static final int AppBaseTheme=0x7f070000;

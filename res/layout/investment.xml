@@ -81,7 +81,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="80dp"
                 android:layout_marginTop="5dp"
-                android:background="@drawable/shape"
+                android:background="@drawable/shape_bg"
                 android:padding="8dp"
                 android:text="功能介绍"
                 android:textColor="@android:color/black"

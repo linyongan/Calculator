@@ -69,7 +69,7 @@
     <RelativeLayout
         android:id="@+id/testing_relativeLayout1"
         android:layout_width="match_parent"
-        android:layout_height="38dp"
+        android:layout_height="40dp"
         android:layout_marginLeft="45dp"
         android:layout_marginRight="45dp"
         android:layout_alignParentBottom="true"
@@ -77,8 +77,8 @@
 
         <ImageButton
             android:id="@+id/testing_back"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
             android:layout_alignParentLeft="true"
             android:layout_centerInParent="true"
             android:layout_marginLeft="10dip"
@@ -87,7 +87,7 @@
         <Button
             android:id="@+id/testing_computer"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:layout_centerInParent="true"
             android:background="@android:color/transparent"
             android:text="计算器"
@@ -96,8 +96,8 @@
 
         <ImageButton
             android:id="@+id/testing_next"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
             android:layout_alignParentRight="true"
             android:layout_centerInParent="true"
             android:layout_marginRight="10dip"
