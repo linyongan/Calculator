@@ -1,7 +1,6 @@
-package com.linyongan.test;
+package com.linyongan.activity;
 
 
-import com.linyongan.activity.MainActivity;
 import com.linyongan.activity.R;
 import android.app.Activity;
 import android.content.Intent;
@@ -342,7 +341,7 @@ public class FinanceActivity extends Activity {
 
 	/** 返回上一个界面 */
 	private void goBack() {
-		Intent intent = new Intent(FinanceActivity.this, MainActivity.class);
+		Intent intent = new Intent(FinanceActivity.this, DerivativeActivity.class);
 		startActivity(intent);
 		finish();
 	}

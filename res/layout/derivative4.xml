@@ -78,7 +78,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@drawable/shape_bg"
-                android:orientation="vertical"
+                android:orientation="horizontal"
                 android:paddingLeft="2dp" >
 
                 <RadioButton
@@ -86,7 +86,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_vertical"
-                    android:text="股票期权义务仓合约维持保证金"
+                    android:text="股票期权"
                     android:textColor="@android:color/black" />
 
                 <RadioButton
@@ -94,7 +94,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_vertical"
-                    android:text="ETF期权义务合约维持保证金"
+                    android:text="ETF期权"
                     android:textColor="@android:color/black" />
             </RadioGroup>
 
@@ -104,7 +104,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
                 android:background="@drawable/shape_bg"
-                android:orientation="vertical"
+                android:orientation="horizontal"
                 android:paddingLeft="2dp" >
 
                 <RadioButton
@@ -112,7 +112,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_vertical"
-                    android:text="认购期权义务仓持仓维持保证金"
+                    android:text="认购期权"
                     android:textColor="@android:color/black" />
 
                 <RadioButton
@@ -120,7 +120,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_vertical"
-                    android:text="认沽期权义务仓持仓维持保证金"
+                    android:text="认沽期权"
                     android:textColor="@android:color/black" />
             </RadioGroup>
 

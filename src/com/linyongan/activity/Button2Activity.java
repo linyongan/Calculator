@@ -1,12 +1,11 @@
 package com.linyongan.activity;
 
 import android.app.Activity;
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.KeyEvent;
 import android.view.View;
-import android.view.Window;
 import android.view.View.OnClickListener;
+import android.view.Window;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
@@ -101,40 +100,40 @@ public class Button2Activity extends Activity {
 					Double a = calculate1(Double.parseDouble(test1),
 							Double.parseDouble(test2),
 							Double.parseDouble(test5));
-					out_tv.setText("计算结果：\n(多头)认购期权到期收益分布："
+					out_tv.setText("计算结果：\n(多头)认购期权到期收益："
 							+ String.format("%.2f", a));
 				} else if (mark == 1 && mark2 == 2 && test1.length() != 0
 						&& test2.length() != 0 && test5.length() != 0) {
 					Double a = calculate2(Double.parseDouble(test1),
 							Double.parseDouble(test2),
 							Double.parseDouble(test5));
-					out_tv.setText("计算结果：\n(多头)认沽期权到期收益分布："
+					out_tv.setText("计算结果：\n(多头)认沽期权到期收益："
 							+ String.format("%.2f", a));
 				} else if (mark == 1 && mark2 == 3 && test3.length() != 0
 						&& test4.length() != 0) {
 					Double a = Double.parseDouble(test3)
 							- Double.parseDouble(test4);
-					out_tv.setText("计算结果：\n(多头)股票到期收益分布："
+					out_tv.setText("计算结果：\n(多头)股票到期收益："
 							+ String.format("%.2f", a));
 				} else if (mark == 2 && mark2 == 1 && test1.length() != 0
 						&& test2.length() != 0 && test5.length() != 0) {
 					Double a = calculate1(Double.parseDouble(test1),
 							Double.parseDouble(test2),
 							Double.parseDouble(test5));
-					out_tv.setText("计算结果：\n(空头)认购期权到期收益分布："
+					out_tv.setText("计算结果：\n(空头)认购期权到期收益："
 							+ String.format("%.2f", -a));
 				} else if (mark == 2 && mark2 == 2 && test1.length() != 0
 						&& test2.length() != 0 && test5.length() != 0) {
 					Double a = calculate2(Double.parseDouble(test1),
 							Double.parseDouble(test2),
 							Double.parseDouble(test5));
-					out_tv.setText("计算结果：\n(空头)认沽期权到期收益分布："
+					out_tv.setText("计算结果：\n(空头)认沽期权到期收益："
 							+ String.format("%.2f", -a));
 				} else if (mark == 2 && mark2 == 3 && test3.length() != 0
 						&& test4.length() != 0) {
 					Double a = Double.parseDouble(test4)
 							- Double.parseDouble(test3);
-					out_tv.setText("计算结果：\n(空头)股票到期收益分布："
+					out_tv.setText("计算结果：\n(空头)股票到期收益："
 							+ String.format("%.2f", a));
 				} else {
 					Toast.makeText(Button2Activity.this, "输入数字不能为空！",

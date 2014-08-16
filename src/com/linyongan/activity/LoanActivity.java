@@ -1,7 +1,6 @@
-package com.linyongan.test;
+package com.linyongan.activity;
 
 
-import com.linyongan.activity.MainActivity;
 import com.linyongan.activity.R;
 import android.app.Activity;
 import android.content.Intent;
@@ -236,7 +235,7 @@ public class LoanActivity extends Activity {
 
 	/** 返回上一个界面 */
 	private void goBack() {
-		Intent intent = new Intent(LoanActivity.this, MainActivity.class);
+		Intent intent = new Intent(LoanActivity.this, DerivativeActivity.class);
 		startActivity(intent);
 		finish();
 	}

@@ -24,6 +24,14 @@ public class DerivativeActivity extends Activity {
 	private Button Button4;
 	/** 期权Delta值 */
 	private Button Button5;
+	/** 内在价值&时间价值 */
+	private Button Button6;
+	/** Delta&杠杆倍数 */
+	private Button Button7;
+	/** 个人理财 */
+	private Button Button8;
+	/** 贷款计算 */
+	private Button Button9;
 	/** 返回按钮 */
 	private ImageButton backButton;
 
@@ -39,12 +47,20 @@ public class DerivativeActivity extends Activity {
 		Button3 = (Button) findViewById(R.id.derivative_Button3);
 		Button4 = (Button) findViewById(R.id.derivative_Button4);
 		Button5 = (Button) findViewById(R.id.derivative_Button5);
+		Button6 = (Button) findViewById(R.id.derivative_Button6);
+		Button7 = (Button) findViewById(R.id.derivative_Button7);
+		Button8 = (Button) findViewById(R.id.derivative_Button8);
+		Button9 = (Button) findViewById(R.id.derivative_Button9);
 		backButton = (ImageButton) findViewById(R.id.derivative_back_bn);
 		Button1.setOnClickListener(new ButtonListener());
 		Button2.setOnClickListener(new ButtonListener());
 		Button3.setOnClickListener(new ButtonListener());
 		Button4.setOnClickListener(new ButtonListener());
 		Button5.setOnClickListener(new ButtonListener());
+		Button6.setOnClickListener(new ButtonListener());
+		Button7.setOnClickListener(new ButtonListener());
+		Button8.setOnClickListener(new ButtonListener());
+		Button9.setOnClickListener(new ButtonListener());
 		backButton.setOnClickListener(new ButtonListener());
 	}
 
@@ -76,6 +92,26 @@ public class DerivativeActivity extends Activity {
 				Intent intent5 = new Intent(DerivativeActivity.this,
 						Button5Activity.class);
 				startActivity(intent5);
+				break;
+			case R.id.derivative_Button6:
+				Intent intent6 = new Intent(DerivativeActivity.this,
+						Button6Activity.class);
+				startActivity(intent6);
+				break;
+			case R.id.derivative_Button7:
+				Intent intent7 = new Intent(DerivativeActivity.this,
+						Button7Activity.class);
+				startActivity(intent7);
+				break;
+			case R.id.derivative_Button8:
+				Intent intent8 = new Intent(DerivativeActivity.this,
+						FinanceActivity.class);
+				startActivity(intent8);
+				break;
+			case R.id.derivative_Button9:
+				Intent intent9 = new Intent(DerivativeActivity.this,
+						LoanActivity.class);
+				startActivity(intent9);
 				break;
 			case R.id.derivative_back_bn:
 				goBack();
