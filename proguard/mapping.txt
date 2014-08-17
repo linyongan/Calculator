@@ -1277,11 +1277,6 @@ android.support.v4.widget.ViewDragHelper$Callback -> android.support.v4.widget.u
     boolean tryCaptureView$5359dc96(android.view.View) -> a
     int clampViewPositionHorizontal$17e143b0(android.view.View,int) -> b
     int clampViewPositionVertical$17e143b0(android.view.View) -> d
-com.linyongan.achartengine.AbstractDemoChart -> com.linyongan.a.a:
-    org.achartengine.model.XYMultipleSeriesDataset buildDataset(java.lang.String[],java.util.List,java.util.List) -> a
-    org.achartengine.renderer.XYMultipleSeriesRenderer buildRenderer(int[],org.achartengine.chart.PointStyle[]) -> a
-com.linyongan.achartengine.IDemoChart -> com.linyongan.a.b:
-    android.content.Intent execute(android.content.Context) -> a
 com.linyongan.activity.AboutActivity -> com.linyongan.activity.AboutActivity:
     android.widget.ImageButton backButton -> a
     void onCreate(android.os.Bundle) -> onCreate
@@ -1374,160 +1369,94 @@ com.linyongan.activity.Button3Activity -> com.linyongan.activity.Button3Activity
     android.widget.ImageButton backButton -> a
     android.widget.ImageButton cleanButton -> b
     android.widget.Button calculateButton -> c
-    android.widget.Button showButton -> d
-    android.widget.Spinner spinner1 -> e
-    android.widget.Spinner spinner3 -> f
-    android.widget.Spinner spinner5 -> g
-    android.widget.Spinner spinner7 -> h
-    android.widget.Spinner spinner2 -> i
-    android.widget.Spinner spinner4 -> j
-    android.widget.Spinner spinner6 -> k
-    android.widget.Spinner spinner8 -> l
-    android.widget.EditText editText1 -> m
-    android.widget.EditText editText2 -> n
-    android.widget.EditText editText3 -> o
-    android.widget.EditText editText4 -> p
-    android.widget.EditText editText5 -> q
-    android.widget.EditText editText6 -> r
-    android.widget.EditText editText7 -> s
-    android.widget.EditText editText8 -> t
-    android.widget.EditText editText9 -> u
-    android.widget.EditText editText10 -> v
-    android.widget.EditText editText11 -> w
-    android.widget.EditText editText12 -> x
-    android.widget.TextView out_tv -> y
-    int mark1 -> z
-    int mark3 -> A
-    int mark5 -> B
-    int mark7 -> C
-    int mark2 -> D
-    int mark4 -> E
-    int mark6 -> F
-    int mark8 -> G
-    double[] result1 -> H
-    double[] result2 -> I
-    double[] result3 -> J
-    double[] result4 -> K
-    java.lang.String test1 -> L
-    java.lang.String test4 -> M
-    java.lang.String test7 -> N
-    java.lang.String test10 -> O
-    java.lang.String test3 -> P
-    java.lang.String test6 -> Q
-    java.lang.String test9 -> R
-    java.lang.String test12 -> S
+    android.widget.Spinner spinner -> d
+    int mark -> e
+    int mark1 -> f
+    int mark2 -> g
+    int mark3 -> h
+    android.widget.RadioGroup group1 -> i
+    android.widget.RadioGroup group2 -> j
+    android.widget.RadioGroup group3 -> k
+    android.widget.LinearLayout include1 -> l
+    android.widget.LinearLayout include2 -> m
+    android.widget.LinearLayout include3 -> n
+    android.widget.LinearLayout include4 -> o
+    android.widget.LinearLayout include5 -> p
+    android.widget.EditText editText1 -> q
+    android.widget.EditText editText2 -> r
+    android.widget.EditText editText3 -> s
+    android.widget.EditText editText4 -> t
+    android.widget.EditText editText5 -> u
+    android.widget.EditText editText6 -> v
+    android.widget.EditText editText7 -> w
+    android.widget.EditText editText8 -> x
+    android.widget.EditText editText9 -> y
+    android.widget.EditText editText10 -> z
+    android.widget.EditText editText11 -> A
+    android.widget.EditText editText12 -> B
+    android.widget.EditText editText13 -> C
+    android.widget.EditText editText14 -> D
+    android.widget.EditText editText15 -> E
+    android.widget.EditText editText16 -> F
+    android.widget.EditText editText17 -> G
+    android.widget.EditText editText18 -> H
+    android.widget.EditText editText19 -> I
+    android.widget.EditText editText20 -> J
+    android.widget.EditText editText21 -> K
+    android.widget.EditText editText22 -> L
+    android.widget.TextView out_tv -> M
     void onCreate(android.os.Bundle) -> onCreate
-    double arrayAll(double[]) -> d
-    double[] All() -> a
-    double arrayMax(double[]) -> e
+    void setGone() -> a
     boolean dispatchKeyEvent(android.view.KeyEvent) -> dispatchKeyEvent
-    int length(java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object) -> a
-    java.lang.String getAllName(int,int,java.lang.String,java.lang.String) -> a
-    android.widget.EditText access$0(com.linyongan.activity.Button3Activity) -> a
-    void access$1(com.linyongan.activity.Button3Activity,java.lang.String) -> a
-    android.widget.EditText access$2(com.linyongan.activity.Button3Activity) -> b
-    android.widget.EditText access$3(com.linyongan.activity.Button3Activity) -> c
-    void access$4(com.linyongan.activity.Button3Activity,java.lang.String) -> b
-    android.widget.EditText access$5(com.linyongan.activity.Button3Activity) -> d
-    void access$6(com.linyongan.activity.Button3Activity,java.lang.String) -> c
-    android.widget.EditText access$7(com.linyongan.activity.Button3Activity) -> e
-    android.widget.EditText access$8(com.linyongan.activity.Button3Activity) -> f
-    void access$9(com.linyongan.activity.Button3Activity,java.lang.String) -> d
-    android.widget.EditText access$10(com.linyongan.activity.Button3Activity) -> g
-    void access$11(com.linyongan.activity.Button3Activity,java.lang.String) -> e
-    android.widget.EditText access$12(com.linyongan.activity.Button3Activity) -> h
-    android.widget.EditText access$13(com.linyongan.activity.Button3Activity) -> i
-    void access$14(com.linyongan.activity.Button3Activity,java.lang.String) -> f
-    android.widget.EditText access$15(com.linyongan.activity.Button3Activity) -> j
-    void access$16(com.linyongan.activity.Button3Activity,java.lang.String) -> g
-    android.widget.EditText access$17(com.linyongan.activity.Button3Activity) -> k
-    android.widget.EditText access$18(com.linyongan.activity.Button3Activity) -> l
-    void access$19(com.linyongan.activity.Button3Activity,java.lang.String) -> h
-    android.widget.Button access$20(com.linyongan.activity.Button3Activity) -> m
-    int access$21(com.linyongan.activity.Button3Activity) -> n
-    java.lang.String access$22(com.linyongan.activity.Button3Activity) -> o
-    java.lang.String access$23(com.linyongan.activity.Button3Activity) -> p
-    java.lang.String access$24$2a48639d(int,java.lang.String,java.lang.String,java.lang.String) -> a
-    int access$25(com.linyongan.activity.Button3Activity) -> q
-    java.lang.String access$26(com.linyongan.activity.Button3Activity) -> r
-    java.lang.String access$27(com.linyongan.activity.Button3Activity) -> s
-    int access$28(com.linyongan.activity.Button3Activity) -> t
-    java.lang.String access$29(com.linyongan.activity.Button3Activity) -> u
-    java.lang.String access$30(com.linyongan.activity.Button3Activity) -> v
-    int access$31(com.linyongan.activity.Button3Activity) -> w
-    java.lang.String access$32(com.linyongan.activity.Button3Activity) -> x
-    java.lang.String access$33(com.linyongan.activity.Button3Activity) -> y
-    int access$34(com.linyongan.activity.Button3Activity) -> z
-    double[] access$35$288aefe3(java.lang.String,java.lang.String,java.lang.String,int,int) -> a
-    void access$36(com.linyongan.activity.Button3Activity,double[]) -> a
-    int access$37(com.linyongan.activity.Button3Activity) -> A
-    void access$38(com.linyongan.activity.Button3Activity,double[]) -> b
-    int access$39(com.linyongan.activity.Button3Activity) -> B
-    void access$40(com.linyongan.activity.Button3Activity,double[]) -> c
-    int access$41(com.linyongan.activity.Button3Activity) -> C
-    void access$42(com.linyongan.activity.Button3Activity,double[]) -> d
-    double access$43(com.linyongan.activity.Button3Activity,int) -> a
-    double[] access$44(com.linyongan.activity.Button3Activity) -> D
-    double access$45$12c3857b(double[]) -> a
-    double access$46$12c3857b(double[]) -> b
-    int access$47$12c38580(double[]) -> c
-    android.widget.TextView access$48(com.linyongan.activity.Button3Activity) -> E
-    void access$49(com.linyongan.activity.Button3Activity) -> F
-    void access$50(com.linyongan.activity.Button3Activity) -> G
-    int access$51(com.linyongan.activity.Button3Activity,int,int,android.widget.EditText,android.widget.EditText,android.widget.EditText) -> a
-    void access$52(com.linyongan.activity.Button3Activity,int) -> b
-    void access$53(com.linyongan.activity.Button3Activity,int) -> c
-    void access$54(com.linyongan.activity.Button3Activity,int) -> d
-    void access$55(com.linyongan.activity.Button3Activity,int) -> e
-    int access$56(com.linyongan.activity.Button3Activity,int,int) -> a
-    void access$57(com.linyongan.activity.Button3Activity,int) -> f
-    void access$58(com.linyongan.activity.Button3Activity,int) -> g
-    void access$59(com.linyongan.activity.Button3Activity,int) -> h
-    void access$60(com.linyongan.activity.Button3Activity,int) -> i
-    java.lang.String[] access$61(com.linyongan.activity.Button3Activity) -> H
-    double[] access$62(com.linyongan.activity.Button3Activity) -> I
-    java.util.List access$63(com.linyongan.activity.Button3Activity) -> J
-    int[] access$64(com.linyongan.activity.Button3Activity) -> K
-    org.achartengine.chart.PointStyle[] access$65(com.linyongan.activity.Button3Activity) -> L
-    double access$66(com.linyongan.activity.Button3Activity) -> M
+    void goBack() -> b
+    void access$0(com.linyongan.activity.Button3Activity,int) -> a
+    void access$1(com.linyongan.activity.Button3Activity,int) -> b
+    void access$2(com.linyongan.activity.Button3Activity,int) -> c
+    int access$3(com.linyongan.activity.Button3Activity) -> a
+    android.widget.EditText access$4(com.linyongan.activity.Button3Activity) -> b
+    android.widget.EditText access$5(com.linyongan.activity.Button3Activity) -> c
+    android.widget.EditText access$6(com.linyongan.activity.Button3Activity) -> d
+    int access$7(com.linyongan.activity.Button3Activity) -> e
+    android.widget.TextView access$8(com.linyongan.activity.Button3Activity) -> f
+    android.widget.EditText access$9(com.linyongan.activity.Button3Activity) -> g
+    android.widget.EditText access$10(com.linyongan.activity.Button3Activity) -> h
+    android.widget.EditText access$11(com.linyongan.activity.Button3Activity) -> i
+    android.widget.EditText access$12(com.linyongan.activity.Button3Activity) -> j
+    int access$13(com.linyongan.activity.Button3Activity) -> k
+    android.widget.EditText access$14(com.linyongan.activity.Button3Activity) -> l
+    android.widget.EditText access$15(com.linyongan.activity.Button3Activity) -> m
+    android.widget.EditText access$16(com.linyongan.activity.Button3Activity) -> n
+    android.widget.EditText access$17(com.linyongan.activity.Button3Activity) -> o
+    int access$18(com.linyongan.activity.Button3Activity) -> p
+    android.widget.EditText access$19(com.linyongan.activity.Button3Activity) -> q
+    android.widget.EditText access$20(com.linyongan.activity.Button3Activity) -> r
+    android.widget.EditText access$21(com.linyongan.activity.Button3Activity) -> s
+    android.widget.EditText access$22(com.linyongan.activity.Button3Activity) -> t
+    android.widget.EditText access$23(com.linyongan.activity.Button3Activity) -> u
+    android.widget.EditText access$24(com.linyongan.activity.Button3Activity) -> v
+    android.widget.EditText access$25(com.linyongan.activity.Button3Activity) -> w
+    android.widget.EditText access$26(com.linyongan.activity.Button3Activity) -> x
+    android.widget.EditText access$27(com.linyongan.activity.Button3Activity) -> y
+    android.widget.EditText access$28(com.linyongan.activity.Button3Activity) -> z
+    android.widget.EditText access$29(com.linyongan.activity.Button3Activity) -> A
+    void access$30(com.linyongan.activity.Button3Activity) -> B
+    void access$31(com.linyongan.activity.Button3Activity) -> C
+    void access$32(com.linyongan.activity.Button3Activity,int) -> d
+    android.widget.LinearLayout access$33(com.linyongan.activity.Button3Activity) -> D
+    android.widget.LinearLayout access$34(com.linyongan.activity.Button3Activity) -> E
+    android.widget.LinearLayout access$35(com.linyongan.activity.Button3Activity) -> F
+    android.widget.LinearLayout access$36(com.linyongan.activity.Button3Activity) -> G
+    android.widget.LinearLayout access$37(com.linyongan.activity.Button3Activity) -> H
 com.linyongan.activity.Button3Activity$ButtonListener -> com.linyongan.activity.f:
     com.linyongan.activity.Button3Activity this$0 -> a
     void onClick(android.view.View) -> onClick
-com.linyongan.activity.Button3Activity$LineChar -> com.linyongan.activity.g:
-    com.linyongan.activity.Button3Activity this$0 -> a
-    android.content.Intent execute(android.content.Context) -> a
-com.linyongan.activity.Button3Activity$SpinnerListener1 -> com.linyongan.activity.h:
+com.linyongan.activity.Button3Activity$SpinnerListener -> com.linyongan.activity.g:
     com.linyongan.activity.Button3Activity this$0 -> a
     void onItemSelected(android.widget.AdapterView,android.view.View,int,long) -> onItemSelected
     void onNothingSelected(android.widget.AdapterView) -> onNothingSelected
-com.linyongan.activity.Button3Activity$SpinnerListener2 -> com.linyongan.activity.i:
+com.linyongan.activity.Button3Activity$radioGroupListener -> com.linyongan.activity.h:
     com.linyongan.activity.Button3Activity this$0 -> a
-    void onItemSelected(android.widget.AdapterView,android.view.View,int,long) -> onItemSelected
-    void onNothingSelected(android.widget.AdapterView) -> onNothingSelected
-com.linyongan.activity.Button3Activity$SpinnerListener3 -> com.linyongan.activity.j:
-    com.linyongan.activity.Button3Activity this$0 -> a
-    void onItemSelected(android.widget.AdapterView,android.view.View,int,long) -> onItemSelected
-    void onNothingSelected(android.widget.AdapterView) -> onNothingSelected
-com.linyongan.activity.Button3Activity$SpinnerListener4 -> com.linyongan.activity.k:
-    com.linyongan.activity.Button3Activity this$0 -> a
-    void onItemSelected(android.widget.AdapterView,android.view.View,int,long) -> onItemSelected
-    void onNothingSelected(android.widget.AdapterView) -> onNothingSelected
-com.linyongan.activity.Button3Activity$SpinnerListener5 -> com.linyongan.activity.l:
-    com.linyongan.activity.Button3Activity this$0 -> a
-    void onItemSelected(android.widget.AdapterView,android.view.View,int,long) -> onItemSelected
-    void onNothingSelected(android.widget.AdapterView) -> onNothingSelected
-com.linyongan.activity.Button3Activity$SpinnerListener6 -> com.linyongan.activity.m:
-    com.linyongan.activity.Button3Activity this$0 -> a
-    void onItemSelected(android.widget.AdapterView,android.view.View,int,long) -> onItemSelected
-    void onNothingSelected(android.widget.AdapterView) -> onNothingSelected
-com.linyongan.activity.Button3Activity$SpinnerListener7 -> com.linyongan.activity.n:
-    com.linyongan.activity.Button3Activity this$0 -> a
-    void onItemSelected(android.widget.AdapterView,android.view.View,int,long) -> onItemSelected
-    void onNothingSelected(android.widget.AdapterView) -> onNothingSelected
-com.linyongan.activity.Button3Activity$SpinnerListener8 -> com.linyongan.activity.o:
-    com.linyongan.activity.Button3Activity this$0 -> a
-    void onItemSelected(android.widget.AdapterView,android.view.View,int,long) -> onItemSelected
-    void onNothingSelected(android.widget.AdapterView) -> onNothingSelected
+    void onCheckedChanged(android.widget.RadioGroup,int) -> onCheckedChanged
 com.linyongan.activity.Button4Activity -> com.linyongan.activity.Button4Activity:
     android.widget.ImageButton backButton -> a
     android.widget.ImageButton cleanButton -> b
@@ -1558,24 +1487,22 @@ com.linyongan.activity.Button4Activity -> com.linyongan.activity.Button4Activity
     void access$12(com.linyongan.activity.Button4Activity) -> i
     void access$13(com.linyongan.activity.Button4Activity,int) -> a
     void access$14(com.linyongan.activity.Button4Activity,int) -> b
-com.linyongan.activity.Button4Activity$ButtonListener -> com.linyongan.activity.p:
+com.linyongan.activity.Button4Activity$ButtonListener -> com.linyongan.activity.i:
     com.linyongan.activity.Button4Activity this$0 -> a
     void onClick(android.view.View) -> onClick
-com.linyongan.activity.Button4Activity$radioGroupListener -> com.linyongan.activity.q:
+com.linyongan.activity.Button4Activity$radioGroupListener -> com.linyongan.activity.j:
     com.linyongan.activity.Button4Activity this$0 -> a
     void onCheckedChanged(android.widget.RadioGroup,int) -> onCheckedChanged
 com.linyongan.activity.Button5Activity -> com.linyongan.activity.Button5Activity:
     android.widget.ImageButton backButton -> a
     android.widget.ImageButton cleanButton -> b
     android.widget.Button calculateButton -> c
-    int mark2 -> d
-    android.widget.EditText editText1 -> e
-    android.widget.EditText editText2 -> f
-    android.widget.EditText editText3 -> g
-    android.widget.EditText editText4 -> h
-    android.widget.EditText editText5 -> i
-    android.widget.TextView out_tv -> j
-    com.linyongan.sql.CalculateDbManger dbmanger -> k
+    android.widget.EditText editText1 -> d
+    android.widget.EditText editText2 -> e
+    android.widget.EditText editText3 -> f
+    android.widget.EditText editText4 -> g
+    android.widget.EditText editText5 -> h
+    android.widget.TextView out_tv -> i
     void onCreate(android.os.Bundle) -> onCreate
     boolean dispatchKeyEvent(android.view.KeyEvent) -> dispatchKeyEvent
     android.widget.EditText access$0(com.linyongan.activity.Button5Activity) -> a
@@ -1583,13 +1510,10 @@ com.linyongan.activity.Button5Activity -> com.linyongan.activity.Button5Activity
     android.widget.EditText access$2(com.linyongan.activity.Button5Activity) -> c
     android.widget.EditText access$3(com.linyongan.activity.Button5Activity) -> d
     android.widget.EditText access$4(com.linyongan.activity.Button5Activity) -> e
-    void access$5$1fb13e41(com.linyongan.activity.Button5Activity) -> f
-    java.lang.Double access$6(com.linyongan.activity.Button5Activity,java.lang.Double,java.lang.Double,java.lang.Double,java.lang.Double,java.lang.Double) -> a
-    int access$7(com.linyongan.activity.Button5Activity) -> g
-    android.widget.TextView access$8(com.linyongan.activity.Button5Activity) -> h
-    void access$9(com.linyongan.activity.Button5Activity) -> i
-    void access$10(com.linyongan.activity.Button5Activity) -> j
-com.linyongan.activity.Button5Activity$ButtonListener -> com.linyongan.activity.r:
+    android.widget.TextView access$5(com.linyongan.activity.Button5Activity) -> f
+    void access$6(com.linyongan.activity.Button5Activity) -> g
+    void access$7(com.linyongan.activity.Button5Activity) -> h
+com.linyongan.activity.Button5Activity$ButtonListener -> com.linyongan.activity.k:
     com.linyongan.activity.Button5Activity this$0 -> a
     void onClick(android.view.View) -> onClick
 com.linyongan.activity.Button6Activity -> com.linyongan.activity.Button6Activity:
@@ -1599,20 +1523,25 @@ com.linyongan.activity.Button6Activity -> com.linyongan.activity.Button6Activity
     android.widget.EditText editText1 -> d
     android.widget.EditText editText2 -> e
     android.widget.EditText editText3 -> f
-    android.widget.EditText editText4 -> g
-    android.widget.TextView out_tv -> h
+    android.widget.TextView out_tv -> g
+    android.widget.RadioGroup radioGroup -> h
+    int mark -> i
     void onCreate(android.os.Bundle) -> onCreate
     boolean dispatchKeyEvent(android.view.KeyEvent) -> dispatchKeyEvent
-    android.widget.EditText access$0(com.linyongan.activity.Button6Activity) -> a
-    android.widget.EditText access$1(com.linyongan.activity.Button6Activity) -> b
-    android.widget.EditText access$2(com.linyongan.activity.Button6Activity) -> c
-    android.widget.EditText access$3(com.linyongan.activity.Button6Activity) -> d
-    android.widget.TextView access$4(com.linyongan.activity.Button6Activity) -> e
-    void access$5(com.linyongan.activity.Button6Activity) -> f
-    void access$6(com.linyongan.activity.Button6Activity) -> g
-com.linyongan.activity.Button6Activity$ButtonListener -> com.linyongan.activity.s:
+    void access$0(com.linyongan.activity.Button6Activity,int) -> a
+    android.widget.EditText access$1(com.linyongan.activity.Button6Activity) -> a
+    android.widget.EditText access$2(com.linyongan.activity.Button6Activity) -> b
+    android.widget.EditText access$3(com.linyongan.activity.Button6Activity) -> c
+    int access$4(com.linyongan.activity.Button6Activity) -> d
+    android.widget.TextView access$5(com.linyongan.activity.Button6Activity) -> e
+    void access$6(com.linyongan.activity.Button6Activity) -> f
+    void access$7(com.linyongan.activity.Button6Activity) -> g
+com.linyongan.activity.Button6Activity$ButtonListener -> com.linyongan.activity.l:
     com.linyongan.activity.Button6Activity this$0 -> a
     void onClick(android.view.View) -> onClick
+com.linyongan.activity.Button6Activity$radioGroupListener -> com.linyongan.activity.m:
+    com.linyongan.activity.Button6Activity this$0 -> a
+    void onCheckedChanged(android.widget.RadioGroup,int) -> onCheckedChanged
 com.linyongan.activity.Button7Activity -> com.linyongan.activity.Button7Activity:
     android.widget.ImageButton backButton -> a
     android.widget.ImageButton cleanButton -> b
@@ -1633,7 +1562,7 @@ com.linyongan.activity.Button7Activity -> com.linyongan.activity.Button7Activity
     android.widget.TextView access$5(com.linyongan.activity.Button7Activity) -> f
     void access$6(com.linyongan.activity.Button7Activity) -> g
     void access$7(com.linyongan.activity.Button7Activity) -> h
-com.linyongan.activity.Button7Activity$ButtonListener -> com.linyongan.activity.t:
+com.linyongan.activity.Button7Activity$ButtonListener -> com.linyongan.activity.n:
     com.linyongan.activity.Button7Activity this$0 -> a
     void onClick(android.view.View) -> onClick
 com.linyongan.activity.DerivativeActivity -> com.linyongan.activity.DerivativeActivity:
@@ -1644,13 +1573,77 @@ com.linyongan.activity.DerivativeActivity -> com.linyongan.activity.DerivativeAc
     android.widget.Button Button5 -> e
     android.widget.Button Button6 -> f
     android.widget.Button Button7 -> g
-    android.widget.ImageButton backButton -> h
+    android.widget.Button Button8 -> h
+    android.widget.Button Button9 -> i
+    android.widget.ImageButton backButton -> j
     void onCreate(android.os.Bundle) -> onCreate
     boolean dispatchKeyEvent(android.view.KeyEvent) -> dispatchKeyEvent
     void access$0(com.linyongan.activity.DerivativeActivity) -> a
-com.linyongan.activity.DerivativeActivity$ButtonListener -> com.linyongan.activity.u:
+com.linyongan.activity.DerivativeActivity$ButtonListener -> com.linyongan.activity.o:
     com.linyongan.activity.DerivativeActivity this$0 -> a
     void onClick(android.view.View) -> onClick
+com.linyongan.activity.FinanceActivity -> com.linyongan.activity.FinanceActivity:
+    android.widget.ImageButton backButton -> a
+    android.widget.ImageButton cleanButton -> b
+    android.widget.Button calculateButton -> c
+    android.widget.RadioGroup radioGroup -> d
+    android.widget.RadioGroup period -> e
+    android.widget.EditText year_et -> f
+    android.widget.EditText rate_et -> g
+    android.widget.EditText annuity_et -> h
+    android.widget.EditText presentValue_et -> i
+    android.widget.EditText finalValue_et -> j
+    android.widget.TextView annuity_tv -> k
+    android.widget.TextView presentValue_tv -> l
+    android.widget.TextView finalValue_tv -> m
+    android.widget.TextView year_tv -> n
+    android.widget.TextView out_tv -> o
+    int year -> p
+    java.lang.Double rate -> q
+    java.lang.Double annuity -> r
+    java.lang.Double presentValue -> s
+    java.lang.Double finalValue -> t
+    int mark -> u
+    int mark2 -> v
+    void onCreate(android.os.Bundle) -> onCreate
+    boolean dispatchKeyEvent(android.view.KeyEvent) -> dispatchKeyEvent
+    void goBack() -> a
+    void access$0(com.linyongan.activity.FinanceActivity) -> a
+    android.widget.EditText access$1(com.linyongan.activity.FinanceActivity) -> b
+    android.widget.RadioGroup access$2(com.linyongan.activity.FinanceActivity) -> c
+    android.widget.EditText access$3(com.linyongan.activity.FinanceActivity) -> d
+    android.widget.EditText access$4(com.linyongan.activity.FinanceActivity) -> e
+    android.widget.TextView access$5(com.linyongan.activity.FinanceActivity) -> f
+    android.widget.TextView access$6(com.linyongan.activity.FinanceActivity) -> g
+    android.widget.TextView access$7(com.linyongan.activity.FinanceActivity) -> h
+    android.widget.TextView access$8(com.linyongan.activity.FinanceActivity) -> i
+    void access$9(com.linyongan.activity.FinanceActivity,int) -> a
+    void access$10(com.linyongan.activity.FinanceActivity,int) -> b
+    android.widget.EditText access$11(com.linyongan.activity.FinanceActivity) -> j
+    android.widget.EditText access$12(com.linyongan.activity.FinanceActivity) -> k
+    int access$13(com.linyongan.activity.FinanceActivity) -> l
+    void access$14(com.linyongan.activity.FinanceActivity,int) -> c
+    void access$15(com.linyongan.activity.FinanceActivity,java.lang.Double) -> a
+    void access$16(com.linyongan.activity.FinanceActivity,java.lang.Double) -> b
+    int access$17(com.linyongan.activity.FinanceActivity) -> m
+    java.lang.Double access$18(com.linyongan.activity.FinanceActivity) -> n
+    java.lang.Double access$19(com.linyongan.activity.FinanceActivity) -> o
+    java.lang.Double access$20$1c4ad074(int,java.lang.Double,java.lang.Double) -> a
+    android.widget.TextView access$21(com.linyongan.activity.FinanceActivity) -> p
+    void access$22(com.linyongan.activity.FinanceActivity,java.lang.Double) -> c
+    java.lang.Double access$23(com.linyongan.activity.FinanceActivity) -> q
+    java.lang.Double access$24(com.linyongan.activity.FinanceActivity,int,java.lang.Double,java.lang.Double) -> a
+    void access$25(com.linyongan.activity.FinanceActivity,java.lang.Double) -> d
+    java.lang.Double access$26(com.linyongan.activity.FinanceActivity) -> r
+    java.lang.Double access$27$1c4ad074(int,java.lang.Double,java.lang.Double) -> b
+    java.lang.Double access$28(com.linyongan.activity.FinanceActivity,int,java.lang.Double,java.lang.Double) -> b
+    void access$29(com.linyongan.activity.FinanceActivity) -> s
+com.linyongan.activity.FinanceActivity$ButtonListener -> com.linyongan.activity.p:
+    com.linyongan.activity.FinanceActivity this$0 -> a
+    void onClick(android.view.View) -> onClick
+com.linyongan.activity.FinanceActivity$radioGroupListener -> com.linyongan.activity.q:
+    com.linyongan.activity.FinanceActivity this$0 -> a
+    void onCheckedChanged(android.widget.RadioGroup,int) -> onCheckedChanged
 com.linyongan.activity.LearnActivity -> com.linyongan.activity.LearnActivity:
     android.widget.ImageButton backButton -> a
     int[] imageResId -> b
@@ -1671,12 +1664,52 @@ com.linyongan.activity.LearnActivity -> com.linyongan.activity.LearnActivity:
     int[] access$5(com.linyongan.activity.LearnActivity) -> c
     android.content.Intent access$6(com.linyongan.activity.LearnActivity) -> d
     void access$7(com.linyongan.activity.LearnActivity) -> e
-com.linyongan.activity.LearnActivity$1 -> com.linyongan.activity.v:
+com.linyongan.activity.LearnActivity$1 -> com.linyongan.activity.r:
     com.linyongan.activity.LearnActivity this$0 -> a
     void onClick(android.view.View) -> onClick
-com.linyongan.activity.LearnActivity$ExpandableListViewListener -> com.linyongan.activity.w:
+com.linyongan.activity.LearnActivity$ExpandableListViewListener -> com.linyongan.activity.s:
     com.linyongan.activity.LearnActivity this$0 -> a
     boolean onChildClick(android.widget.ExpandableListView,android.view.View,int,int,long) -> onChildClick
+com.linyongan.activity.LoanActivity -> com.linyongan.activity.LoanActivity:
+    android.widget.ImageButton backButton -> a
+    android.widget.ImageButton cleanButton -> b
+    android.widget.Button calculateButton -> c
+    android.widget.EditText principal_et -> d
+    android.widget.EditText month_et -> e
+    android.widget.EditText monthRate_et -> f
+    android.widget.TextView out_tv -> g
+    android.widget.RadioGroup radioGroup -> h
+    int month -> i
+    java.lang.Double principal -> j
+    java.lang.Double monthRate -> k
+    int mark -> l
+    void onCreate(android.os.Bundle) -> onCreate
+    boolean dispatchKeyEvent(android.view.KeyEvent) -> dispatchKeyEvent
+    void goBack() -> a
+    android.widget.EditText access$0(com.linyongan.activity.LoanActivity) -> a
+    android.widget.EditText access$1(com.linyongan.activity.LoanActivity) -> b
+    android.widget.EditText access$2(com.linyongan.activity.LoanActivity) -> c
+    int access$3(com.linyongan.activity.LoanActivity) -> d
+    void access$4(com.linyongan.activity.LoanActivity,int) -> a
+    void access$5(com.linyongan.activity.LoanActivity,java.lang.Double) -> a
+    void access$6(com.linyongan.activity.LoanActivity,java.lang.Double) -> b
+    java.lang.Double access$7(com.linyongan.activity.LoanActivity) -> e
+    java.lang.Double access$8(com.linyongan.activity.LoanActivity) -> f
+    int access$9(com.linyongan.activity.LoanActivity) -> g
+    java.lang.Double access$10$79c8a5a(java.lang.Double,int,java.lang.Double) -> a
+    java.lang.Double access$11$79c8a5a(java.lang.Double,int,java.lang.Double) -> b
+    android.widget.TextView access$12(com.linyongan.activity.LoanActivity) -> h
+    java.lang.Double[] access$13$5c9725d5(java.lang.Double,int,java.lang.Double) -> c
+    java.lang.Double access$14$479c3c95(java.lang.Double,java.lang.Double[],int) -> a
+    void access$15(com.linyongan.activity.LoanActivity) -> i
+    void access$16(com.linyongan.activity.LoanActivity) -> j
+    void access$17(com.linyongan.activity.LoanActivity,int) -> b
+com.linyongan.activity.LoanActivity$ButtonListener -> com.linyongan.activity.t:
+    com.linyongan.activity.LoanActivity this$0 -> a
+    void onClick(android.view.View) -> onClick
+com.linyongan.activity.LoanActivity$radioGroupListener -> com.linyongan.activity.u:
+    com.linyongan.activity.LoanActivity this$0 -> a
+    void onCheckedChanged(android.widget.RadioGroup,int) -> onCheckedChanged
 com.linyongan.activity.MainActivity -> com.linyongan.activity.MainActivity:
     android.widget.Button questionButton -> a
     android.widget.Button searchButton -> b
@@ -1687,10 +1720,10 @@ com.linyongan.activity.MainActivity -> com.linyongan.activity.MainActivity:
     boolean mark -> g
     void onCreate(android.os.Bundle) -> onCreate
     boolean dispatchKeyEvent(android.view.KeyEvent) -> dispatchKeyEvent
-com.linyongan.activity.MainActivity$ButtonListener -> com.linyongan.activity.x:
+com.linyongan.activity.MainActivity$ButtonListener -> com.linyongan.activity.v:
     com.linyongan.activity.MainActivity this$0 -> a
     void onClick(android.view.View) -> onClick
-com.linyongan.activity.MainActivity$LoadTask -> com.linyongan.activity.y:
+com.linyongan.activity.MainActivity$LoadTask -> com.linyongan.activity.w:
     android.app.ProgressDialog pdialog -> a
     android.content.Context mContext -> b
     com.linyongan.activity.MainActivity this$0 -> c
@@ -1710,13 +1743,13 @@ com.linyongan.activity.QuestionActivity -> com.linyongan.activity.QuestionActivi
     void goBack() -> a
     void access$0(com.linyongan.activity.QuestionActivity,int) -> a
     void access$1(com.linyongan.activity.QuestionActivity) -> a
-com.linyongan.activity.QuestionActivity$1 -> com.linyongan.activity.z:
+com.linyongan.activity.QuestionActivity$1 -> com.linyongan.activity.x:
     com.linyongan.activity.QuestionActivity this$0 -> a
     void onItemClick(android.widget.AdapterView,android.view.View,int,long) -> onItemClick
-com.linyongan.activity.QuestionActivity$2 -> com.linyongan.activity.aa:
+com.linyongan.activity.QuestionActivity$2 -> com.linyongan.activity.y:
     com.linyongan.activity.QuestionActivity this$0 -> a
     void onClick(android.view.View) -> onClick
-com.linyongan.activity.QuestionActivity$3 -> com.linyongan.activity.ab:
+com.linyongan.activity.QuestionActivity$3 -> com.linyongan.activity.z:
     com.linyongan.activity.QuestionActivity this$0 -> a
     android.widget.PopupWindow val$popup -> b
     void onClick(android.view.View) -> onClick
@@ -1740,21 +1773,21 @@ com.linyongan.activity.SearchActivity -> com.linyongan.activity.SearchActivity:
     android.widget.ListView access$2(com.linyongan.activity.SearchActivity) -> c
     void access$3(com.linyongan.activity.SearchActivity,int) -> a
     void access$4(com.linyongan.activity.SearchActivity,java.lang.String) -> a
-com.linyongan.activity.SearchActivity$1 -> com.linyongan.activity.ac:
+com.linyongan.activity.SearchActivity$1 -> com.linyongan.activity.aa:
     com.linyongan.activity.SearchActivity this$0 -> a
     void onClick(android.view.View) -> onClick
-com.linyongan.activity.SearchActivity$2 -> com.linyongan.activity.ad:
+com.linyongan.activity.SearchActivity$2 -> com.linyongan.activity.ab:
     com.linyongan.activity.SearchActivity this$0 -> a
     void onTouchingLetterChanged(java.lang.String) -> a
-com.linyongan.activity.SearchActivity$3 -> com.linyongan.activity.ae:
+com.linyongan.activity.SearchActivity$3 -> com.linyongan.activity.ac:
     com.linyongan.activity.SearchActivity this$0 -> a
     void onItemClick(android.widget.AdapterView,android.view.View,int,long) -> onItemClick
-com.linyongan.activity.SearchActivity$4 -> com.linyongan.activity.af:
+com.linyongan.activity.SearchActivity$4 -> com.linyongan.activity.ad:
     com.linyongan.activity.SearchActivity this$0 -> a
     void onTextChanged(java.lang.CharSequence,int,int,int) -> onTextChanged
     void beforeTextChanged(java.lang.CharSequence,int,int,int) -> beforeTextChanged
     void afterTextChanged(android.text.Editable) -> afterTextChanged
-com.linyongan.activity.SearchActivity$5 -> com.linyongan.activity.ag:
+com.linyongan.activity.SearchActivity$5 -> com.linyongan.activity.ae:
     com.linyongan.activity.SearchActivity this$0 -> a
     android.widget.PopupWindow val$popup -> b
     void onClick(android.view.View) -> onClick
@@ -1769,7 +1802,7 @@ com.linyongan.activity.TestActivity -> com.linyongan.activity.TestActivity:
     boolean dispatchKeyEvent(android.view.KeyEvent) -> dispatchKeyEvent
     void goBack() -> a
     void access$0(com.linyongan.activity.TestActivity) -> a
-com.linyongan.activity.TestActivity$ButtonListener -> com.linyongan.activity.ah:
+com.linyongan.activity.TestActivity$ButtonListener -> com.linyongan.activity.af:
     com.linyongan.activity.TestActivity this$0 -> a
     void onClick(android.view.View) -> onClick
 com.linyongan.activity.TestCollectActivity -> com.linyongan.activity.TestCollectActivity:
@@ -1779,7 +1812,7 @@ com.linyongan.activity.TestCollectActivity -> com.linyongan.activity.TestCollect
     boolean dispatchKeyEvent(android.view.KeyEvent) -> dispatchKeyEvent
     void goBack() -> a
     void access$0(com.linyongan.activity.TestCollectActivity) -> a
-com.linyongan.activity.TestCollectActivity$1 -> com.linyongan.activity.ai:
+com.linyongan.activity.TestCollectActivity$1 -> com.linyongan.activity.ag:
     com.linyongan.activity.TestCollectActivity this$0 -> a
     void onClick(android.view.View) -> onClick
 com.linyongan.activity.TestGradeActivity -> com.linyongan.activity.TestGradeActivity:
@@ -1789,7 +1822,7 @@ com.linyongan.activity.TestGradeActivity -> com.linyongan.activity.TestGradeActi
     boolean dispatchKeyEvent(android.view.KeyEvent) -> dispatchKeyEvent
     void goBack() -> a
     void access$0(com.linyongan.activity.TestGradeActivity) -> a
-com.linyongan.activity.TestGradeActivity$1 -> com.linyongan.activity.aj:
+com.linyongan.activity.TestGradeActivity$1 -> com.linyongan.activity.ah:
     com.linyongan.activity.TestGradeActivity this$0 -> a
     void onClick(android.view.View) -> onClick
 com.linyongan.activity.TestingActivity -> com.linyongan.activity.TestingActivity:
@@ -1851,28 +1884,28 @@ com.linyongan.activity.TestingActivity -> com.linyongan.activity.TestingActivity
     int access$20(com.linyongan.activity.TestingActivity) -> o
     com.linyongan.sql.GradeDbManger access$21(com.linyongan.activity.TestingActivity) -> p
     java.lang.String access$22(com.linyongan.activity.TestingActivity) -> q
-com.linyongan.activity.TestingActivity$1 -> com.linyongan.activity.ak:
+com.linyongan.activity.TestingActivity$1 -> com.linyongan.activity.ai:
     com.linyongan.activity.TestingActivity this$0 -> a
     void onCheckedChanged(android.widget.RadioGroup,int) -> onCheckedChanged
-com.linyongan.activity.TestingActivity$2 -> com.linyongan.activity.al:
+com.linyongan.activity.TestingActivity$2 -> com.linyongan.activity.aj:
     com.linyongan.activity.TestingActivity this$0 -> a
     android.widget.TextView val$textView -> b
     android.widget.Button val$button1 -> c
     android.widget.Button val$button -> d
     void onClick(android.view.View) -> onClick
-com.linyongan.activity.TestingActivity$3 -> com.linyongan.activity.am:
+com.linyongan.activity.TestingActivity$3 -> com.linyongan.activity.ak:
     com.linyongan.activity.TestingActivity this$0 -> a
     void onClick(android.view.View) -> onClick
-com.linyongan.activity.TestingActivity$ButtonListener -> com.linyongan.activity.an:
+com.linyongan.activity.TestingActivity$ButtonListener -> com.linyongan.activity.al:
     com.linyongan.activity.TestingActivity this$0 -> a
     void onClick(android.view.View) -> onClick
-com.linyongan.activity.TestingActivity$MyPagerAdapter -> com.linyongan.activity.ao:
+com.linyongan.activity.TestingActivity$MyPagerAdapter -> com.linyongan.activity.am:
     com.linyongan.activity.TestingActivity this$0 -> a
     java.lang.Object instantiateItem(android.view.ViewGroup,int) -> a
     int getCount() -> a
     boolean isViewFromObject(android.view.View,java.lang.Object) -> b
     void destroyItem(android.view.ViewGroup,int,java.lang.Object) -> a
-com.linyongan.activity.TestingActivity$PageListener -> com.linyongan.activity.ap:
+com.linyongan.activity.TestingActivity$PageListener -> com.linyongan.activity.an:
     com.linyongan.activity.TestingActivity this$0 -> a
     void onPageScrollStateChanged(int) -> c
     void onPageScrolled$486775f1(int) -> a
@@ -1895,22 +1928,22 @@ com.linyongan.activity.ViewPagerActivity -> com.linyongan.activity.ViewPagerActi
     void access$3(com.linyongan.activity.ViewPagerActivity,int) -> a
     java.util.List access$5(com.linyongan.activity.ViewPagerActivity) -> d
     int[] access$6(com.linyongan.activity.ViewPagerActivity) -> e
-com.linyongan.activity.ViewPagerActivity$1 -> com.linyongan.activity.aq:
+com.linyongan.activity.ViewPagerActivity$1 -> com.linyongan.activity.ao:
     com.linyongan.activity.ViewPagerActivity this$0 -> a
     void handleMessage(android.os.Message) -> handleMessage
-com.linyongan.activity.ViewPagerActivity$MyAdapter -> com.linyongan.activity.ar:
+com.linyongan.activity.ViewPagerActivity$MyAdapter -> com.linyongan.activity.ap:
     com.linyongan.activity.ViewPagerActivity this$0 -> a
     int getCount() -> a
     java.lang.Object instantiateItem(android.view.View,int) -> a
     void destroyItem$7e55ba3e(android.view.View,java.lang.Object) -> a
     boolean isViewFromObject(android.view.View,java.lang.Object) -> b
-com.linyongan.activity.ViewPagerActivity$MyPageChangeListener -> com.linyongan.activity.as:
+com.linyongan.activity.ViewPagerActivity$MyPageChangeListener -> com.linyongan.activity.aq:
     int oldPosition -> b
     com.linyongan.activity.ViewPagerActivity this$0 -> a
     void onPageSelected(int) -> b
     void onPageScrollStateChanged(int) -> c
     void onPageScrolled$486775f1(int) -> a
-com.linyongan.adapter.ExpandableListAdapter -> com.linyongan.b.a:
+com.linyongan.adapter.ExpandableListAdapter -> com.linyongan.a.a:
     android.content.Context context -> a
     android.view.LayoutInflater inflater -> b
     java.lang.String[] item -> c
@@ -1925,11 +1958,11 @@ com.linyongan.adapter.ExpandableListAdapter -> com.linyongan.b.a:
     android.view.View getGroupView(int,boolean,android.view.View,android.view.ViewGroup) -> getGroupView
     boolean isChildSelectable(int,int) -> isChildSelectable
     boolean hasStableIds() -> hasStableIds
-com.linyongan.adapter.ExpandableListAdapter$GroupHolder -> com.linyongan.b.b:
+com.linyongan.adapter.ExpandableListAdapter$GroupHolder -> com.linyongan.a.b:
     android.widget.TextView textView -> a
     android.widget.ImageView imageView -> b
     com.linyongan.adapter.ExpandableListAdapter this$0 -> c
-com.linyongan.model.Grade -> com.linyongan.c.a:
+com.linyongan.model.Grade -> com.linyongan.b.a:
     java.lang.String name -> a
     java.lang.String time -> b
     int grade -> c
@@ -1939,7 +1972,7 @@ com.linyongan.model.Grade -> com.linyongan.c.a:
     void setTime(java.lang.String) -> b
     int getGrade() -> c
     void setGrade(int) -> a
-com.linyongan.model.Test -> com.linyongan.c.b:
+com.linyongan.model.Test -> com.linyongan.b.b:
     int _id -> a
     java.lang.String mark -> b
     int get_id() -> a
@@ -1998,13 +2031,13 @@ com.linyongan.sortlistview.SortModel -> com.linyongan.sortlistview.f:
     void setName(java.lang.String) -> a
     java.lang.String getSortLetters() -> b
     void setSortLetters(java.lang.String) -> b
-com.linyongan.sql.CalculateDbManger -> com.linyongan.d.a:
+com.linyongan.sql.CalculateDbManger -> com.linyongan.c.a:
     android.database.sqlite.SQLiteDatabase db -> a
     com.linyongan.sql.DBHelper helper -> b
     void close() -> a
     void open() -> b
     android.database.Cursor search(java.lang.String) -> a
-com.linyongan.sql.DBHelper -> com.linyongan.d.b:
+com.linyongan.sql.DBHelper -> com.linyongan.c.b:
     java.lang.String CALCULATE_TABLE -> a
     java.lang.String NOUN_TABLE -> b
     java.lang.String QUESTION_TABLE -> c
@@ -2012,27 +2045,27 @@ com.linyongan.sql.DBHelper -> com.linyongan.d.b:
     java.lang.String GRADE_TABLE -> e
     void onCreate(android.database.sqlite.SQLiteDatabase) -> onCreate
     void onUpgrade(android.database.sqlite.SQLiteDatabase,int,int) -> onUpgrade
-com.linyongan.sql.GradeDbManger -> com.linyongan.d.c:
+com.linyongan.sql.GradeDbManger -> com.linyongan.c.c:
     android.database.sqlite.SQLiteDatabase db -> a
     com.linyongan.sql.DBHelper helper -> b
     void close() -> a
     void open() -> b
     long addGrade(com.linyongan.model.Grade) -> a
     android.database.Cursor searchGrade() -> c
-com.linyongan.sql.NounDbManger -> com.linyongan.d.d:
+com.linyongan.sql.NounDbManger -> com.linyongan.c.d:
     android.database.sqlite.SQLiteDatabase db -> a
     com.linyongan.sql.DBHelper helper -> b
     void close() -> a
     void open() -> b
     android.database.Cursor search(java.lang.String) -> a
-com.linyongan.sql.QuestionDbManger -> com.linyongan.d.e:
+com.linyongan.sql.QuestionDbManger -> com.linyongan.c.e:
     android.database.sqlite.SQLiteDatabase db -> a
     com.linyongan.sql.DBHelper helper -> b
     void close() -> a
     void open() -> b
     android.database.Cursor search(java.lang.String) -> a
     android.database.Cursor searchQuestion() -> c
-com.linyongan.sql.TestDbManger -> com.linyongan.d.f:
+com.linyongan.sql.TestDbManger -> com.linyongan.c.f:
     android.database.sqlite.SQLiteDatabase db -> a
     com.linyongan.sql.DBHelper dbHelper -> b
     void close() -> a
@@ -2041,75 +2074,158 @@ com.linyongan.sql.TestDbManger -> com.linyongan.d.f:
     android.database.Cursor getCollect() -> c
     android.database.Cursor getMark(int) -> b
     int updateMark(com.linyongan.model.Test) -> a
-com.linyongan.test.FinanceActivity -> com.linyongan.test.FinanceActivity:
+com.linyongan.test.ButtonActivity -> com.linyongan.test.ButtonActivity:
     android.widget.ImageButton backButton -> a
     android.widget.ImageButton cleanButton -> b
     android.widget.Button calculateButton -> c
-    android.widget.RadioGroup radioGroup -> d
-    android.widget.RadioGroup period -> e
-    android.widget.EditText year_et -> f
-    android.widget.EditText rate_et -> g
-    android.widget.EditText annuity_et -> h
-    android.widget.EditText presentValue_et -> i
-    android.widget.EditText finalValue_et -> j
-    android.widget.TextView annuity_tv -> k
-    android.widget.TextView presentValue_tv -> l
-    android.widget.TextView finalValue_tv -> m
-    android.widget.TextView year_tv -> n
-    android.widget.TextView out_tv -> o
-    int year -> p
-    java.lang.Double rate -> q
-    java.lang.Double annuity -> r
-    java.lang.Double presentValue -> s
-    java.lang.Double finalValue -> t
-    int mark -> u
-    int mark2 -> v
+    android.widget.Button showButton -> d
+    android.widget.Spinner spinner1 -> e
+    android.widget.Spinner spinner3 -> f
+    android.widget.Spinner spinner5 -> g
+    android.widget.Spinner spinner7 -> h
+    android.widget.Spinner spinner2 -> i
+    android.widget.Spinner spinner4 -> j
+    android.widget.Spinner spinner6 -> k
+    android.widget.Spinner spinner8 -> l
+    android.widget.EditText editText1 -> m
+    android.widget.EditText editText2 -> n
+    android.widget.EditText editText3 -> o
+    android.widget.EditText editText4 -> p
+    android.widget.EditText editText5 -> q
+    android.widget.EditText editText6 -> r
+    android.widget.EditText editText7 -> s
+    android.widget.EditText editText8 -> t
+    android.widget.EditText editText9 -> u
+    android.widget.EditText editText10 -> v
+    android.widget.EditText editText11 -> w
+    android.widget.EditText editText12 -> x
+    android.widget.TextView out_tv -> y
+    int mark1 -> z
+    int mark3 -> A
+    int mark5 -> B
+    int mark7 -> C
+    int mark2 -> D
+    int mark4 -> E
+    int mark6 -> F
+    int mark8 -> G
+    double[] result1 -> H
+    double[] result2 -> I
+    double[] result3 -> J
+    double[] result4 -> K
+    java.lang.String test1 -> L
+    java.lang.String test4 -> M
+    java.lang.String test7 -> N
+    java.lang.String test10 -> O
+    java.lang.String test3 -> P
+    java.lang.String test6 -> Q
+    java.lang.String test9 -> R
+    java.lang.String test12 -> S
     void onCreate(android.os.Bundle) -> onCreate
+    double arrayAll(double[]) -> d
     boolean dispatchKeyEvent(android.view.KeyEvent) -> dispatchKeyEvent
-    void goBack() -> a
-    void access$0(com.linyongan.test.FinanceActivity) -> a
-    android.widget.EditText access$1(com.linyongan.test.FinanceActivity) -> b
-    android.widget.RadioGroup access$2(com.linyongan.test.FinanceActivity) -> c
-    android.widget.EditText access$3(com.linyongan.test.FinanceActivity) -> d
-    android.widget.EditText access$4(com.linyongan.test.FinanceActivity) -> e
-    android.widget.TextView access$5(com.linyongan.test.FinanceActivity) -> f
-    android.widget.TextView access$6(com.linyongan.test.FinanceActivity) -> g
-    android.widget.TextView access$7(com.linyongan.test.FinanceActivity) -> h
-    android.widget.TextView access$8(com.linyongan.test.FinanceActivity) -> i
-    void access$9(com.linyongan.test.FinanceActivity,int) -> a
-    void access$10(com.linyongan.test.FinanceActivity,int) -> b
-    android.widget.EditText access$11(com.linyongan.test.FinanceActivity) -> j
-    android.widget.EditText access$12(com.linyongan.test.FinanceActivity) -> k
-    int access$13(com.linyongan.test.FinanceActivity) -> l
-    void access$14(com.linyongan.test.FinanceActivity,int) -> c
-    void access$15(com.linyongan.test.FinanceActivity,java.lang.Double) -> a
-    void access$16(com.linyongan.test.FinanceActivity,java.lang.Double) -> b
-    int access$17(com.linyongan.test.FinanceActivity) -> m
-    java.lang.Double access$18(com.linyongan.test.FinanceActivity) -> n
-    java.lang.Double access$19(com.linyongan.test.FinanceActivity) -> o
-    java.lang.Double access$20$70c19faf(int,java.lang.Double,java.lang.Double) -> a
-    android.widget.TextView access$21(com.linyongan.test.FinanceActivity) -> p
-    void access$22(com.linyongan.test.FinanceActivity,java.lang.Double) -> c
-    java.lang.Double access$23(com.linyongan.test.FinanceActivity) -> q
-    java.lang.Double access$24(com.linyongan.test.FinanceActivity,int,java.lang.Double,java.lang.Double) -> a
-    void access$25(com.linyongan.test.FinanceActivity,java.lang.Double) -> d
-    java.lang.Double access$26(com.linyongan.test.FinanceActivity) -> r
-    java.lang.Double access$27$70c19faf(int,java.lang.Double,java.lang.Double) -> b
-    java.lang.Double access$28(com.linyongan.test.FinanceActivity,int,java.lang.Double,java.lang.Double) -> b
-    void access$29(com.linyongan.test.FinanceActivity) -> s
-com.linyongan.test.FinanceActivity$ButtonListener -> com.linyongan.test.a:
-    com.linyongan.test.FinanceActivity this$0 -> a
+    android.widget.EditText access$0(com.linyongan.test.ButtonActivity) -> a
+    void access$1(com.linyongan.test.ButtonActivity,java.lang.String) -> a
+    android.widget.EditText access$2(com.linyongan.test.ButtonActivity) -> b
+    android.widget.EditText access$3(com.linyongan.test.ButtonActivity) -> c
+    void access$4(com.linyongan.test.ButtonActivity,java.lang.String) -> b
+    android.widget.EditText access$5(com.linyongan.test.ButtonActivity) -> d
+    void access$6(com.linyongan.test.ButtonActivity,java.lang.String) -> c
+    android.widget.EditText access$7(com.linyongan.test.ButtonActivity) -> e
+    android.widget.EditText access$8(com.linyongan.test.ButtonActivity) -> f
+    void access$9(com.linyongan.test.ButtonActivity,java.lang.String) -> d
+    android.widget.EditText access$10(com.linyongan.test.ButtonActivity) -> g
+    void access$11(com.linyongan.test.ButtonActivity,java.lang.String) -> e
+    android.widget.EditText access$12(com.linyongan.test.ButtonActivity) -> h
+    android.widget.EditText access$13(com.linyongan.test.ButtonActivity) -> i
+    void access$14(com.linyongan.test.ButtonActivity,java.lang.String) -> f
+    android.widget.EditText access$15(com.linyongan.test.ButtonActivity) -> j
+    void access$16(com.linyongan.test.ButtonActivity,java.lang.String) -> g
+    android.widget.EditText access$17(com.linyongan.test.ButtonActivity) -> k
+    android.widget.EditText access$18(com.linyongan.test.ButtonActivity) -> l
+    void access$19(com.linyongan.test.ButtonActivity,java.lang.String) -> h
+    android.widget.Button access$20(com.linyongan.test.ButtonActivity) -> m
+    int access$21(com.linyongan.test.ButtonActivity) -> n
+    java.lang.String access$22(com.linyongan.test.ButtonActivity) -> o
+    java.lang.String access$23(com.linyongan.test.ButtonActivity) -> p
+    java.lang.String access$24$5724773d(int,java.lang.String,java.lang.String,java.lang.String) -> a
+    int access$25(com.linyongan.test.ButtonActivity) -> q
+    java.lang.String access$26(com.linyongan.test.ButtonActivity) -> r
+    java.lang.String access$27(com.linyongan.test.ButtonActivity) -> s
+    int access$28(com.linyongan.test.ButtonActivity) -> t
+    java.lang.String access$29(com.linyongan.test.ButtonActivity) -> u
+    java.lang.String access$30(com.linyongan.test.ButtonActivity) -> v
+    int access$31(com.linyongan.test.ButtonActivity) -> w
+    java.lang.String access$32(com.linyongan.test.ButtonActivity) -> x
+    java.lang.String access$33(com.linyongan.test.ButtonActivity) -> y
+    int access$34(com.linyongan.test.ButtonActivity) -> z
+    double[] access$35$6672e37d(java.lang.String,java.lang.String,java.lang.String,int,int) -> a
+    void access$36(com.linyongan.test.ButtonActivity,double[]) -> a
+    int access$37(com.linyongan.test.ButtonActivity) -> A
+    void access$38(com.linyongan.test.ButtonActivity,double[]) -> b
+    int access$39(com.linyongan.test.ButtonActivity) -> B
+    void access$40(com.linyongan.test.ButtonActivity,double[]) -> c
+    int access$41(com.linyongan.test.ButtonActivity) -> C
+    void access$42(com.linyongan.test.ButtonActivity,double[]) -> d
+    double access$43(com.linyongan.test.ButtonActivity,int) -> a
+    double[] access$44(com.linyongan.test.ButtonActivity) -> D
+    double access$45$a9bdbd5(double[]) -> a
+    double access$46$a9bdbd5(double[]) -> b
+    int access$47$a9bdbda(double[]) -> c
+    android.widget.TextView access$48(com.linyongan.test.ButtonActivity) -> E
+    void access$49(com.linyongan.test.ButtonActivity) -> F
+    void access$50(com.linyongan.test.ButtonActivity) -> G
+    int access$51(com.linyongan.test.ButtonActivity,int,int,android.widget.EditText,android.widget.EditText,android.widget.EditText) -> a
+    void access$52(com.linyongan.test.ButtonActivity,int) -> b
+    void access$53(com.linyongan.test.ButtonActivity,int) -> c
+    void access$54(com.linyongan.test.ButtonActivity,int) -> d
+    void access$55(com.linyongan.test.ButtonActivity,int) -> e
+    int access$56(com.linyongan.test.ButtonActivity,int,int) -> a
+    void access$57(com.linyongan.test.ButtonActivity,int) -> f
+    void access$58(com.linyongan.test.ButtonActivity,int) -> g
+    void access$59(com.linyongan.test.ButtonActivity,int) -> h
+    void access$60(com.linyongan.test.ButtonActivity,int) -> i
+com.linyongan.test.ButtonActivity$ButtonListener -> com.linyongan.test.a:
+    com.linyongan.test.ButtonActivity this$0 -> a
     void onClick(android.view.View) -> onClick
-com.linyongan.test.FinanceActivity$radioGroupListener -> com.linyongan.test.b:
-    com.linyongan.test.FinanceActivity this$0 -> a
-    void onCheckedChanged(android.widget.RadioGroup,int) -> onCheckedChanged
+com.linyongan.test.ButtonActivity$SpinnerListener1 -> com.linyongan.test.b:
+    com.linyongan.test.ButtonActivity this$0 -> a
+    void onItemSelected(android.widget.AdapterView,android.view.View,int,long) -> onItemSelected
+    void onNothingSelected(android.widget.AdapterView) -> onNothingSelected
+com.linyongan.test.ButtonActivity$SpinnerListener2 -> com.linyongan.test.c:
+    com.linyongan.test.ButtonActivity this$0 -> a
+    void onItemSelected(android.widget.AdapterView,android.view.View,int,long) -> onItemSelected
+    void onNothingSelected(android.widget.AdapterView) -> onNothingSelected
+com.linyongan.test.ButtonActivity$SpinnerListener3 -> com.linyongan.test.d:
+    com.linyongan.test.ButtonActivity this$0 -> a
+    void onItemSelected(android.widget.AdapterView,android.view.View,int,long) -> onItemSelected
+    void onNothingSelected(android.widget.AdapterView) -> onNothingSelected
+com.linyongan.test.ButtonActivity$SpinnerListener4 -> com.linyongan.test.e:
+    com.linyongan.test.ButtonActivity this$0 -> a
+    void onItemSelected(android.widget.AdapterView,android.view.View,int,long) -> onItemSelected
+    void onNothingSelected(android.widget.AdapterView) -> onNothingSelected
+com.linyongan.test.ButtonActivity$SpinnerListener5 -> com.linyongan.test.f:
+    com.linyongan.test.ButtonActivity this$0 -> a
+    void onItemSelected(android.widget.AdapterView,android.view.View,int,long) -> onItemSelected
+    void onNothingSelected(android.widget.AdapterView) -> onNothingSelected
+com.linyongan.test.ButtonActivity$SpinnerListener6 -> com.linyongan.test.g:
+    com.linyongan.test.ButtonActivity this$0 -> a
+    void onItemSelected(android.widget.AdapterView,android.view.View,int,long) -> onItemSelected
+    void onNothingSelected(android.widget.AdapterView) -> onNothingSelected
+com.linyongan.test.ButtonActivity$SpinnerListener7 -> com.linyongan.test.h:
+    com.linyongan.test.ButtonActivity this$0 -> a
+    void onItemSelected(android.widget.AdapterView,android.view.View,int,long) -> onItemSelected
+    void onNothingSelected(android.widget.AdapterView) -> onNothingSelected
+com.linyongan.test.ButtonActivity$SpinnerListener8 -> com.linyongan.test.i:
+    com.linyongan.test.ButtonActivity this$0 -> a
+    void onItemSelected(android.widget.AdapterView,android.view.View,int,long) -> onItemSelected
+    void onNothingSelected(android.widget.AdapterView) -> onNothingSelected
 com.linyongan.test.IdentificationActivity -> com.linyongan.test.IdentificationActivity:
     android.widget.ImageButton backButton -> a
     void onCreate(android.os.Bundle) -> onCreate
     boolean dispatchKeyEvent(android.view.KeyEvent) -> dispatchKeyEvent
     void goBack() -> a
     void access$0(com.linyongan.test.IdentificationActivity) -> a
-com.linyongan.test.IdentificationActivity$1 -> com.linyongan.test.c:
+com.linyongan.test.IdentificationActivity$1 -> com.linyongan.test.j:
     com.linyongan.test.IdentificationActivity this$0 -> a
     void onClick(android.view.View) -> onClick
 com.linyongan.test.InvestmentActivity -> com.linyongan.test.InvestmentActivity:
@@ -2118,49 +2234,9 @@ com.linyongan.test.InvestmentActivity -> com.linyongan.test.InvestmentActivity:
     boolean dispatchKeyEvent(android.view.KeyEvent) -> dispatchKeyEvent
     void goBack() -> a
     void access$0(com.linyongan.test.InvestmentActivity) -> a
-com.linyongan.test.InvestmentActivity$1 -> com.linyongan.test.d:
+com.linyongan.test.InvestmentActivity$1 -> com.linyongan.test.k:
     com.linyongan.test.InvestmentActivity this$0 -> a
     void onClick(android.view.View) -> onClick
-com.linyongan.test.LoanActivity -> com.linyongan.test.LoanActivity:
-    android.widget.ImageButton backButton -> a
-    android.widget.ImageButton cleanButton -> b
-    android.widget.Button calculateButton -> c
-    android.widget.EditText principal_et -> d
-    android.widget.EditText month_et -> e
-    android.widget.EditText monthRate_et -> f
-    android.widget.TextView out_tv -> g
-    android.widget.RadioGroup radioGroup -> h
-    int month -> i
-    java.lang.Double principal -> j
-    java.lang.Double monthRate -> k
-    int mark -> l
-    void onCreate(android.os.Bundle) -> onCreate
-    boolean dispatchKeyEvent(android.view.KeyEvent) -> dispatchKeyEvent
-    void goBack() -> a
-    android.widget.EditText access$0(com.linyongan.test.LoanActivity) -> a
-    android.widget.EditText access$1(com.linyongan.test.LoanActivity) -> b
-    android.widget.EditText access$2(com.linyongan.test.LoanActivity) -> c
-    int access$3(com.linyongan.test.LoanActivity) -> d
-    void access$4(com.linyongan.test.LoanActivity,int) -> a
-    void access$5(com.linyongan.test.LoanActivity,java.lang.Double) -> a
-    void access$6(com.linyongan.test.LoanActivity,java.lang.Double) -> b
-    java.lang.Double access$7(com.linyongan.test.LoanActivity) -> e
-    java.lang.Double access$8(com.linyongan.test.LoanActivity) -> f
-    int access$9(com.linyongan.test.LoanActivity) -> g
-    java.lang.Double access$10$4caab063(java.lang.Double,int,java.lang.Double) -> a
-    java.lang.Double access$11$4caab063(java.lang.Double,int,java.lang.Double) -> b
-    android.widget.TextView access$12(com.linyongan.test.LoanActivity) -> h
-    java.lang.Double[] access$13$27f708f2(java.lang.Double,int,java.lang.Double) -> c
-    java.lang.Double access$14$12fc1fb2(java.lang.Double,java.lang.Double[],int) -> a
-    void access$15(com.linyongan.test.LoanActivity) -> i
-    void access$16(com.linyongan.test.LoanActivity) -> j
-    void access$17(com.linyongan.test.LoanActivity,int) -> b
-com.linyongan.test.LoanActivity$ButtonListener -> com.linyongan.test.e:
-    com.linyongan.test.LoanActivity this$0 -> a
-    void onClick(android.view.View) -> onClick
-com.linyongan.test.LoanActivity$radioGroupListener -> com.linyongan.test.f:
-    com.linyongan.test.LoanActivity this$0 -> a
-    void onCheckedChanged(android.widget.RadioGroup,int) -> onCheckedChanged
 org.achartengine.GraphicalActivity -> org.achartengine.GraphicalActivity:
     org.achartengine.GraphicalView mView -> a
     org.achartengine.chart.AbstractChart mChart -> b
@@ -2215,41 +2291,9 @@ org.achartengine.TouchHandlerOld -> org.achartengine.e:
     org.achartengine.GraphicalView graphicalView -> f
     boolean handleTouch(android.view.MotionEvent) -> a
 org.achartengine.chart.AbstractChart -> org.achartengine.a.a:
-    void draw(android.graphics.Canvas,int,int,int,int,android.graphics.Paint) -> a
-    void drawBackground(org.achartengine.renderer.DefaultRenderer,android.graphics.Canvas,int,int,int,int,android.graphics.Paint,boolean,int) -> a
-    int drawLegend(android.graphics.Canvas,org.achartengine.renderer.DefaultRenderer,java.lang.String[],int,int,int,int,int,int,android.graphics.Paint,boolean) -> a
-    void drawString(android.graphics.Canvas,java.lang.String,float,float,android.graphics.Paint) -> a
-    boolean getExceed(float,org.achartengine.renderer.DefaultRenderer,int,int) -> a
+    void draw$71b3f465() -> a
     boolean isVertical(org.achartengine.renderer.DefaultRenderer) -> a
-    float[] calculateDrawPoints(float,float,float,float,int,int) -> a
-    void drawPath(android.graphics.Canvas,float[],android.graphics.Paint,boolean) -> a
-    int getLegendShapeWidth$134621() -> a
-    void drawLegendShape(android.graphics.Canvas,org.achartengine.renderer.SimpleSeriesRenderer,float,float,int,android.graphics.Paint) -> a
-org.achartengine.chart.ClickableArea -> org.achartengine.a.b:
-    android.graphics.RectF rect -> a
-    double x -> b
-    double y -> c
-org.achartengine.chart.LineChart -> org.achartengine.a.c:
-    org.achartengine.chart.ScatterChart pointsChart -> c
-    void drawSeries$5b0b722c(android.graphics.Canvas,android.graphics.Paint,float[],org.achartengine.renderer.SimpleSeriesRenderer,float) -> a
-    org.achartengine.chart.ClickableArea[] clickableAreasForPoints$1222cb8e(float[],double[]) -> a
-    int getLegendShapeWidth$134621() -> a
-    void drawLegendShape(android.graphics.Canvas,org.achartengine.renderer.SimpleSeriesRenderer,float,float,int,android.graphics.Paint) -> a
-    boolean isRenderPoints(org.achartengine.renderer.SimpleSeriesRenderer) -> a
-    org.achartengine.chart.ScatterChart getPointsChart() -> b
-org.achartengine.chart.PointStyle -> org.achartengine.a.d:
-    org.achartengine.chart.PointStyle X -> a
-    org.achartengine.chart.PointStyle CIRCLE -> b
-    org.achartengine.chart.PointStyle TRIANGLE -> c
-    org.achartengine.chart.PointStyle SQUARE -> d
-    org.achartengine.chart.PointStyle DIAMOND -> e
-    org.achartengine.chart.PointStyle POINT -> f
-    java.lang.String mName -> g
-    org.achartengine.chart.PointStyle[] $VALUES -> h
-    org.achartengine.chart.PointStyle[] values() -> values
-    org.achartengine.chart.PointStyle valueOf(java.lang.String) -> valueOf
-    java.lang.String toString() -> toString
-org.achartengine.chart.RoundChart -> org.achartengine.a.e:
+org.achartengine.chart.RoundChart -> org.achartengine.a.b:
     org.achartengine.renderer.DefaultRenderer mRenderer -> a
     int mCenterX -> b
     int mCenterY -> c
@@ -2258,187 +2302,73 @@ org.achartengine.chart.RoundChart -> org.achartengine.a.e:
     int getCenterY() -> d
     void setCenterX(int) -> a
     void setCenterY(int) -> b
-org.achartengine.chart.ScatterChart -> org.achartengine.a.f:
-    float size -> c
-    void drawSeries$5b0b722c(android.graphics.Canvas,android.graphics.Paint,float[],org.achartengine.renderer.SimpleSeriesRenderer,float) -> a
-    org.achartengine.chart.ClickableArea[] clickableAreasForPoints$1222cb8e(float[],double[]) -> a
-    int getLegendShapeWidth$134621() -> a
-    void drawLegendShape(android.graphics.Canvas,org.achartengine.renderer.SimpleSeriesRenderer,float,float,int,android.graphics.Paint) -> a
-    void drawX(android.graphics.Canvas,android.graphics.Paint,float,float) -> a
-    void drawCircle(android.graphics.Canvas,android.graphics.Paint,float,float) -> b
-    void drawTriangle(android.graphics.Canvas,android.graphics.Paint,float[],float,float) -> a
-    void drawSquare(android.graphics.Canvas,android.graphics.Paint,float,float) -> c
-    void drawDiamond(android.graphics.Canvas,android.graphics.Paint,float[],float,float) -> b
-org.achartengine.chart.ScatterChart$1 -> org.achartengine.a.g:
-    int[] $SwitchMap$org$achartengine$chart$PointStyle -> a
-org.achartengine.chart.XYChart -> org.achartengine.a.h:
+org.achartengine.chart.XYChart -> org.achartengine.a.c:
     org.achartengine.model.XYMultipleSeriesDataset mDataset -> a
     org.achartengine.renderer.XYMultipleSeriesRenderer mRenderer -> b
-    float mScale -> c
-    float mTranslate -> d
-    org.achartengine.model.Point mCenter -> e
-    android.graphics.Rect mScreenR -> f
-    java.util.Map mCalcRange -> g
-    java.util.Map clickableAreas -> h
-    void draw(android.graphics.Canvas,int,int,int,int,android.graphics.Paint) -> a
-    java.util.Map getYLabels(double[],double[],int) -> a
-    java.util.List getValidLabels(java.util.List) -> a
-    void drawSeries$7a25fd6f(org.achartengine.model.XYSeries,android.graphics.Canvas,android.graphics.Paint,java.util.List,org.achartengine.renderer.SimpleSeriesRenderer,float,org.achartengine.renderer.XYMultipleSeriesRenderer$Orientation,int) -> a
-    void setStroke(android.graphics.Paint$Cap,android.graphics.Paint$Join,float,android.graphics.Paint$Style,android.graphics.PathEffect,android.graphics.Paint) -> a
-    void drawChartValuesText$76a1002a(android.graphics.Canvas,org.achartengine.model.XYSeries,org.achartengine.renderer.SimpleSeriesRenderer,android.graphics.Paint,float[],int) -> a
-    void drawText(android.graphics.Canvas,java.lang.String,float,float,android.graphics.Paint,float) -> a
-    void transform(android.graphics.Canvas,float,boolean) -> a
-    java.lang.String getLabel(double) -> a
-    void drawXLabels(java.util.List,java.lang.Double[],android.graphics.Canvas,android.graphics.Paint,int,int,int,double,double,double) -> a
-    void drawYLabels(java.util.Map,android.graphics.Canvas,android.graphics.Paint,int,int,int,int,double[],double[]) -> a
-    org.achartengine.renderer.XYMultipleSeriesRenderer getRenderer() -> c
-    org.achartengine.model.XYMultipleSeriesDataset getDataset() -> d
+    android.graphics.Rect mScreenR -> c
+    java.util.Map mCalcRange -> d
+    java.util.Map clickableAreas -> e
+    org.achartengine.renderer.XYMultipleSeriesRenderer getRenderer() -> b
+    org.achartengine.model.XYMultipleSeriesDataset getDataset() -> c
     double[] getCalcRange(int) -> a
-    int getLabelLinePos(android.graphics.Paint$Align) -> a
     double[] toRealPoint(float,float,int) -> a
-    void drawSeries$5b0b722c(android.graphics.Canvas,android.graphics.Paint,float[],org.achartengine.renderer.SimpleSeriesRenderer,float) -> a
-    org.achartengine.chart.ClickableArea[] clickableAreasForPoints$1222cb8e(float[],double[]) -> a
-    boolean isRenderPoints(org.achartengine.renderer.SimpleSeriesRenderer) -> a
-    org.achartengine.chart.ScatterChart getPointsChart() -> b
-org.achartengine.model.Point -> org.achartengine.b.a:
-    float mX -> a
-    float mY -> b
-    float getX() -> a
-    float getY() -> b
-org.achartengine.model.XYMultipleSeriesDataset -> org.achartengine.b.b:
+org.achartengine.model.XYMultipleSeriesDataset -> org.achartengine.b.a:
     java.util.List mSeries -> a
-    void addSeries(org.achartengine.model.XYSeries) -> a
-    org.achartengine.model.XYSeries getSeriesAt(int) -> a
-    int getSeriesCount() -> a
-    org.achartengine.model.XYSeries[] getSeries() -> b
-org.achartengine.model.XYSeries -> org.achartengine.b.c:
-    java.lang.String mTitle -> a
-    org.achartengine.util.IndexXYMap mXY -> b
-    double mMinX -> c
-    double mMaxX -> d
-    double mMinY -> e
-    double mMaxY -> f
-    int mScaleNumber -> g
+    org.achartengine.model.XYSeries[] getSeries() -> a
+org.achartengine.model.XYSeries -> org.achartengine.b.b:
+    double mMinX -> a
+    double mMaxX -> b
+    double mMinY -> c
+    double mMaxY -> d
+    int mScaleNumber -> e
     int getScaleNumber() -> a
-    void initRange() -> h
-    void updateRange(double,double) -> c
-    java.lang.String getTitle() -> b
-    void add(double,double) -> a
-    double getX(int) -> b
-    double getY(int) -> a
-    java.util.SortedMap getRange$70a7aec0(double,double) -> b
-    int getIndexForKey(double) -> a
-    int getItemCount() -> c
-    double getMinX() -> d
-    double getMinY() -> e
-    double getMaxX() -> f
-    double getMaxY() -> g
-org.achartengine.renderer.BasicStroke -> org.achartengine.c.a:
-    org.achartengine.renderer.BasicStroke SOLID -> a
-    org.achartengine.renderer.BasicStroke DASHED -> b
-    org.achartengine.renderer.BasicStroke DOTTED -> c
-    android.graphics.Paint$Cap mCap -> d
-    android.graphics.Paint$Join mJoin -> e
-    float mMiter -> f
-    float[] mIntervals -> g
-    float mPhase -> h
-    android.graphics.Paint$Cap getCap() -> a
-    android.graphics.Paint$Join getJoin() -> b
-    float getMiter() -> c
-    float[] getIntervals() -> d
-    float getPhase() -> e
-org.achartengine.renderer.DefaultRenderer -> org.achartengine.c.b:
+    double getMinX() -> b
+    double getMinY() -> c
+    double getMaxX() -> d
+    double getMaxY() -> e
+org.achartengine.renderer.DefaultRenderer -> org.achartengine.c.a:
     java.lang.String mChartTitle -> a
     float mChartTitleTextSize -> b
     android.graphics.Typeface REGULAR_TEXT_FONT -> c
     java.lang.String mTextTypefaceName -> d
     int mTextTypefaceStyle -> e
-    int mBackgroundColor -> f
-    boolean mApplyBackgroundColor -> g
-    boolean mShowAxes -> h
-    int mAxesColor -> i
-    boolean mShowLabels -> j
-    int mLabelsColor -> k
-    float mLabelsTextSize -> l
-    boolean mShowLegend -> m
-    float mLegendTextSize -> n
-    boolean mFitLegend -> o
-    boolean mShowGridX -> p
-    boolean mShowGridY -> q
-    boolean mShowCustomTextGrid -> r
-    java.util.List mRenderers -> s
-    boolean mAntialiasing -> t
-    int mLegendHeight -> u
-    int[] mMargins -> v
-    float mScale -> w
-    boolean mPanEnabled -> x
-    boolean mZoomEnabled -> y
-    boolean mZoomButtonsVisible -> z
-    float mZoomRate -> A
-    boolean mExternalZoomEnabled -> B
-    float mOriginalScale -> C
-    boolean mClickEnabled -> D
-    int selectableBuffer -> E
-    boolean mInScroll -> F
-    float mStartAngle -> G
-    java.lang.String getChartTitle() -> a
-    void setChartTitle(java.lang.String) -> a
-    float getChartTitleTextSize() -> b
-    void setChartTitleTextSize$133aeb() -> c
-    void addSeriesRenderer(org.achartengine.renderer.SimpleSeriesRenderer) -> a
-    org.achartengine.renderer.SimpleSeriesRenderer getSeriesRendererAt(int) -> a
-    int getSeriesRendererCount() -> d
-    int getBackgroundColor() -> e
-    boolean isApplyBackgroundColor() -> f
-    int getAxesColor() -> g
-    void setAxesColor$13462e() -> h
-    int getLabelsColor() -> i
-    void setLabelsColor$13462e() -> j
-    float getLabelsTextSize() -> k
-    void setLabelsTextSize$133aeb() -> l
-    boolean isShowAxes() -> m
-    boolean isShowLabels() -> n
-    boolean isShowGridX() -> o
-    boolean isShowGridY() -> p
-    void setShowGrid$1385ff() -> q
-    boolean isShowCustomTextGrid() -> r
-    boolean isShowLegend() -> s
-    boolean isFitLegend() -> t
-    java.lang.String getTextTypefaceName() -> u
-    int getTextTypefaceStyle() -> v
-    float getLegendTextSize() -> w
-    void setLegendTextSize$133aeb() -> x
-    boolean isAntialiasing() -> y
-    float getScale() -> z
-    float getOriginalScale() -> A
+    boolean mShowAxes -> f
+    int mAxesColor -> g
+    boolean mShowLabels -> h
+    int mLabelsColor -> i
+    float mLabelsTextSize -> j
+    boolean mShowLegend -> k
+    float mLegendTextSize -> l
+    boolean mFitLegend -> m
+    boolean mShowGridX -> n
+    boolean mShowGridY -> o
+    boolean mShowCustomTextGrid -> p
+    java.util.List mRenderers -> q
+    boolean mAntialiasing -> r
+    int mLegendHeight -> s
+    int[] mMargins -> t
+    float mScale -> u
+    boolean mPanEnabled -> v
+    boolean mZoomEnabled -> w
+    boolean mZoomButtonsVisible -> x
+    float mZoomRate -> y
+    boolean mExternalZoomEnabled -> z
+    float mOriginalScale -> A
+    boolean mClickEnabled -> B
+    int selectableBuffer -> C
+    boolean mInScroll -> D
+    float mStartAngle -> E
+    float getScale() -> a
+    float getOriginalScale() -> b
     void setScale(float) -> a
-    boolean isZoomEnabled() -> B
-    boolean isZoomButtonsVisible() -> C
-    boolean isExternalZoomEnabled() -> D
-    float getZoomRate() -> E
-    boolean isPanEnabled() -> F
-    boolean isClickEnabled() -> G
-    int getSelectableBuffer() -> H
-    int getLegendHeight() -> I
-    int[] getMargins() -> J
-    void setMargins(int[]) -> a
-    boolean isInScroll() -> K
-org.achartengine.renderer.SimpleSeriesRenderer -> org.achartengine.c.c:
-    int mColor -> a
-    boolean mDisplayChartValues -> b
-    float mChartValuesTextSize -> c
-    android.graphics.Paint$Align mChartValuesTextAlign -> d
-    float mChartValuesSpacing -> e
-    org.achartengine.renderer.BasicStroke mStroke -> f
-    boolean mGradientEnabled -> g
-    int getColor() -> a
-    void setColor(int) -> a
-    boolean isDisplayChartValues() -> b
-    float getChartValuesTextSize() -> c
-    android.graphics.Paint$Align getChartValuesTextAlign() -> d
-    float getChartValuesSpacing() -> e
-    org.achartengine.renderer.BasicStroke getStroke() -> f
-org.achartengine.renderer.XYMultipleSeriesRenderer -> org.achartengine.c.d:
+    boolean isZoomEnabled() -> c
+    boolean isZoomButtonsVisible() -> d
+    boolean isExternalZoomEnabled() -> e
+    float getZoomRate() -> f
+    boolean isPanEnabled() -> g
+    boolean isClickEnabled() -> h
+    boolean isInScroll() -> i
+org.achartengine.renderer.XYMultipleSeriesRenderer -> org.achartengine.c.b:
     java.lang.String mXTitle -> a
     java.lang.String[] mYTitle -> b
     float mAxisTitleTextSize -> c
@@ -2459,99 +2389,51 @@ org.achartengine.renderer.XYMultipleSeriesRenderer -> org.achartengine.c.d:
     int mMarginsColor -> r
     double[] mPanLimits -> s
     double[] mZoomLimits -> t
-    float mXLabelsAngle -> u
-    float mYLabelsAngle -> v
-    java.util.Map initialRange -> w
-    float mPointSize -> x
-    int mGridColor -> y
-    int scalesCount -> z
-    android.graphics.Paint$Align xLabelsAlign -> A
-    android.graphics.Paint$Align[] yLabelsAlign -> B
-    android.graphics.Paint$Align[] yAxisAlign -> C
-    int mXLabelsColor -> D
-    int[] mYLabelsColor -> E
-    void initAxesRange$13462e() -> ap
-    org.achartengine.renderer.XYMultipleSeriesRenderer$Orientation getOrientation() -> L
-    java.lang.String getXTitle() -> M
-    void setXTitle(java.lang.String) -> b
-    java.lang.String getYTitle() -> N
-    java.lang.String getYTitle(int) -> b
-    void setYTitle(java.lang.String) -> c
-    float getAxisTitleTextSize() -> O
-    void setAxisTitleTextSize$133aeb() -> P
-    void setXAxisMin$133369() -> Q
-    void setXAxisMax$133369() -> R
-    void setYAxisMin$133369() -> S
-    void setYAxisMax$133369() -> T
-    double getXAxisMin(int) -> c
+    java.util.Map initialRange -> u
+    float mPointSize -> v
+    int mGridColor -> w
+    int scalesCount -> x
+    android.graphics.Paint$Align xLabelsAlign -> y
+    android.graphics.Paint$Align[] yLabelsAlign -> z
+    android.graphics.Paint$Align[] yAxisAlign -> A
+    int mXLabelsColor -> B
+    int[] mYLabelsColor -> C
+    void initAxesRange$13462e() -> t
+    org.achartengine.renderer.XYMultipleSeriesRenderer$Orientation getOrientation() -> j
+    double getXAxisMin(int) -> a
     void setXAxisMin(double,int) -> a
-    boolean isMinXSet(int) -> d
-    double getXAxisMax(int) -> e
+    boolean isMinXSet(int) -> b
+    double getXAxisMax(int) -> c
     void setXAxisMax(double,int) -> b
-    boolean isMaxXSet(int) -> f
-    double getYAxisMin(int) -> g
+    boolean isMaxXSet(int) -> d
+    double getYAxisMin(int) -> e
     void setYAxisMin(double,int) -> c
-    boolean isMinYSet(int) -> h
-    double getYAxisMax(int) -> i
+    boolean isMinYSet(int) -> f
+    double getYAxisMax(int) -> g
     void setYAxisMax(double,int) -> d
-    boolean isMaxYSet(int) -> j
-    int getXLabels() -> U
-    void setXLabels$13462e() -> V
-    java.lang.String getXTextLabel(java.lang.Double) -> a
-    java.lang.Double[] getXTextLabelLocations() -> W
-    java.lang.String getYTextLabel(java.lang.Double,int) -> a
-    java.lang.Double[] getYTextLabelLocations(int) -> k
-    int getYLabels() -> X
-    void setYLabels$13462e() -> Y
-    boolean isPanEnabled() -> F
-    boolean isPanXEnabled() -> Z
-    boolean isPanYEnabled() -> aa
-    boolean isZoomEnabled() -> B
-    boolean isZoomXEnabled() -> ab
-    boolean isZoomYEnabled() -> ac
-    int getMarginsColor() -> ad
-    void setMarginsColor(int) -> l
-    int getGridColor() -> ae
-    double[] getPanLimits() -> af
-    void setPanLimits(double[]) -> a
-    double[] getZoomLimits() -> ag
-    float getXLabelsAngle() -> ah
-    float getYLabelsAngle() -> ai
-    float getPointSize() -> aj
-    void setPointSize$133aeb() -> ak
+    boolean isMaxYSet(int) -> h
+    boolean isPanEnabled() -> g
+    boolean isPanXEnabled() -> k
+    boolean isPanYEnabled() -> l
+    boolean isZoomEnabled() -> c
+    boolean isZoomXEnabled() -> m
+    boolean isZoomYEnabled() -> n
+    int getMarginsColor() -> o
+    void setMarginsColor(int) -> i
+    double[] getPanLimits() -> p
+    double[] getZoomLimits() -> q
     void setRange(double[],int) -> a
-    boolean isInitialRangeSet() -> al
-    boolean isInitialRangeSet(int) -> m
-    double[] getInitialRange(int) -> n
-    int getXLabelsColor() -> am
-    int getYLabelsColor(int) -> o
-    android.graphics.Paint$Align getXLabelsAlign() -> an
-    void setXLabelsAlign(android.graphics.Paint$Align) -> a
-    android.graphics.Paint$Align getYLabelsAlign(int) -> p
-    void setYLabelsAlign(android.graphics.Paint$Align) -> b
-    android.graphics.Paint$Align getYAxisAlign(int) -> q
-    int getScalesCount() -> ao
-org.achartengine.renderer.XYMultipleSeriesRenderer$Orientation -> org.achartengine.c.e:
+    boolean isInitialRangeSet() -> r
+    boolean isInitialRangeSet(int) -> j
+    double[] getInitialRange(int) -> k
+    int getScalesCount() -> s
+org.achartengine.renderer.XYMultipleSeriesRenderer$Orientation -> org.achartengine.c.c:
     org.achartengine.renderer.XYMultipleSeriesRenderer$Orientation HORIZONTAL -> a
     org.achartengine.renderer.XYMultipleSeriesRenderer$Orientation VERTICAL -> b
     int mAngle -> c
     org.achartengine.renderer.XYMultipleSeriesRenderer$Orientation[] $VALUES -> d
     org.achartengine.renderer.XYMultipleSeriesRenderer$Orientation[] values() -> values
     org.achartengine.renderer.XYMultipleSeriesRenderer$Orientation valueOf(java.lang.String) -> valueOf
-    int getAngle() -> a
-org.achartengine.renderer.XYSeriesRenderer -> org.achartengine.c.f:
-    boolean mFillPoints -> a
-    boolean mFillBelowLine -> b
-    int mFillColor -> c
-    org.achartengine.chart.PointStyle mPointStyle -> d
-    float mLineWidth -> e
-    boolean isFillBelowLine() -> g
-    boolean isFillPoints() -> h
-    void setFillPoints$1385ff() -> i
-    int getFillBelowLineColor() -> j
-    org.achartengine.chart.PointStyle getPointStyle() -> k
-    void setPointStyle(org.achartengine.chart.PointStyle) -> a
-    float getLineWidth() -> l
 org.achartengine.tools.AbstractTool -> org.achartengine.d.a:
     org.achartengine.chart.AbstractChart mChart -> a
     org.achartengine.renderer.XYMultipleSeriesRenderer mRenderer -> b
@@ -2580,17 +2462,3 @@ org.achartengine.tools.Zoom -> org.achartengine.d.d:
 org.achartengine.tools.ZoomEvent -> org.achartengine.d.e:
     boolean mZoomIn -> a
     float mZoomRate -> b
-org.achartengine.util.IndexXYMap -> org.achartengine.e.a:
-    java.util.List indexList -> a
-    double maxXDifference -> b
-    java.lang.Object put(java.lang.Object,java.lang.Object) -> put
-    void updateMaxXDifference() -> a
-    void clear() -> clear
-    java.lang.Object getXByIndex(int) -> a
-    java.lang.Object getYByIndex(int) -> b
-    int getIndexForKey(java.lang.Object) -> a
-org.achartengine.util.MathHelper -> org.achartengine.e.b:
-    java.text.NumberFormat FORMAT -> a
-    java.util.List getLabels(double,double,int) -> a
-    float[] getFloats(java.util.List) -> a
-    double[] getDoubles(java.util.List) -> b

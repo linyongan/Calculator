@@ -192,12 +192,17 @@ public class MainActivity extends Activity {
 	/** ÍË³ö°´Å¥ */
 	public boolean dispatchKeyEvent(KeyEvent event) {
 		if (event.getKeyCode() == KeyEvent.KEYCODE_BACK) {
-			Intent mHomeIntent = new Intent(Intent.ACTION_MAIN);  
-			mHomeIntent.addCategory(Intent.CATEGORY_HOME);  
-			mHomeIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK  
-			| Intent.FLAG_ACTIVITY_RESET_TASK_IF_NEEDED);  
-			startActivity(mHomeIntent); 
-			finish();
+			
+			if (event.getAction() == KeyEvent.ACTION_DOWN
+					&& event.getRepeatCount() == 0) {
+				Intent mHomeIntent = new Intent(Intent.ACTION_MAIN);  
+				mHomeIntent.addCategory(Intent.CATEGORY_HOME);  
+				mHomeIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK  
+				| Intent.FLAG_ACTIVITY_RESET_TASK_IF_NEEDED);  
+				startActivity(mHomeIntent); 
+				finish();
+				return true;
+			}
 		}
 		return super.dispatchKeyEvent(event);
 	}

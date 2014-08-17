@@ -57,8 +57,12 @@ com.linyongan.activity.Button7Activity
 com.linyongan.activity.Button7Activity: Button7Activity()
 com.linyongan.activity.DerivativeActivity
 com.linyongan.activity.DerivativeActivity: DerivativeActivity()
+com.linyongan.activity.FinanceActivity
+com.linyongan.activity.FinanceActivity: FinanceActivity()
 com.linyongan.activity.LearnActivity
 com.linyongan.activity.LearnActivity: LearnActivity()
+com.linyongan.activity.LoanActivity
+com.linyongan.activity.LoanActivity: LoanActivity()
 com.linyongan.activity.MainActivity
 com.linyongan.activity.MainActivity: MainActivity()
 com.linyongan.activity.QuestionActivity
@@ -83,10 +87,9 @@ com.linyongan.sortlistview.SideBar
 com.linyongan.sortlistview.SideBar: SideBar(android.content.Context,android.util.AttributeSet,int)
 com.linyongan.sortlistview.SideBar: SideBar(android.content.Context,android.util.AttributeSet)
 com.linyongan.sortlistview.SideBar: SideBar(android.content.Context)
-com.linyongan.test.FinanceActivity
+com.linyongan.test.ButtonActivity
 com.linyongan.test.IdentificationActivity
 com.linyongan.test.InvestmentActivity
-com.linyongan.test.LoanActivity
 org.achartengine.GraphicalActivity
 org.achartengine.GraphicalActivity: GraphicalActivity()
 org.achartengine.chart.BarChart$Type: org.achartengine.chart.BarChart$Type[] values()
