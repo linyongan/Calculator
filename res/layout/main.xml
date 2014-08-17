@@ -2,7 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/b6"
+    android:background="@drawable/b5"
     android:orientation="vertical" >
 
     <RelativeLayout
@@ -38,7 +38,7 @@
             android:background="@android:color/transparent"
             android:padding="8dp"
             android:text="理念介绍\n纵观历史，每次金融危机的发生，背后总有一群疯狂的投资者。可以说，投资者的不成熟导致金融危机的发生的一项非常重要的因素。"
-            android:textColor="#a0000000"
+            android:textColor="@android:color/black"
             android:textSize="18sp" />
         <!--
             <Button
@@ -93,7 +93,7 @@
                     android:drawablePadding="-5dp"
                     android:drawableTop="@drawable/learn_btn_selector"
                     android:text="期权学堂"
-                    android:textColor="@android:color/white"
+                    android:textColor="@android:color/black"
                     android:textSize="16sp" />
 
                 <Button
@@ -105,7 +105,7 @@
                     android:drawablePadding="-5dp"
                     android:drawableTop="@drawable/calculate_btn_selector"
                     android:text="期权计算"
-                    android:textColor="@android:color/white"
+                    android:textColor="@android:color/black"
                     android:textSize="16sp" />
 
                 <Button
@@ -116,7 +116,7 @@
                     android:drawablePadding="-5dp"
                     android:drawableTop="@drawable/test_btn_selector"
                     android:text="自我测试"
-                    android:textColor="@android:color/white"
+                    android:textColor="@android:color/black"
                     android:textSize="16sp" />
             </TableRow>
 
@@ -134,7 +134,7 @@
                     android:drawablePadding="-5dp"
                     android:drawableTop="@drawable/noun_btn_selector"
                     android:text="名词查询"
-                    android:textColor="@android:color/white"
+                    android:textColor="@android:color/black"
                     android:textSize="16sp" />
 
                 <Button
@@ -146,7 +146,7 @@
                     android:drawablePadding="-5dp"
                     android:drawableTop="@drawable/question_btn_selector"
                     android:text="常见问题"
-                    android:textColor="@android:color/white"
+                    android:textColor="@android:color/black"
                     android:textSize="16sp" />
 
                 <Button
@@ -157,7 +157,7 @@
                     android:drawablePadding="-5dp"
                     android:drawableTop="@drawable/about_btn_selector"
                     android:text="关于我们"
-                    android:textColor="@android:color/white"
+                    android:textColor="@android:color/black"
                     android:textSize="16sp" />
             </TableRow>
         </TableLayout>

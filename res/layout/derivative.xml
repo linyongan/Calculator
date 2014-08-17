@@ -2,7 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/b11"
+    android:background="@drawable/b1"
     android:orientation="vertical" >
 
     <RelativeLayout
@@ -64,7 +64,7 @@
                     android:layout_marginRight="20dp"
                     android:background="@drawable/test_commonbtn_selector"
                     android:drawablePadding="-15dp"
-                    android:drawableTop="@drawable/c1"
+                    android:drawableTop="@drawable/c10"
                     android:paddingTop="20dp"
                     android:text="理论价格"
                     android:textColor="@android:color/black"

@@ -14,6 +14,13 @@
         <item>认沽</item>
         <item>股票</item>
     </string-array>
+    <string-array name="array4">
+        <item>多头策略与空头策略</item>
+        <item>牛市价差与熊市价差</item>
+        <item>跨式策略与勒式策略</item>
+        <item>领口策略</item>
+        <item>蝶式策略</item>
+    </string-array>
     <string-array name="array3">
         <item>多头</item>
         <item>空头</item>

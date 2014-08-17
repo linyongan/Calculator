@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/b1"
+    android:background="@drawable/b3"
     android:orientation="vertical" >
 
     <RelativeLayout
@@ -41,7 +41,6 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
         android:gravity="center_horizontal|center_vertical"
         android:orientation="vertical"
         android:paddingLeft="8dp"
@@ -52,38 +51,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp" >
 
-            <TableRow
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="5dp"
-                android:gravity="center_horizontal" >
-
-                <Button
-                    android:id="@+id/test_collectButton"
-                    android:layout_width="80dp"
-                    android:layout_height="80dp"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginRight="10dp"
-                    android:background="@drawable/test_commonbtn_selector"
-                    android:drawablePadding="-15dp"
-                    android:drawableTop="@drawable/test_button4"
-                    android:paddingTop="10dp"
-                    android:text="难题收藏"
-                    android:textSize="14sp" />
-
-                <Button
-                    android:id="@+id/test_gradeButton"
-                    android:layout_width="80dp"
-                    android:layout_height="80dp"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginRight="10dp"
-                    android:background="@drawable/test_commonbtn_selector"
-                    android:drawablePadding="-15dp"
-                    android:drawableTop="@drawable/test_button5"
-                    android:paddingTop="10dp"
-                    android:text="考试成绩"
-                    android:textSize="14sp" />
-            </TableRow>
+           
 
             <TableRow
                 android:layout_width="wrap_content"
@@ -125,7 +93,39 @@
                     android:text="进阶测试2"
                     android:textSize="14sp" />
             </TableRow>
+             <TableRow
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:gravity="center_horizontal" >
+
+                <Button
+                    android:id="@+id/test_collectButton"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:background="@drawable/test_commonbtn_selector"
+                    android:drawablePadding="-15dp"
+                    android:drawableTop="@drawable/test_button4"
+                    android:paddingTop="10dp"
+                    android:text="难题收藏"
+                    android:textSize="14sp" />
+
+                <Button
+                    android:id="@+id/test_gradeButton"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:background="@drawable/test_commonbtn_selector"
+                    android:drawablePadding="-15dp"
+                    android:drawableTop="@drawable/test_button5"
+                    android:paddingTop="10dp"
+                    android:text="考试成绩"
+                    android:textSize="14sp" />
+            </TableRow>
         </TableLayout>
     </LinearLayout>
 
-</RelativeLayout>
+</LinearLayout>
