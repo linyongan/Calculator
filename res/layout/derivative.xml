@@ -64,7 +64,7 @@
                     android:layout_marginRight="20dp"
                     android:background="@drawable/test_commonbtn_selector"
                     android:drawablePadding="-15dp"
-                    android:drawableTop="@drawable/c10"
+                    android:drawableTop="@drawable/c1"
                     android:paddingTop="20dp"
                     android:text="理论价格"
                     android:textColor="@android:color/black"
