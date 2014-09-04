@@ -222,8 +222,7 @@ public class TestingActivity extends Activity {
 					right = false;
 					left = true;
 					buttoncontrol = false;
-				} 
-				else if (lastValue == arg2) {
+				} else if (lastValue == arg2) {
 					right = left = false;
 					buttoncontrol = true;
 				}
@@ -235,11 +234,11 @@ public class TestingActivity extends Activity {
 		@Override
 		public void onPageSelected(int arg0) {
 			// 页面跳转完成之后才调用的方法
-			if (left && i < 10&&!buttoncontrol) {
+			if (left && i < 10 && !buttoncontrol) {
 				i++;
 				System.out.println("页面跳转后----向左滑动，现在的i值:" + i);
 			}
-			if (right&&!buttoncontrol) {
+			if (right && !buttoncontrol) {
 				i--;
 				System.out.println("页面跳转后----向右滑动，现在的i值:" + i);
 			}
@@ -340,7 +339,7 @@ public class TestingActivity extends Activity {
 			System.out.println("--option2:-- " + Soption2);
 			System.out.println("--option3:-- " + Soption3);
 			System.out.println("--option4:-- " + Soption4);
-			question.setText((i+1) + "、" + Squestion);
+			question.setText((i + 1) + "、" + Squestion);
 			option1.setText(Soption1);
 			option2.setText(Soption2);
 			option3.setText(Soption3);
@@ -425,20 +424,20 @@ public class TestingActivity extends Activity {
 			switch (v.getId()) {
 			case R.id.testing_next:
 				buttoncontrol = true;
-				if(i<10){
-					i=i+1;
+				if (i < 10) {
+					i = i + 1;
 					viewPager.setCurrentItem(i);
-				}else{
+				} else {
 					Toast.makeText(TestingActivity.this, "已经到达最后一页！",
 							Toast.LENGTH_SHORT).show();
 				}
 				break;
 			case R.id.testing_back:
 				buttoncontrol = true;
-				if(i>0){
-					i=i-1;
+				if (i > 0) {
+					i = i - 1;
 					viewPager.setCurrentItem(i);
-				}else{
+				} else {
 					Toast.makeText(TestingActivity.this, "已经到达第一页！",
 							Toast.LENGTH_SHORT).show();
 				}
@@ -454,8 +453,7 @@ public class TestingActivity extends Activity {
 			case R.id.testing_collect_bn:
 				dbManger.open();
 				Cursor cursor = dbManger.getMark(id[i]);
-				System.out.println("收藏按钮--现在的i值:" + i + " id[i]的值："
-						+ id[i]);
+				System.out.println("收藏按钮--现在的i值:" + i + " id[i]的值：" + id[i]);
 				if (cursor.moveToFirst()) {
 					String mark = cursor.getString(cursor
 							.getColumnIndex(Constants.TestTable.MARK));

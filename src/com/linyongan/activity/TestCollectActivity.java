@@ -9,7 +9,6 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.Window;
 import android.widget.CursorAdapter;
-import android.widget.ImageButton;
 import android.widget.SimpleCursorAdapter;
 import android.widget.TextView;
 
@@ -17,14 +16,15 @@ import com.linyongan.cofig.Constants;
 import com.linyongan.model.Test;
 import com.linyongan.sql.TestDbManger;
 import com.linyongan.view.MyListView;
+import com.linyongan.view.TitleView1;
 import com.linyongan.view.MyListView.DelButtonClickListener;
 
 /**
  * 测试难题收集界面
  */
 public class TestCollectActivity extends Activity {
-	/** 返回按钮 */
-	private ImageButton backButton;
+	/** 标题 */
+	private TitleView1 titleView;
 	private TestDbManger dbManger;
 	private CursorAdapter listAdapter;
 	private MyListView listView;
@@ -74,9 +74,12 @@ public class TestCollectActivity extends Activity {
 		listView.setAdapter(listAdapter);
 		dbManger.close();
 
-		backButton = (ImageButton) findViewById(R.id.test_collect_back_bn);
-		backButton.setOnClickListener(new OnClickListener() {
+		titleView = (TitleView1) findViewById(R.id.TitleView1);
+		titleView.setTitleText("难题收藏");
+		titleView.setLeftButtonListener(new OnClickListener() {
+			@Override
 			public void onClick(View v) {
+				// TODO Auto-generated method stub
 				goBack();
 			}
 		});

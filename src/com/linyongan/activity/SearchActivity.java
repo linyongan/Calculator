@@ -20,7 +20,6 @@ import android.view.Window;
 import android.view.WindowManager.LayoutParams;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
-import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.PopupWindow;
 import android.widget.TextView;
@@ -34,13 +33,14 @@ import com.linyongan.sortlistview.SideBar.OnTouchingLetterChangedListener;
 import com.linyongan.sortlistview.SortAdapter;
 import com.linyongan.sortlistview.SortModel;
 import com.linyongan.sql.NounDbManger;
+import com.linyongan.view.TitleView1;
 
 /**
  * 名词查询页面
  */
 public class SearchActivity extends Activity {
-	/** 返回按钮 */
-	private ImageButton backButton;
+	/** 标题 */
+	private TitleView1 titleView;
 	private ListView sortListView;
 	private SideBar sideBar;
 	private TextView dialog;
@@ -70,11 +70,13 @@ public class SearchActivity extends Activity {
 		nounDbManger = new NounDbManger(this);
 		initViews();
 
-		backButton = (ImageButton) findViewById(R.id.search_back_bn);
-		backButton.setOnClickListener(new OnClickListener() {
+		titleView = (TitleView1) findViewById(R.id.TitleView1);
+		titleView.setTitleText("名词查询");
+		titleView.setLeftButtonListener(new OnClickListener() {
+			@Override
 			public void onClick(View v) {
+				// TODO Auto-generated method stub
 				goBack();
-
 			}
 		});
 	}

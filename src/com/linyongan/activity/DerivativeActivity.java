@@ -1,5 +1,7 @@
 package com.linyongan.activity;
 
+import com.linyongan.view.TitleView1;
+
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
@@ -8,10 +10,9 @@ import android.view.View;
 import android.view.Window;
 import android.view.View.OnClickListener;
 import android.widget.Button;
-import android.widget.ImageButton;
 
 /**
- * 金融衍生品定价页面
+ * 期权计算页面
  */
 public class DerivativeActivity extends Activity {
 	/** 期权理论价格 */
@@ -32,8 +33,8 @@ public class DerivativeActivity extends Activity {
 	private Button Button8;
 	/** 贷款计算 */
 	private Button Button9;
-	/** 返回按钮 */
-	private ImageButton backButton;
+	/** 标题 */
+	private TitleView1 titleView;
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -51,7 +52,6 @@ public class DerivativeActivity extends Activity {
 		Button7 = (Button) findViewById(R.id.derivative_Button7);
 		Button8 = (Button) findViewById(R.id.derivative_Button8);
 		Button9 = (Button) findViewById(R.id.derivative_Button9);
-		backButton = (ImageButton) findViewById(R.id.derivative_back_bn);
 		Button1.setOnClickListener(new ButtonListener());
 		Button2.setOnClickListener(new ButtonListener());
 		Button3.setOnClickListener(new ButtonListener());
@@ -61,7 +61,15 @@ public class DerivativeActivity extends Activity {
 		Button7.setOnClickListener(new ButtonListener());
 		Button8.setOnClickListener(new ButtonListener());
 		Button9.setOnClickListener(new ButtonListener());
-		backButton.setOnClickListener(new ButtonListener());
+		titleView = (TitleView1) findViewById(R.id.TitleView1);
+		titleView.setTitleText("期权计算");
+		titleView.setLeftButtonListener(new OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				// TODO Auto-generated method stub
+				goBack();
+			}
+		});
 	}
 
 	private class ButtonListener implements OnClickListener {
@@ -112,9 +120,6 @@ public class DerivativeActivity extends Activity {
 				Intent intent9 = new Intent(DerivativeActivity.this,
 						LoanActivity.class);
 				startActivity(intent9);
-				break;
-			case R.id.derivative_back_bn:
-				goBack();
 				break;
 			}
 

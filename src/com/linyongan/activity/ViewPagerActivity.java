@@ -44,7 +44,7 @@ public class ViewPagerActivity extends Activity {
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.learn_viewpage);
-		//获取传递过来的图片ID
+		// 获取传递过来的图片ID
 		Bundle b = this.getIntent().getExtras();
 		imageResId = b.getIntArray("imageResId");
 		dot = b.getIntArray("dots");
@@ -56,7 +56,7 @@ public class ViewPagerActivity extends Activity {
 			imageView.setScaleType(ScaleType.CENTER_CROP);
 			imageViews.add(imageView);
 		}
-        //找到所有的点
+		// 找到所有的点
 		dots = new ArrayList<View>();
 		for (int i = 0; i < dot.length; i++) {
 			findViewById(dot[i]).setVisibility(View.VISIBLE);

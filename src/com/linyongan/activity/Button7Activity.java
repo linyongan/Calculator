@@ -8,17 +8,16 @@ import android.view.View.OnClickListener;
 import android.view.Window;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ImageButton;
 import android.widget.TextView;
 
+import com.linyongan.view.TitleView2;
+
 /**
- * 内在价值与时间价值页面
+ * Delta与杠杆倍数页面
  */
 public class Button7Activity extends Activity {
-	/** 返回按钮 */
-	private ImageButton backButton;
-	/** 清空按钮 */
-	private ImageButton cleanButton;
+	/** 标题 */
+	private TitleView2 titleView;
 	/** 计算按钮 */
 	private Button calculateButton;
 	/** 标的证券变化量(输入框) */
@@ -51,10 +50,24 @@ public class Button7Activity extends Activity {
 		// 找到所有的Button
 		calculateButton = (Button) findViewById(R.id.Button7_calculate_bt);
 		calculateButton.setOnClickListener(new ButtonListener());
-		backButton = (ImageButton) findViewById(R.id.Button7_back_bn);
-		backButton.setOnClickListener(new ButtonListener());
-		cleanButton = (ImageButton) findViewById(R.id.Button7_clean_bn);
-		cleanButton.setOnClickListener(new ButtonListener());
+		titleView = (TitleView2) findViewById(R.id.TitleView2);
+		titleView.setTitleText("Delta与杠杆倍数");
+		titleView.setLeftButtonListener(new OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				// TODO Auto-generated method stub
+				goBack();
+			}
+		});
+		titleView.setCleanButtonListener(new OnClickListener() {
+
+			@Override
+			public void onClick(View v) {
+				// TODO Auto-generated method stub
+				cleanEditText();
+			}
+
+		});
 	}
 
 	private class ButtonListener implements OnClickListener {
@@ -75,7 +88,7 @@ public class Button7Activity extends Activity {
 							+ "Delta: "
 							+ String.format("%.2f", Double.parseDouble(test2)
 									/ Double.parseDouble(test1));
-				} 
+				}
 				if (test5.length() != 0 && test3.length() != 0
 						&& test4.length() != 0) {
 					out = out
@@ -85,14 +98,8 @@ public class Button7Activity extends Activity {
 									Double.parseDouble(test5)
 											* Double.parseDouble(test3)
 											/ Double.parseDouble(test4));
-				} 
+				}
 				out_tv.setText(out);
-				break;
-			case R.id.Button7_back_bn:
-				goBack();
-				break;
-			case R.id.Button7_clean_bn:
-				cleanEditText();
 				break;
 			}
 

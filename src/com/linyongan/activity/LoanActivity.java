@@ -1,7 +1,8 @@
 package com.linyongan.activity;
 
-
 import com.linyongan.activity.R;
+import com.linyongan.view.TitleView2;
+
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
@@ -11,7 +12,6 @@ import android.view.Window;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ImageButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -20,10 +20,8 @@ import android.widget.Toast;
  * 贷款计算页面
  */
 public class LoanActivity extends Activity {
-	/** 返回按钮 */
-	private ImageButton backButton;
-	/** 清空按钮 */
-	private ImageButton cleanButton;
+	/** 标题 */
+	private TitleView2 titleView;
 	/** 计算按钮 */
 	private Button calculateButton;
 	/** 贷款本金(输入框) */
@@ -56,10 +54,24 @@ public class LoanActivity extends Activity {
 		// 找到所有的Button
 		calculateButton = (Button) findViewById(R.id.loan_calculate_bt);
 		calculateButton.setOnClickListener(new ButtonListener());
-		backButton = (ImageButton) findViewById(R.id.loan_back_bn);
-		backButton.setOnClickListener(new ButtonListener());
-		cleanButton = (ImageButton) findViewById(R.id.loan_clean_bn);
-		cleanButton.setOnClickListener(new ButtonListener());
+		titleView = (TitleView2) findViewById(R.id.TitleView2);
+		titleView.setTitleText("贷款计算");
+		titleView.setLeftButtonListener(new OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				// TODO Auto-generated method stub
+				goBack();
+			}
+		});
+		titleView.setCleanButtonListener(new OnClickListener() {
+
+			@Override
+			public void onClick(View v) {
+				// TODO Auto-generated method stub
+				cleanEditText();
+			}
+
+		});
 		// 找到所有的EditText
 		principal_et = (EditText) findViewById(R.id.loan_principal_et);
 		month_et = (EditText) findViewById(R.id.loan_month_et);
@@ -90,8 +102,8 @@ public class LoanActivity extends Activity {
 					monthRate = monthRate / 12;
 					Double a = calculateRepayment(principal, month, monthRate);
 					Double b = calculateInterest(a, month, principal);
-					out_tv.setText("计算结果：\n每月还款额：" + String.format("%.2f", a)+"元"
-							+ "\n累计利息：" + String.format("%.2f", b)+"元");
+					out_tv.setText("计算结果：\n每月还款额：" + String.format("%.2f", a)
+							+ "元" + "\n累计利息：" + String.format("%.2f", b) + "元");
 				} else if (mark == 2 && Sprincipal.length() != 0
 						&& Smonth.length() != 0 && SmonthRate.length() != 0) {
 					month = Integer.parseInt(Smonth);
@@ -113,13 +125,6 @@ public class LoanActivity extends Activity {
 							Toast.LENGTH_SHORT).show();
 				}
 				break;
-			case R.id.loan_back_bn:
-				goBack();
-				break;
-			case R.id.loan_clean_bn:
-				cleanEditText();
-				break;
-
 			}
 		}
 

@@ -1,7 +1,8 @@
 package com.linyongan.activity;
 
-
 import com.linyongan.activity.R;
+import com.linyongan.view.TitleView2;
+
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
@@ -11,7 +12,6 @@ import android.view.Window;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ImageButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -20,10 +20,8 @@ import android.widget.Toast;
  * 个人理财页面
  */
 public class FinanceActivity extends Activity {
-	/** 返回按钮 */
-	private ImageButton backButton;
-	/** 清空按钮 */
-	private ImageButton cleanButton;
+	/** 标题 */
+	private TitleView2 titleView;
 	/** 计算按钮 */
 	private Button calculateButton;
 	/** 计算类型 */
@@ -95,10 +93,24 @@ public class FinanceActivity extends Activity {
 		// 找到所有的Button
 		calculateButton = (Button) findViewById(R.id.finance_calculate_bt);
 		calculateButton.setOnClickListener(new ButtonListener());
-		backButton = (ImageButton) findViewById(R.id.finance_back_bn);
-		backButton.setOnClickListener(new ButtonListener());
-		cleanButton = (ImageButton) findViewById(R.id.finance_clean_bn);
-		cleanButton.setOnClickListener(new ButtonListener());
+		titleView = (TitleView2) findViewById(R.id.TitleView2);
+		titleView.setTitleText("个人理财");
+		titleView.setLeftButtonListener(new OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				// TODO Auto-generated method stub
+				goBack();
+			}
+		});
+		titleView.setCleanButtonListener(new OnClickListener() {
+
+			@Override
+			public void onClick(View v) {
+				// TODO Auto-generated method stub
+				cleanEditText();
+			}
+
+		});
 	}
 
 	/** 选择计算类型的RadioGroup的监听事件 */
@@ -196,7 +208,7 @@ public class FinanceActivity extends Activity {
 				String Sannuity = annuity_et.getText().toString();
 				String SpresentValue = presentValue_et.getText().toString();
 				String SfinalValue = finalValue_et.getText().toString();
-				
+
 				if (mark == 1 && Syear.length() != 0
 						&& SfinalValue.length() != 0 && Srate.length() != 0) {
 					year = Integer.parseInt(Syear);
@@ -231,13 +243,6 @@ public class FinanceActivity extends Activity {
 				}
 
 				break;
-			case R.id.finance_back_bn:
-				goBack();
-				break;
-			case R.id.finance_clean_bn:
-				cleanEditText();
-				break;
-
 			}
 		}
 
@@ -341,7 +346,8 @@ public class FinanceActivity extends Activity {
 
 	/** 返回上一个界面 */
 	private void goBack() {
-		Intent intent = new Intent(FinanceActivity.this, DerivativeActivity.class);
+		Intent intent = new Intent(FinanceActivity.this,
+				DerivativeActivity.class);
 		startActivity(intent);
 		finish();
 	}

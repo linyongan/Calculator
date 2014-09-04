@@ -2,59 +2,14 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-   android:background="@color/layoutBackground"
+    android:background="@color/layoutBackground"
     android:orientation="vertical" >
 
-    <RelativeLayout
+    <com.linyongan.view.TitleView2
+        android:id="@+id/TitleView2"
         android:layout_width="match_parent"
-        android:layout_height="45dp"
-        android:background="@drawable/titlebar" >
-
-        <ImageButton
-            android:id="@+id/finance_back_bn"
-            android:layout_width="40dp"
-            android:layout_height="wrap_content"
-            android:layout_alignParentLeft="true"
-            android:layout_centerInParent="true"
-            android:layout_marginLeft="4dip"
-            android:background="@drawable/common_btn_selector" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentLeft="true"
-            android:layout_centerVertical="true"
-            android:layout_marginLeft="12dp"
-            android:background="@drawable/btn_back" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerInParent="true"
-            android:focusable="true"
-            android:focusableInTouchMode="true"
-            android:text="个人理财"
-            android:textColor="@android:color/white"
-            android:textSize="20sp" />
-        
-        
-        <ImageButton
-            android:id="@+id/finance_clean_bn"
-            android:layout_width="40dp"
-            android:layout_height="wrap_content"
-            android:layout_alignParentRight="true"
-            android:layout_centerInParent="true"
-            android:layout_marginRight="6dip"
-            android:background="@drawable/common_btn_selector" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentRight="true"
-            android:layout_centerVertical="true"
-            android:layout_marginRight="12dp"
-            android:text="清空"/>
-    </RelativeLayout>
+        android:layout_height="45dp" >
+    </com.linyongan.view.TitleView2>
 
     <ScrollView
         android:layout_width="match_parent"
@@ -122,8 +77,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
-                android:background="@drawable/shape_bg" 
-                >
+                android:background="@drawable/shape_bg" >
 
                 <TableRow
                     android:layout_width="match_parent"
@@ -228,14 +182,16 @@
                 android:layout_marginTop="5dp"
                 android:background="@drawable/shape_bg"
                 android:orientation="horizontal" >
-                <TextView 
+
+                <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_vertical"
                     android:padding="8dp"
                     android:text="年金周期:"
-                    android:textSize="16sp" 
-                    android:textColor="@android:color/black" />
+                    android:textColor="@android:color/black"
+                    android:textSize="16sp" />
+
                 <RadioButton
                     android:id="@+id/finance_month_rb"
                     android:layout_width="wrap_content"

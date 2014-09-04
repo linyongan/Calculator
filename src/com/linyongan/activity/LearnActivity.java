@@ -9,16 +9,15 @@ import android.view.View.OnClickListener;
 import android.view.Window;
 import android.widget.ExpandableListView;
 import android.widget.ExpandableListView.OnChildClickListener;
-import android.widget.ImageButton;
-
 import com.linyongan.adapter.ExpandableListAdapter;
+import com.linyongan.view.TitleView1;
 
 /**
  * 期权学堂页面
  */
 public class LearnActivity extends ExpandableListActivity {
-	/** 返回按钮 */
-	private ImageButton backButton;
+	/** 标题 */
+	private TitleView1 titleView;
 	/** 图片ID */
 	private int[] imageResId;
 	/** 图片标题正文的那些点 */
@@ -56,21 +55,22 @@ public class LearnActivity extends ExpandableListActivity {
 		setListAdapter(adapter);
 		getExpandableListView().setOnChildClickListener(
 				new ExpandableListViewListener());
-
-		backButton = (ImageButton) findViewById(R.id.learn_back_bn);
-		backButton.setOnClickListener(new OnClickListener() {
+		titleView = (TitleView1) findViewById(R.id.TitleView1);
+		titleView.setTitleText("期权学堂");
+		titleView.setLeftButtonListener(new OnClickListener() {
+			@Override
 			public void onClick(View v) {
+				// TODO Auto-generated method stub
 				goBack();
-
 			}
 		});
-
 	}
 
 	/**
 	 * 设置图片的ID，然后调整到相应的页面
+	 * 
 	 * @author yongan
-	 *
+	 * 
 	 */
 	private class ExpandableListViewListener implements OnChildClickListener {
 

@@ -1,5 +1,7 @@
 package com.linyongan.activity;
 
+import com.linyongan.view.TitleView1;
+
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
@@ -8,14 +10,13 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.Window;
 import android.widget.Button;
-import android.widget.ImageButton;
 
 /**
  * 自我测试页面
  */
 public class TestActivity extends Activity {
-	/** 返回按钮 */
-	private ImageButton backButton;
+	/** 标题 */
+	private TitleView1 titleView;
 	/** 基础测试按钮 */
 	private Button baseButton;
 	/** 进阶测试1按钮 */
@@ -33,14 +34,21 @@ public class TestActivity extends Activity {
 		/* 设置全屏 */
 		requestWindowFeature(Window.FEATURE_NO_TITLE);
 		setContentView(R.layout.test_main);
-		backButton = (ImageButton) findViewById(R.id.test_back_bn);
 		baseButton = (Button) findViewById(R.id.test_baseButton);
 		advanceButton1 = (Button) findViewById(R.id.test_advanceButton1);
 		advanceButton2 = (Button) findViewById(R.id.test_advanceButton2);
 		collectButton = (Button) findViewById(R.id.test_collectButton);
 		gradeButton = (Button) findViewById(R.id.test_gradeButton);
 
-		backButton.setOnClickListener(new ButtonListener());
+		titleView = (TitleView1) findViewById(R.id.TitleView1);
+		titleView.setTitleText("自我测试");
+		titleView.setLeftButtonListener(new OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				// TODO Auto-generated method stub
+				goBack();
+			}
+		});
 		baseButton.setOnClickListener(new ButtonListener());
 		advanceButton1.setOnClickListener(new ButtonListener());
 		advanceButton2.setOnClickListener(new ButtonListener());
@@ -60,9 +68,6 @@ public class TestActivity extends Activity {
 		public void onClick(View v) {
 			// TODO Auto-generated method stub
 			switch (v.getId()) {
-			case R.id.test_back_bn:
-				goBack();
-				break;
 			case R.id.test_baseButton:
 				Intent intent2 = new Intent(TestActivity.this,
 						TestingActivity.class);

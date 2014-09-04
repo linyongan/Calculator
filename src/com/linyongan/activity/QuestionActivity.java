@@ -15,20 +15,20 @@ import android.view.WindowManager.LayoutParams;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ArrayAdapter;
-import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.PopupWindow;
 import android.widget.TextView;
 
 import com.linyongan.cofig.Constants;
 import com.linyongan.sql.QuestionDbManger;
+import com.linyongan.view.TitleView1;
 
 /**
  * 常见问题页面
  */
 public class QuestionActivity extends Activity {
-	/** 返回按钮 */
-	private ImageButton backButton;
+	/** 标题 */
+	private TitleView1 titleView;
 	private ListView listView;
 	/** 数据库管理类 */
 	private QuestionDbManger dbManger;
@@ -37,6 +37,7 @@ public class QuestionActivity extends Activity {
 	private int i = 0;
 
 	private ArrayAdapter<String> adapter;
+
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -54,11 +55,13 @@ public class QuestionActivity extends Activity {
 				popupView(position);
 			}
 		});
-		backButton = (ImageButton) findViewById(R.id.question_back_bn);
-		backButton.setOnClickListener(new OnClickListener() {
+		titleView = (TitleView1) findViewById(R.id.TitleView1);
+		titleView.setTitleText("常见问题");
+		titleView.setLeftButtonListener(new OnClickListener() {
+			@Override
 			public void onClick(View v) {
+				// TODO Auto-generated method stub
 				goBack();
-
 			}
 		});
 	}
@@ -79,8 +82,8 @@ public class QuestionActivity extends Activity {
 			} while (cursor.moveToNext());
 
 		}
-		adapter = new ArrayAdapter<String>(this,
-				R.layout.question_item, strings);
+		adapter = new ArrayAdapter<String>(this, R.layout.question_item,
+				strings);
 		listView.setAdapter(adapter);
 		dbManger.close();
 	}
@@ -97,8 +100,8 @@ public class QuestionActivity extends Activity {
 				LayoutParams.MATCH_PARENT, LayoutParams.MATCH_PARENT, true);
 		popup.setBackgroundDrawable(new BitmapDrawable());
 		// 将PopupWindow显示在指定位置
-		popup.showAtLocation(findViewById(R.id.question_listview), Gravity.CENTER, 0,
-				0);
+		popup.showAtLocation(findViewById(R.id.question_listview),
+				Gravity.CENTER, 0, 0);
 		TextView textView;
 		textView = (TextView) root.findViewById(R.id.question_show_tv);
 		String string = adapter.getItem(position).toString();
@@ -111,7 +114,7 @@ public class QuestionActivity extends Activity {
 			textView.setText(string1);
 		}
 		dbManger.close();
-		textView.setMovementMethod(ScrollingMovementMethod.getInstance()); 
+		textView.setMovementMethod(ScrollingMovementMethod.getInstance());
 		// 获取PopupWindow中的关闭按钮。
 		root.findViewById(R.id.question_closeButton).setOnClickListener(
 				new View.OnClickListener() {
@@ -121,7 +124,7 @@ public class QuestionActivity extends Activity {
 					}
 				});
 	}
-	
+
 	/** 退出按钮 */
 	public boolean dispatchKeyEvent(KeyEvent event) {
 		if (event.getKeyCode() == KeyEvent.KEYCODE_BACK) {

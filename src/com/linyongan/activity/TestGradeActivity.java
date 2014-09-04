@@ -3,6 +3,7 @@ package com.linyongan.activity;
 import com.linyongan.cofig.Constants;
 import com.linyongan.sql.GradeDbManger;
 import com.linyongan.view.MyListView;
+import com.linyongan.view.TitleView1;
 import com.linyongan.view.MyListView.DelButtonClickListener;
 
 import android.app.Activity;
@@ -14,7 +15,6 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.Window;
 import android.widget.CursorAdapter;
-import android.widget.ImageButton;
 import android.widget.SimpleCursorAdapter;
 import android.widget.TextView;
 
@@ -22,8 +22,8 @@ import android.widget.TextView;
  * 测试成绩界面
  */
 public class TestGradeActivity extends Activity {
-	/** 返回按钮 */
-	private ImageButton backButton;
+	/** 标题 */
+	private TitleView1 titleView;
 
 	private GradeDbManger dbManger;
 	private CursorAdapter listAdapter;
@@ -73,11 +73,13 @@ public class TestGradeActivity extends Activity {
 		listView.setAdapter(listAdapter);
 		dbManger.close();
 
-		backButton = (ImageButton) findViewById(R.id.test_grade_back_bn);
-		backButton.setOnClickListener(new OnClickListener() {
+		titleView = (TitleView1) findViewById(R.id.TitleView1);
+		titleView.setTitleText("成绩查询");
+		titleView.setLeftButtonListener(new OnClickListener() {
+			@Override
 			public void onClick(View v) {
+				// TODO Auto-generated method stub
 				goBack();
-
 			}
 		});
 	}

@@ -8,20 +8,19 @@ import android.view.View.OnClickListener;
 import android.view.Window;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ImageButton;
 import android.widget.RadioGroup;
 import android.widget.TableRow;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.linyongan.view.TitleView2;
+
 /**
  * 期权到期收益页面
  */
 public class Button2Activity extends Activity {
-	/** 返回按钮 */
-	private ImageButton backButton;
-	/** 清空按钮 */
-	private ImageButton cleanButton;
+	/** 标题 */
+	private TitleView2 titleView;
 	/** 计算按钮 */
 	private Button calculateButton;
 	private RadioGroup radioGroup1;
@@ -76,10 +75,24 @@ public class Button2Activity extends Activity {
 		// 找到所有的Button
 		calculateButton = (Button) findViewById(R.id.Button2_calculate_bt);
 		calculateButton.setOnClickListener(new ButtonListener());
-		backButton = (ImageButton) findViewById(R.id.Button2_back_bn);
-		backButton.setOnClickListener(new ButtonListener());
-		cleanButton = (ImageButton) findViewById(R.id.Button2_clean_bn);
-		cleanButton.setOnClickListener(new ButtonListener());
+		titleView = (TitleView2) findViewById(R.id.TitleView2);
+		titleView.setTitleText("期权到期收益");
+		titleView.setLeftButtonListener(new OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				// TODO Auto-generated method stub
+				goBack();
+			}
+		});
+		titleView.setCleanButtonListener(new OnClickListener() {
+
+			@Override
+			public void onClick(View v) {
+				// TODO Auto-generated method stub
+				cleanEditText();
+			}
+
+		});
 	}
 
 	private class ButtonListener implements OnClickListener {
@@ -141,12 +154,7 @@ public class Button2Activity extends Activity {
 				}
 
 				break;
-			case R.id.Button2_back_bn:
-				goBack();
-				break;
-			case R.id.Button2_clean_bn:
-				cleanEditText();
-				break;
+
 			}
 
 		}

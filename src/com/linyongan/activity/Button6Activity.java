@@ -1,5 +1,7 @@
 package com.linyongan.activity;
 
+import com.linyongan.view.TitleView2;
+
 import android.app.Activity;
 import android.os.Bundle;
 import android.view.KeyEvent;
@@ -8,7 +10,6 @@ import android.view.View.OnClickListener;
 import android.view.Window;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ImageButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -17,10 +18,8 @@ import android.widget.Toast;
  * 内在价值与时间价值页面
  */
 public class Button6Activity extends Activity {
-	/** 返回按钮 */
-	private ImageButton backButton;
-	/** 清空按钮 */
-	private ImageButton cleanButton;
+	/** 标题 */
+	private TitleView2 titleView;
 	/** 计算按钮 */
 	private Button calculateButton;
 	/** 标的股价(输入框) */
@@ -55,10 +54,24 @@ public class Button6Activity extends Activity {
 		// 找到所有的Button
 		calculateButton = (Button) findViewById(R.id.Button6_calculate_bt);
 		calculateButton.setOnClickListener(new ButtonListener());
-		backButton = (ImageButton) findViewById(R.id.Button6_back_bn);
-		backButton.setOnClickListener(new ButtonListener());
-		cleanButton = (ImageButton) findViewById(R.id.Button6_clean_bn);
-		cleanButton.setOnClickListener(new ButtonListener());
+		titleView = (TitleView2) findViewById(R.id.TitleView2);
+		titleView.setTitleText("内在价值与时间价值");
+		titleView.setLeftButtonListener(new OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				// TODO Auto-generated method stub
+				goBack();
+			}
+		});
+		titleView.setCleanButtonListener(new OnClickListener() {
+
+			@Override
+			public void onClick(View v) {
+				// TODO Auto-generated method stub
+				cleanEditText();
+			}
+
+		});
 	}
 
 	/** RadioGroup的监听事件 */
@@ -121,12 +134,6 @@ public class Button6Activity extends Activity {
 					out_tv.setText("计算结果：输入数字不能为空！");
 				}
 
-				break;
-			case R.id.Button6_back_bn:
-				goBack();
-				break;
-			case R.id.Button6_clean_bn:
-				cleanEditText();
 				break;
 			}
 

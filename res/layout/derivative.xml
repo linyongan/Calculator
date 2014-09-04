@@ -5,38 +5,11 @@
     android:background="@drawable/b1"
     android:orientation="vertical" >
 
-    <RelativeLayout
+    <com.linyongan.view.TitleView1
+        android:id="@+id/TitleView1"
         android:layout_width="match_parent"
-        android:layout_height="45dp"
-        android:background="@drawable/titlebar" >
-
-        <ImageButton
-            android:id="@+id/derivative_back_bn"
-            android:layout_width="40dp"
-            android:layout_height="wrap_content"
-            android:layout_alignParentLeft="true"
-            android:layout_centerInParent="true"
-            android:layout_marginLeft="4dip"
-            android:background="@drawable/common_btn_selector" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentLeft="true"
-            android:layout_centerVertical="true"
-            android:layout_marginLeft="12dp"
-            android:background="@drawable/btn_back" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerInParent="true"
-            android:focusable="true"
-            android:focusableInTouchMode="true"
-            android:text="期权计算"
-            android:textColor="@android:color/white"
-            android:textSize="20sp" />
-    </RelativeLayout>
+        android:layout_height="45dp" >
+    </com.linyongan.view.TitleView1>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -55,7 +28,7 @@
             <TableRow
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:gravity="center_horizontal"  >
+                android:gravity="center_horizontal" >
 
                 <Button
                     android:id="@+id/derivative_Button1"
@@ -99,7 +72,7 @@
             <TableRow
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="5dp" 
+                android:layout_marginTop="5dp"
                 android:gravity="center_horizontal" >
 
                 <Button
@@ -130,7 +103,7 @@
 
                 <Button
                     android:id="@+id/derivative_Button7"
-                     android:layout_width="80dp"
+                    android:layout_width="80dp"
                     android:layout_height="80dp"
                     android:background="@drawable/test_commonbtn_selector"
                     android:drawablePadding="-15dp"
@@ -144,7 +117,7 @@
             <TableRow
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="5dp" 
+                android:layout_marginTop="5dp"
                 android:gravity="center_horizontal" >
 
                 <Button
@@ -159,6 +132,7 @@
                     android:text="平价套利"
                     android:textColor="@android:color/black"
                     android:textSize="14sp" />
+
                 <Button
                     android:id="@+id/derivative_Button8"
                     android:layout_width="80dp"
@@ -171,6 +145,7 @@
                     android:text="个人理财"
                     android:textColor="@android:color/black"
                     android:textSize="14sp" />
+
                 <Button
                     android:id="@+id/derivative_Button9"
                     android:layout_width="80dp"

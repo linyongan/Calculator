@@ -2,6 +2,7 @@ package com.linyongan.activity;
 
 import com.linyongan.activity.MainActivity;
 import com.linyongan.activity.R;
+import com.linyongan.view.TitleView2;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -13,7 +14,6 @@ import android.view.View.OnClickListener;
 import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.RadioGroup;
 import android.widget.Spinner;
@@ -25,10 +25,8 @@ import android.widget.AdapterView.OnItemSelectedListener;
  * 期权组合页面
  */
 public class Button3Activity extends Activity {
-	/** 返回按钮 */
-	private ImageButton backButton;
-	/** 清空按钮 */
-	private ImageButton cleanButton;
+	/** 标题 */
+	private TitleView2 titleView;
 	/** 计算按钮 */
 	private Button calculateButton;
 	private Spinner spinner;
@@ -121,10 +119,24 @@ public class Button3Activity extends Activity {
 		// 找到所有的Button
 		calculateButton = (Button) findViewById(R.id.Button3_Calculate_bt);
 		calculateButton.setOnClickListener(new ButtonListener());
-		backButton = (ImageButton) findViewById(R.id.Button3_Back_bn);
-		backButton.setOnClickListener(new ButtonListener());
-		cleanButton = (ImageButton) findViewById(R.id.Button3_Clean_bn);
-		cleanButton.setOnClickListener(new ButtonListener());
+		titleView = (TitleView2) findViewById(R.id.TitleView2);
+		titleView.setTitleText("期权组合");
+		titleView.setLeftButtonListener(new OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				// TODO Auto-generated method stub
+				goBack();
+			}
+		});
+		titleView.setCleanButtonListener(new OnClickListener() {
+
+			@Override
+			public void onClick(View v) {
+				// TODO Auto-generated method stub
+				cleanEditText();
+			}
+
+		});
 	}
 
 	/** RadioGroup的监听事件 */
@@ -358,12 +370,6 @@ public class Button3Activity extends Activity {
 					break;
 				}
 				break;
-			case R.id.Button3_Back_bn:
-				goBack();
-				break;
-			case R.id.Button3_Clean_bn:
-				cleanEditText();
-				break;
 			}
 		}
 	}
@@ -477,7 +483,7 @@ public class Button3Activity extends Activity {
 
 	/** 返回上一个界面 */
 	private void goBack() {
-		Intent intent = new Intent(Button3Activity.this, MainActivity.class);
+		Intent intent = new Intent(Button3Activity.this, DerivativeActivity.class);
 		startActivity(intent);
 		finish();
 	}
