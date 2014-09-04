@@ -38,13 +38,13 @@
             android:textSize="20sp" />
     </RelativeLayout>
 
-    <ListView
+    <com.linyongan.view.MyListView
         android:id="@+id/test_collect_listview"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:cacheColorHint="@android:color/transparent"
         android:divider="@null"
         android:listSelector="#00000000" >
-    </ListView>
+    </com.linyongan.view.MyListView>
 
 </LinearLayout>

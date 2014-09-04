@@ -2,6 +2,8 @@ package com.linyongan.activity;
 
 import com.linyongan.cofig.Constants;
 import com.linyongan.sql.GradeDbManger;
+import com.linyongan.view.MyListView;
+import com.linyongan.view.MyListView.DelButtonClickListener;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -11,10 +13,10 @@ import android.view.KeyEvent;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.Window;
+import android.widget.CursorAdapter;
 import android.widget.ImageButton;
-import android.widget.ListAdapter;
-import android.widget.ListView;
 import android.widget.SimpleCursorAdapter;
+import android.widget.TextView;
 
 /**
  * 测试成绩界面
@@ -24,6 +26,9 @@ public class TestGradeActivity extends Activity {
 	private ImageButton backButton;
 
 	private GradeDbManger dbManger;
+	private CursorAdapter listAdapter;
+	private MyListView listView;
+	private Cursor cursor;
 
 	@SuppressWarnings("deprecation")
 	@Override
@@ -34,15 +39,37 @@ public class TestGradeActivity extends Activity {
 		setContentView(R.layout.test_grade);
 
 		dbManger = new GradeDbManger(this);
-		ListView listView = (ListView) findViewById(R.id.test_grade_listview);
+		listView = (MyListView) findViewById(R.id.test_grade_listview);
+		listView.setDelButtonClickListener(new DelButtonClickListener() {
+			@Override
+			public void clickHappend(int position) {
+				// 查找到当前的item
+				View view = listView.getChildAt(position);
+				TextView textview = (TextView) view
+						.findViewById(R.id.test_grade_item_time);
+				// 查找到当前item的时间
+				String string = textview.getText().toString();
+				// 更改数据库的数据，删除成绩
+				dbManger.open();
+				dbManger.delete(string);
+				// 从数据库重新获取数据，更新listview
+				cursor = dbManger.searchGrade();
+				listAdapter.changeCursor(cursor);
+				dbManger.close();
+			}
+
+		});
+
 		dbManger.open();
-		Cursor cursor = dbManger.searchGrade();
-		ListAdapter listAdapter = new SimpleCursorAdapter(this,
-				R.layout.test_grade_item, cursor, new String[] {
-						Constants.GradeTable.TIME, Constants.GradeTable.NAME,
-						Constants.GradeTable.GRADE }, new int[] {
-						R.id.test_grade_item_time, R.id.test_grade_item_name,
-						R.id.test_grade_item_grade });
+		cursor = dbManger.searchGrade();
+		listAdapter = new SimpleCursorAdapter(
+				this,
+				R.layout.test_grade_item,
+				cursor,
+				new String[] { Constants.GradeTable.TIME,
+						Constants.GradeTable.NAME, Constants.GradeTable.GRADE },
+				new int[] { R.id.test_grade_item_time,
+						R.id.test_grade_item_name, R.id.test_grade_item_grade });
 		listView.setAdapter(listAdapter);
 		dbManger.close();
 

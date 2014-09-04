@@ -66,6 +66,28 @@ public class GradeDbManger {
 	}
 
 	/**
+	 * 删除表中的记录
+	 * 
+	 * @param whereClause
+	 *            删除条件 如：( id>? and time>?)
+	 * @param whereArgs
+	 *            条件里的参数 用来替换"?" 第1个参数，代表第1个问号；第2个参数，代表第2个问号；依此类推......
+	 * @return 返回删除的条数 也可以作为判断值，如果是正数则表示删除成功，反之不成功
+	 */
+	public int delete(String time) {
+		try {
+
+			return db.delete(Constants.GradeTable.TABLE_NAME,
+					Constants.GradeTable.TIME + " =?",
+					new String[] { time });
+		} catch (Exception e) {
+			// TODO: handle exception
+			Log.e(TAG, e.getMessage());
+			return -1;
+		}
+	}
+	
+	/**
 	 * 查找表中记录
 	 * 
 	 * @return Cursor
